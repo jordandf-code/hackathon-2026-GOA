@@ -1,0 +1,338 @@
+# Federal commitments seed for the policy-alignment demo.
+#
+# Hand-curated from public Government of Canada announcements (mandate
+# letters, budgets, official program pages). Each entry is what a PBO-style
+# auditor would treat as a "stated commitment" to test against actual
+# spending in fed.grants_contributions and public.contracts.
+#
+# Schema:
+#   id                  Stable slug (kebab-case). Used as primary key.
+#   theme               Top-level theme (reconciliation | emissions | housing | healthcare).
+#                       For the v1 demo we only seed reconciliation.
+#   sub_theme           Free-form sub-bucket for grouping in the UI.
+#   title               One-line human-readable title.
+#   pledge_source       Where the commitment was made (Budget X, mandate
+#                       letter, throne speech, settlement agreement, etc.).
+#   pledge_year         Year the commitment was first publicly stated.
+#   target_date         Date the commitment was meant to be met. null if
+#                       open-ended / ongoing.
+#   pledge_amount_cad   Total CAD pledged. null if no headline number, or if
+#                       the commitment is non-monetary (e.g. "lift X by Y").
+#   pledge_window:      [start, end] dates over which the pledged amount is
+#                       intended to flow (helps when pledge_amount_cad is set).
+#   description_en      1-3 sentence plain-English description.
+#   query_hints:        Structured guidance for the spending-query agent.
+#     departments       owner_org slugs to filter on. null = all departments.
+#                       NOTE: validate against
+#                       SELECT DISTINCT owner_org FROM fed.grants_contributions
+#                       at agent boot — slugs in this file are placeholders
+#                       and may not match the dataset exactly.
+#     recipient_types   fed.grants_contributions.recipient_type codes.
+#                       'A' = Indigenous recipients per fed.recipient_type_lookup.
+#     keywords          Inclusive match against prog_name_en, prog_purpose_en,
+#                       agreement_title_en, description_en, expected_results_en.
+#     exclude_keywords  Negative match (false-positive guard).
+#     date_range        Filter on agreement_start_date.
+#   source_url          Citation URL. Empty = TODO; fill before demo.
+#   status_notes        Known progress / shortfall context for the narrative.
+#   confidence          high / medium / low — how sure we are the pledge text,
+#                       amount, and date below are correct as stated. Verify
+#                       medium / low before publishing.
+#
+# Department slugs to validate at boot (best-guess):
+#   isc-sac     Indigenous Services Canada
+#   cirnac      Crown-Indigenous Relations and Northern Affairs Canada
+#   cmhc-schl   Canada Mortgage and Housing Corporation
+#   wage-fegc   Women and Gender Equality Canada
+#   pch         Canadian Heritage
+#   eccc        Environment and Climate Change Canada
+#   nrcan-rncan Natural Resources Canada
+#   hc-sc       Health Canada
+
+commitments:
+
+  - id: water-advisories-lift-2021
+    theme: reconciliation
+    sub_theme: indigenous_services
+    title: Lift all long-term drinking-water advisories on public First Nations water systems
+    pledge_source: Liberal Party platform 2015; reiterated in mandate letters and Budget 2016
+    pledge_year: 2015
+    target_date: 2021-03-31
+    pledge_amount_cad: null
+    pledge_window: [2016-04-01, 2021-03-31]
+    description_en: >
+      Federal government committed to lift all long-term drinking-water advisories
+      on public First Nations water systems on reserve by March 2021. The original
+      target was missed; the program has continued past the deadline with multiple
+      additional rounds of funding through Indigenous Services Canada.
+    query_hints:
+      departments: [isc-sac, aandc-aadnc]
+      recipient_types: [A]
+      keywords: [water, drinking water, water advisory, boil water, potable, water treatment, water infrastructure, wastewater]
+      exclude_keywords: [stormwater]
+      date_range: [2015-04-01, 2025-12-31]
+    source_url: ""
+    status_notes: Target missed in 2021; advisories remained as of recent reporting. Compare cumulative ISC water-related grants/contributions vs the implicit funding envelope in budgets 2016-2024.
+    confidence: high
+
+  - id: jordans-principle
+    theme: reconciliation
+    sub_theme: child_welfare
+    title: Fund all eligible Jordan's Principle requests for First Nations children
+    pledge_source: Canadian Human Rights Tribunal orders 2016+; ongoing ISC commitment
+    pledge_year: 2016
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2016-04-01, 2026-03-31]
+    description_en: >
+      Federal commitment, enforced via Canadian Human Rights Tribunal orders, to
+      fund all eligible Jordan's Principle requests so First Nations children can
+      access health, social, and education services without jurisdictional delay.
+      Annual expenditure has grown from sub-$100M to multi-billion in recent years.
+    query_hints:
+      departments: [isc-sac]
+      recipient_types: [A, P]
+      keywords: ["Jordan's Principle", Jordans Principle, child and family services, First Nations child]
+      exclude_keywords: []
+      date_range: [2016-04-01, 2025-12-31]
+    source_url: ""
+    status_notes: Volume of approved requests has scaled order-of-magnitude. Test whether grants/contributions tagged to Jordan's Principle by program name match the public expenditure totals reported by ISC.
+    confidence: high
+
+  - id: fncfs-reform-2024
+    theme: reconciliation
+    sub_theme: child_welfare
+    title: First Nations Child and Family Services long-term reform funding
+    pledge_source: Final Settlement Agreement (2024) following CHRT orders
+    pledge_year: 2024
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2024-04-01, 2034-03-31]
+    description_en: >
+      Long-term reform funding for the First Nations Child and Family Services
+      program, separate from the compensation settlement, intended to address the
+      systemic underfunding identified by the Canadian Human Rights Tribunal.
+      Verify the headline pledge amount and window against the final settlement
+      agreement before quoting in the demo.
+    query_hints:
+      departments: [isc-sac]
+      recipient_types: [A, P]
+      keywords: [child and family services, FNCFS, child welfare, First Nations children]
+      exclude_keywords: []
+      date_range: [2024-04-01, 2025-12-31]
+    source_url: ""
+    status_notes: Pledge amount and timeline need verification; flagged medium confidence.
+    confidence: medium
+
+  - id: mmiwg-national-action-plan
+    theme: reconciliation
+    sub_theme: mmiwg
+    title: National Action Plan response to MMIWG Calls for Justice
+    pledge_source: Budget 2021 ("$2.2B over 5 years"); National Action Plan released June 2021
+    pledge_year: 2021
+    target_date: 2026-03-31
+    pledge_amount_cad: 2200000000
+    pledge_window: [2021-04-01, 2026-03-31]
+    description_en: >
+      Budget 2021 pledged $2.2B over 5 years across multiple departments to
+      respond to the 231 Calls for Justice from the Final Report of the National
+      Inquiry into Missing and Murdered Indigenous Women and Girls. Spans CIRNAC,
+      ISC, Women and Gender Equality, Justice, and others.
+    query_hints:
+      departments: [cirnac, isc-sac, wage-fegc, jus-jus]
+      recipient_types: [A]
+      keywords: [MMIWG, Missing and Murdered, Indigenous women, Calls for Justice, gender-based violence]
+      exclude_keywords: []
+      date_range: [2021-04-01, 2026-03-31]
+    source_url: ""
+    status_notes: Cross-departmental envelope; sum federal grants/contributions and contracts tagged to MMIWG response and compare to the $2.2B/5y target.
+    confidence: high
+
+  - id: indigenous-housing-strategy-2022
+    theme: reconciliation
+    sub_theme: housing
+    title: Indigenous-led, urban / rural / northern Indigenous housing strategy
+    pledge_source: Budget 2022 ("$4.3B over 7 years for Indigenous housing")
+    pledge_year: 2022
+    target_date: 2029-03-31
+    pledge_amount_cad: 4300000000
+    pledge_window: [2022-04-01, 2029-03-31]
+    description_en: >
+      Budget 2022 pledged approximately $4.3B over 7 years to improve and build
+      housing in First Nations, Inuit, and Métis communities, plus a separate
+      stream for urban, rural, and northern Indigenous housing.
+    query_hints:
+      departments: [cmhc-schl, isc-sac, cirnac]
+      recipient_types: [A]
+      keywords: [housing, Indigenous housing, on-reserve housing, urban Indigenous, rural Indigenous, northern Indigenous, Métis housing, Inuit housing]
+      exclude_keywords: []
+      date_range: [2022-04-01, 2029-03-31]
+    source_url: ""
+    status_notes: Test cumulative flow against the linear-pace expectation ($4.3B / 7y ≈ $614M/y); compare to actual.
+    confidence: high
+
+  - id: undrip-act-implementation
+    theme: reconciliation
+    sub_theme: rights_implementation
+    title: Implementation of the United Nations Declaration on the Rights of Indigenous Peoples Act
+    pledge_source: UN Declaration Act (Bill C-15, June 2021); Action Plan tabled June 2023
+    pledge_year: 2021
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2021-06-01, 2028-12-31]
+    description_en: >
+      The UN Declaration on the Rights of Indigenous Peoples Act requires the
+      federal government to align Canadian laws with UNDRIP and to publish an
+      Action Plan in consultation with Indigenous peoples. The 2023 Action Plan
+      contains numbered measures across many departments; specific funding
+      envelopes are spread across budgets.
+    query_hints:
+      departments: null
+      recipient_types: [A]
+      keywords: [UNDRIP, UN Declaration, Declaration Act, Indigenous rights, self-determination]
+      exclude_keywords: []
+      date_range: [2021-06-01, 2025-12-31]
+    source_url: ""
+    status_notes: No single dollar headline; agent should aggregate by Action Plan measure where possible. Useful as a "broad surface" reference.
+    confidence: medium
+
+  - id: indigenous-languages-act-2019
+    theme: reconciliation
+    sub_theme: languages_culture
+    title: Sustained funding for Indigenous languages revitalization
+    pledge_source: Indigenous Languages Act (2019); Budget 2019 / 2024 funding tranches
+    pledge_year: 2019
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2019-04-01, 2025-12-31]
+    description_en: >
+      The Indigenous Languages Act established federal commitment to fund the
+      reclamation, revitalization, maintenance, and strengthening of Indigenous
+      languages, primarily through Canadian Heritage. Funding has been renewed in
+      multiple budgets; verify current envelope before quoting headline numbers.
+    query_hints:
+      departments: [pch]
+      recipient_types: [A]
+      keywords: [Indigenous language, language revitalization, language reclamation, Inuktitut, Cree, Anishinaabemowin, Mi'kmaw, Michif]
+      exclude_keywords: []
+      date_range: [2019-04-01, 2025-12-31]
+    source_url: ""
+    status_notes: Multi-year program area; useful as an example where the demo can show cumulative grants by recipient.
+    confidence: medium
+
+  - id: trc-calls-to-action-implementation
+    theme: reconciliation
+    sub_theme: trc
+    title: Federal implementation of the 94 TRC Calls to Action within federal jurisdiction
+    pledge_source: Federal acceptance of the TRC Final Report (2015); annual progress reports
+    pledge_year: 2015
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2015-12-01, 2025-12-31]
+    description_en: >
+      Federal government committed to implement the Truth and Reconciliation
+      Commission's 94 Calls to Action that fall within federal jurisdiction. No
+      single dollar pledge spans all calls — funding is spread across many
+      programs (justice, education, language, health, monitoring at NCTR).
+    query_hints:
+      departments: null
+      recipient_types: [A]
+      keywords: ["Truth and Reconciliation", TRC, "Calls to Action", National Centre for Truth and Reconciliation, NCTR, residential schools]
+      exclude_keywords: []
+      date_range: [2015-12-01, 2025-12-31]
+    source_url: ""
+    status_notes: Useful as a broad-surface narrative; the demo can pick one specific Call (e.g. NCTR funding under Call 78, or language funding under Calls 13-17) and report cumulative dollars.
+    confidence: medium
+
+  - id: nctr-call-78-funding
+    theme: reconciliation
+    sub_theme: trc
+    title: Sustained federal funding for the National Centre for Truth and Reconciliation (TRC Call to Action #78)
+    pledge_source: TRC Call to Action #78 (2015); subsequent budget allocations
+    pledge_year: 2015
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2015-12-01, 2025-12-31]
+    description_en: >
+      TRC Call to Action #78 specifically requested $10M over 7 years (initially)
+      to support the National Centre for Truth and Reconciliation. Subsequent
+      budgets have added funding; the demo should compare federal flows to NCTR
+      against the original asks and announced renewals.
+    query_hints:
+      departments: [pch, cirnac]
+      recipient_types: null
+      keywords: ["National Centre for Truth and Reconciliation", NCTR, "University of Manitoba", residential school records]
+      exclude_keywords: []
+      date_range: [2015-12-01, 2025-12-31]
+    source_url: ""
+    status_notes: Specific recipient (University of Manitoba) makes this a clean narrow case study.
+    confidence: medium
+
+  - id: residential-schools-search-2022
+    theme: reconciliation
+    sub_theme: residential_schools
+    title: Funding to support communities investigating and commemorating residential school burial sites
+    pledge_source: Budget 2022 (community-led research at former residential school sites)
+    pledge_year: 2022
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2022-04-01, 2027-03-31]
+    description_en: >
+      In response to the disclosure of unmarked graves at former residential
+      school sites starting in 2021, the federal government committed funding for
+      community-led searches, commemoration, and a Special Interlocutor.
+    query_hints:
+      departments: [cirnac, isc-sac]
+      recipient_types: [A]
+      keywords: [residential school, unmarked graves, burial site, Special Interlocutor, commemoration]
+      exclude_keywords: []
+      date_range: [2021-06-01, 2025-12-31]
+    source_url: ""
+    status_notes: Sensitive topic; demo narrative should be careful and respectful.
+    confidence: medium
+
+  - id: indigenous-climate-leadership
+    theme: reconciliation
+    sub_theme: climate
+    title: Indigenous Climate Leadership funding
+    pledge_source: Budget 2022 / Budget 2023 (Indigenous-led climate action programs)
+    pledge_year: 2022
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2022-04-01, 2027-03-31]
+    description_en: >
+      Federal funding to support Indigenous-led climate action and clean-energy
+      projects, distributed via ECCC, NRCan, and CIRNAC. Useful as a
+      cross-cutting case where reconciliation and emissions commitments overlap.
+    query_hints:
+      departments: [eccc, nrcan-rncan, cirnac]
+      recipient_types: [A]
+      keywords: [Indigenous climate, Indigenous-led, clean energy, climate action, climate adaptation, Indigenous community climate]
+      exclude_keywords: []
+      date_range: [2022-04-01, 2025-12-31]
+    source_url: ""
+    status_notes: Bridges reconciliation and emissions themes — good demo material for "spending overlaps two policy areas."
+    confidence: medium
+
+  - id: indigenous-procurement-target-5pct
+    theme: reconciliation
+    sub_theme: procurement
+    title: Federal Indigenous procurement target — minimum 5% of contracts to Indigenous businesses
+    pledge_source: Mandate (2021) for departments to award at least 5% of total annual contract value to Indigenous businesses
+    pledge_year: 2021
+    target_date: null
+    pledge_amount_cad: null
+    pledge_window: [2022-04-01, 2025-12-31]
+    description_en: >
+      The federal government set a mandatory minimum target that 5% of total
+      annual federal contract value go to Indigenous-owned businesses. This is
+      directly testable against public.contracts.indigenous_business and contract_value.
+    query_hints:
+      departments: null
+      recipient_types: null
+      keywords: []
+      exclude_keywords: []
+      date_range: [2022-04-01, 2025-12-31]
+    source_url: ""
+    status_notes: Directly testable from public.contracts. Compute share of total annual contract $ where indigenous_business = 'Y' and compare to 5%. Strongest "did the government meet its own number" beat in the demo.
+    confidence: high
