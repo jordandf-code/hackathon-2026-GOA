@@ -1,0 +1,734 @@
+[
+  {
+    "table_schema": "ab",
+    "table_name": "ab_contracts",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_grants",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_grants_fiscal_years",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_grants_ministries",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_grants_programs",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_grants_recipients",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_non_profit",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_non_profit_status_lookup",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "ab",
+    "table_name": "ab_sole_source",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_activities_outside_countries",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_activities_outside_countries",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_activities_outside_countries",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_activities_outside_details",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_activities_outside_details",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_category_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_charitable_programs",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_charitable_programs",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_charitable_programs",
+    "column_name": "program_type",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_compensation",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_compensation",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_country_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_designation_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_directors",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_directors",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_directors",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_disbursement_quota",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_disbursement_quota",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_exported_goods",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_exported_goods",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_exported_goods",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_financial_details",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_financial_details",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_financial_general",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_financial_general",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_foundation_info",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_foundation_info",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_gifts_in_kind",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_gifts_in_kind",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_identification",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_identification",
+    "column_name": "fiscal_year",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_non_qualified_donees",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_non_qualified_donees",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_non_qualified_donees",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_desc",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_desc",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_funding",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_funding",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_funding",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_resources",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_resources",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_political_activity_resources",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_program_type_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_province_state_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_qualified_donees",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_qualified_donees",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_qualified_donees",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_resources_sent_outside",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_resources_sent_outside",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_resources_sent_outside",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_sub_category_lookup",
+    "column_name": "category_code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_sub_category_lookup",
+    "column_name": "sub_category_code",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_web_urls",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_web_urls",
+    "column_name": "fiscal_year",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "cra_web_urls",
+    "column_name": "sequence_number",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "donee_name_quality",
+    "column_name": "donee_bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "donee_name_quality",
+    "column_name": "donee_name",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "govt_funding_by_charity",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "govt_funding_by_charity",
+    "column_name": "fiscal_year",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "govt_funding_by_year",
+    "column_name": "fiscal_year",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "identified_hubs",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "johnson_cycles",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_charity_financials",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_edge_year_flows",
+    "column_name": "loop_id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_edge_year_flows",
+    "column_name": "hop_idx",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_edges",
+    "column_name": "src",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_edges",
+    "column_name": "dst",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_financials",
+    "column_name": "loop_id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_participants",
+    "column_name": "loop_id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_participants",
+    "column_name": "position_in_loop",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loop_universe",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "loops",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "matrix_census",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "overhead_by_charity",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "overhead_by_charity",
+    "column_name": "fiscal_year",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "overhead_by_year",
+    "column_name": "fiscal_year",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "overhead_by_year_designation",
+    "column_name": "fiscal_year",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "overhead_by_year_designation",
+    "column_name": "designation",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "partitioned_cycles",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "scc_components",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "scc_summary",
+    "column_name": "scc_id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_completeness_issues",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_completeness_issues",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_completeness_issues",
+    "column_name": "rule_code",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_completeness_issues",
+    "column_name": "missing_field",
+    "ordinal_position": 4
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_impossibilities",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_impossibilities",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_impossibilities",
+    "column_name": "rule_code",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_plausibility_flags",
+    "column_name": "bn",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_plausibility_flags",
+    "column_name": "fpe",
+    "ordinal_position": 2
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_plausibility_flags",
+    "column_name": "rule_code",
+    "ordinal_position": 3
+  },
+  {
+    "table_schema": "cra",
+    "table_name": "t3010_plausibility_flags",
+    "column_name": "offending_field",
+    "ordinal_position": 4
+  },
+  {
+    "table_schema": "fed",
+    "table_name": "agreement_type_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "fed",
+    "table_name": "country_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "fed",
+    "table_name": "currency_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "fed",
+    "table_name": "grants_contributions",
+    "column_name": "_id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "fed",
+    "table_name": "province_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "fed",
+    "table_name": "recipient_type_lookup",
+    "column_name": "code",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "donee_trigram_candidates",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "entities",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "entity_golden_records",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "entity_merge_candidates",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "entity_merges",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "entity_resolution_log",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "entity_source_links",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "ministries",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "ministries_crosswalk",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "ministries_history",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "resolution_batches",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "splink_aliases",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "splink_build_metadata",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "general",
+    "table_name": "splink_predictions",
+    "column_name": "id",
+    "ordinal_position": 1
+  },
+  {
+    "table_schema": "public",
+    "table_name": "contracts",
+    "column_name": "id",
+    "ordinal_position": 1
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "schema": "cra",
+    "table": "loop_edge_year_flows",
+    "column": "loop_id",
+    "ref_schema": "cra",
+    "ref_table": "loops",
+    "ref_column": "id",
+    "constraint_name": "loop_edge_year_flows_loop_id_fkey"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_financials",
+    "column": "loop_id",
+    "ref_schema": "cra",
+    "ref_table": "loops",
+    "ref_column": "id",
+    "constraint_name": "loop_financials_loop_id_fkey"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_participants",
+    "column": "loop_id",
+    "ref_schema": "cra",
+    "ref_table": "loops",
+    "ref_column": "id",
+    "constraint_name": "loop_participants_loop_id_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "donee_trigram_candidates",
+    "column": "candidate_entity_id",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "donee_trigram_candidates_candidate_entity_id_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "entities",
+    "column": "merged_into",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "entities_merged_into_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "entity_merge_candidates",
+    "column": "entity_id_b",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "entity_merge_candidates_entity_id_b_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "entity_merge_candidates",
+    "column": "entity_id_a",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "entity_merge_candidates_entity_id_a_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "entity_merges",
+    "column": "absorbed_id",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "entity_merges_absorbed_id_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "entity_merges",
+    "column": "survivor_id",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "entity_merges_survivor_id_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "entity_resolution_log",
+    "column": "entity_id",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "entity_resolution_log_entity_id_fkey"
+  },
+  {
+    "schema": "general",
+    "table": "entity_source_links",
+    "column": "entity_id",
+    "ref_schema": "general",
+    "ref_table": "entities",
+    "ref_column": "id",
+    "constraint_name": "entity_source_links_entity_id_fkey"
+  }
+]

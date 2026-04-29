@@ -1,0 +1,620 @@
+[
+  {
+    "schema": "ab",
+    "table": "ab_grants",
+    "column": "payment_date",
+    "type": "timestamp",
+    "min": "2014-04-01 00:00:00",
+    "max": "2026-03-31 00:00:00",
+    "non_null": 1983355
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants",
+    "column": "created_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants",
+    "column": "updated_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_fiscal_years",
+    "column": "last_updated",
+    "type": "timestamp",
+    "min": "2026-04-20 02:33:02.517968",
+    "max": "2026-04-20 02:33:02.517968",
+    "non_null": 12
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_ministries",
+    "column": "last_updated",
+    "type": "timestamp",
+    "min": "2026-04-20 02:33:02.517968",
+    "max": "2026-04-20 02:33:02.517968",
+    "non_null": 352
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_programs",
+    "column": "last_updated",
+    "type": "timestamp",
+    "min": "2026-04-20 02:33:02.517968",
+    "max": "2026-04-20 02:33:02.517968",
+    "non_null": 20208
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_recipients",
+    "column": "last_updated",
+    "type": "timestamp",
+    "min": "2026-04-20 02:33:02.517968",
+    "max": "2026-04-20 02:33:02.517968",
+    "non_null": 452900
+  },
+  {
+    "schema": "ab",
+    "table": "ab_non_profit",
+    "column": "registration_date",
+    "type": "date",
+    "min": "1900-03-25",
+    "max": "2026-03-31",
+    "non_null": 69271
+  },
+  {
+    "schema": "ab",
+    "table": "ab_sole_source",
+    "column": "start_date",
+    "type": "date",
+    "min": "1975-04-01",
+    "max": "2025-09-29",
+    "non_null": 15533
+  },
+  {
+    "schema": "ab",
+    "table": "ab_sole_source",
+    "column": "end_date",
+    "type": "date",
+    "min": "2015-04-28",
+    "max": "2099-03-31",
+    "non_null": 15530
+  },
+  {
+    "schema": "ab",
+    "table": "vw_non_profit_decoded",
+    "column": "registration_date",
+    "type": "date",
+    "min": "1900-03-25",
+    "max": "2026-03-31",
+    "non_null": 69271
+  },
+  {
+    "schema": "cra",
+    "table": "cra_activities_outside_countries",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 44683
+  },
+  {
+    "schema": "cra",
+    "table": "cra_activities_outside_details",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 25139
+  },
+  {
+    "schema": "cra",
+    "table": "cra_charitable_programs",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 478691
+  },
+  {
+    "schema": "cra",
+    "table": "cra_compensation",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 216380
+  },
+  {
+    "schema": "cra",
+    "table": "cra_directors",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 2873624
+  },
+  {
+    "schema": "cra",
+    "table": "cra_directors",
+    "column": "start_date",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_directors",
+    "column": "end_date",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_disbursement_quota",
+    "column": "fpe",
+    "type": "date",
+    "min": "2023-07-31",
+    "max": "2024-12-31",
+    "non_null": 22151
+  },
+  {
+    "schema": "cra",
+    "table": "cra_exported_goods",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-15",
+    "max": "2024-12-31",
+    "non_null": 4029
+  },
+  {
+    "schema": "cra",
+    "table": "cra_financial_details",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 420849
+  },
+  {
+    "schema": "cra",
+    "table": "cra_financial_general",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 422683
+  },
+  {
+    "schema": "cra",
+    "table": "cra_foundation_info",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 422569
+  },
+  {
+    "schema": "cra",
+    "table": "cra_gifts_in_kind",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 54575
+  },
+  {
+    "schema": "cra",
+    "table": "cra_identification",
+    "column": "registration_date",
+    "type": "date",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "cra",
+    "table": "cra_non_qualified_donees",
+    "column": "fpe",
+    "type": "date",
+    "min": "2022-06-30",
+    "max": "2024-12-31",
+    "non_null": 29270
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_desc",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-31",
+    "max": "2023-08-31",
+    "non_null": 313
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_funding",
+    "column": "fpe",
+    "type": "date",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_resources",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-03-20",
+    "max": "2023-08-31",
+    "non_null": 234
+  },
+  {
+    "schema": "cra",
+    "table": "cra_qualified_donees",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 1664343
+  },
+  {
+    "schema": "cra",
+    "table": "cra_resources_sent_outside",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 68028
+  },
+  {
+    "schema": "cra",
+    "table": "loop_universe",
+    "column": "scored_at",
+    "type": "timestamptz",
+    "min": "2026-04-19 20:00:28.143327+00",
+    "max": "2026-04-19 20:01:46.746383+00",
+    "non_null": 1501
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_completeness_issues",
+    "column": "fpe",
+    "type": "date",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_impossibilities",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 54010
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_plausibility_flags",
+    "column": "fpe",
+    "type": "date",
+    "min": "2020-03-31",
+    "max": "2024-12-31",
+    "non_null": 1075
+  },
+  {
+    "schema": "cra",
+    "table": "vw_charity_financials_by_year",
+    "column": "fiscal_period_end",
+    "type": "date",
+    "min": "2020-01-01",
+    "max": "2024-12-31",
+    "non_null": 420849
+  },
+  {
+    "schema": "cra",
+    "table": "vw_charity_programs",
+    "column": "fiscal_period_end",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "fed",
+    "table": "grants_contributions",
+    "column": "amendment_date",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "fed",
+    "table": "grants_contributions",
+    "column": "agreement_start_date",
+    "type": "date",
+    "min": "1899-12-30",
+    "max": "2027-01-01",
+    "non_null": 1275521
+  },
+  {
+    "schema": "fed",
+    "table": "grants_contributions",
+    "column": "agreement_end_date",
+    "type": "date",
+    "min": "0209-10-16",
+    "max": "9999-12-31",
+    "non_null": 1087655
+  },
+  {
+    "schema": "fed",
+    "table": "vw_grants_by_department",
+    "column": "earliest_start",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "fed",
+    "table": "vw_grants_by_department",
+    "column": "latest_start",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "fed",
+    "table": "vw_grants_decoded",
+    "column": "amendment_date",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "fed",
+    "table": "vw_grants_decoded",
+    "column": "agreement_start_date",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "fed",
+    "table": "vw_grants_decoded",
+    "column": "agreement_end_date",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "donee_trigram_candidates",
+    "column": "reviewed_at",
+    "type": "timestamp",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "general",
+    "table": "donee_trigram_candidates",
+    "column": "applied_at",
+    "type": "timestamp",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "general",
+    "table": "donee_trigram_candidates",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "general",
+    "table": "entities",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": "2026-04-20 03:19:48.04046",
+    "max": "2026-04-20 03:42:57.497048",
+    "non_null": 926670
+  },
+  {
+    "schema": "general",
+    "table": "entities",
+    "column": "updated_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "entity_golden_records",
+    "column": "created_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "entity_golden_records",
+    "column": "updated_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "entity_merge_candidates",
+    "column": "reviewed_at",
+    "type": "timestamp",
+    "min": "2026-04-20 10:14:05.138335",
+    "max": "2026-04-20 22:27:58.13824",
+    "non_null": 1614607
+  },
+  {
+    "schema": "general",
+    "table": "entity_merge_candidates",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": "2026-04-20 03:54:08.357115",
+    "max": "2026-04-20 10:13:50.898058",
+    "non_null": 1643060
+  },
+  {
+    "schema": "general",
+    "table": "entity_merges",
+    "column": "merged_at",
+    "type": "timestamp",
+    "min": "2026-04-20 10:14:05.853707",
+    "max": "2026-04-20 21:20:27.269917",
+    "non_null": 66147
+  },
+  {
+    "schema": "general",
+    "table": "entity_resolution_log",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": "2026-04-20 03:20:29.604654",
+    "max": "2026-04-20 03:42:56.391982",
+    "non_null": 1266141
+  },
+  {
+    "schema": "general",
+    "table": "entity_resolution_log",
+    "column": "updated_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "entity_source_links",
+    "column": "created_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "entity_source_links",
+    "column": "updated_at",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "ministries",
+    "column": "effective_from",
+    "type": "date",
+    "min": "2022-10-11",
+    "max": "2025-05-16",
+    "non_null": 25
+  },
+  {
+    "schema": "general",
+    "table": "ministries",
+    "column": "effective_to",
+    "type": "date",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "general",
+    "table": "ministries",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": "2026-04-13 03:55:11.924028",
+    "max": "2026-04-13 03:55:13.246887",
+    "non_null": 27
+  },
+  {
+    "schema": "general",
+    "table": "ministries",
+    "column": "updated_at",
+    "type": "timestamp",
+    "min": "2026-04-13 03:55:11.924028",
+    "max": "2026-04-13 03:55:13.246887",
+    "non_null": 27
+  },
+  {
+    "schema": "general",
+    "table": "ministries_crosswalk",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": "2026-04-20 02:58:21.459182",
+    "max": "2026-04-20 02:58:30.83318",
+    "non_null": 162
+  },
+  {
+    "schema": "general",
+    "table": "ministries_history",
+    "column": "effective_from",
+    "type": "date",
+    "min": "2015-05-24",
+    "max": "2025-05-16",
+    "non_null": 62
+  },
+  {
+    "schema": "general",
+    "table": "ministries_history",
+    "column": "effective_to",
+    "type": "date",
+    "min": "2015-10-21",
+    "max": "2025-05-15",
+    "non_null": 35
+  },
+  {
+    "schema": "general",
+    "table": "ministries_history",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": "2026-04-19 22:28:05.107448",
+    "max": "2026-04-19 22:28:08.172671",
+    "non_null": 62
+  },
+  {
+    "schema": "general",
+    "table": "ministries_history",
+    "column": "updated_at",
+    "type": "timestamp",
+    "min": "2026-04-20 02:58:17.839106",
+    "max": "2026-04-20 02:58:21.070167",
+    "non_null": 62
+  },
+  {
+    "schema": "general",
+    "table": "resolution_batches",
+    "column": "started_at",
+    "type": "timestamp",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "general",
+    "table": "resolution_batches",
+    "column": "completed_at",
+    "type": "timestamp",
+    "min": null,
+    "max": null,
+    "non_null": 0
+  },
+  {
+    "schema": "general",
+    "table": "splink_build_metadata",
+    "column": "started_at",
+    "type": "timestamp",
+    "min": "2026-04-20 03:48:41.249651",
+    "max": "2026-04-20 03:48:41.249651",
+    "non_null": 1
+  },
+  {
+    "schema": "general",
+    "table": "splink_build_metadata",
+    "column": "completed_at",
+    "type": "timestamp",
+    "min": "2026-04-20 03:54:01.463944",
+    "max": "2026-04-20 03:54:01.463944",
+    "non_null": 1
+  },
+  {
+    "schema": "general",
+    "table": "splink_predictions",
+    "column": "created_at",
+    "type": "timestamp",
+    "min": "2026-04-20 03:48:41.394672",
+    "max": "2026-04-20 03:48:41.394672",
+    "non_null": 540640
+  },
+  {
+    "schema": "general",
+    "table": "vw_entity_funding",
+    "column": "fed_earliest_grant",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  },
+  {
+    "schema": "general",
+    "table": "vw_entity_funding",
+    "column": "fed_latest_grant",
+    "error": "proxy 400: {\"detail\":\"postgres error: QueryCanceled: canceling statement due to statement timeout\\n\"}"
+  }
+]

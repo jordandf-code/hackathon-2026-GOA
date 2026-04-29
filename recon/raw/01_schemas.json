@@ -1,0 +1,22 @@
+[
+  {
+    "schema": "ab",
+    "owner": "database_database_w2a1_user"
+  },
+  {
+    "schema": "cra",
+    "owner": "database_database_w2a1_user"
+  },
+  {
+    "schema": "fed",
+    "owner": "database_database_w2a1_user"
+  },
+  {
+    "schema": "general",
+    "owner": "database_database_w2a1_user"
+  },
+  {
+    "schema": "public",
+    "owner": "database_database_w2a1_user"
+  }
+]

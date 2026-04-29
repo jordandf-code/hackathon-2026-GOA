@@ -1,0 +1,397 @@
+[
+  {
+    "schema": "fed",
+    "table": "grants_contributions",
+    "exact_rows": 1275521
+  },
+  {
+    "schema": "general",
+    "table": "entity_golden_records",
+    "exact_rows": 851300
+  },
+  {
+    "schema": "general",
+    "table": "entity_source_links",
+    "exact_rows": null
+  },
+  {
+    "schema": "general",
+    "table": "entity_merge_candidates",
+    "exact_rows": 1643060
+  },
+  {
+    "schema": "general",
+    "table": "entities",
+    "exact_rows": 926670
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants",
+    "exact_rows": 1986676
+  },
+  {
+    "schema": "cra",
+    "table": "cra_directors",
+    "exact_rows": 2873624
+  },
+  {
+    "schema": "general",
+    "table": "entity_resolution_log",
+    "exact_rows": 1266141
+  },
+  {
+    "schema": "cra",
+    "table": "cra_qualified_donees",
+    "exact_rows": 1664343
+  },
+  {
+    "schema": "cra",
+    "table": "cra_charitable_programs",
+    "exact_rows": 478691
+  },
+  {
+    "schema": "cra",
+    "table": "cra_financial_details",
+    "exact_rows": 420849
+  },
+  {
+    "schema": "cra",
+    "table": "cra_identification",
+    "exact_rows": 421866
+  },
+  {
+    "schema": "general",
+    "table": "splink_predictions",
+    "exact_rows": 540640
+  },
+  {
+    "schema": "cra",
+    "table": "donee_name_quality",
+    "exact_rows": 439867
+  },
+  {
+    "schema": "cra",
+    "table": "overhead_by_charity",
+    "exact_rows": 420021
+  },
+  {
+    "schema": "cra",
+    "table": "cra_financial_general",
+    "exact_rows": 422683
+  },
+  {
+    "schema": "public",
+    "table": "contracts",
+    "exact_rows": 153455
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_recipients",
+    "exact_rows": 452900
+  },
+  {
+    "schema": "cra",
+    "table": "cra_foundation_info",
+    "exact_rows": 422569
+  },
+  {
+    "schema": "cra",
+    "table": "loop_edges",
+    "exact_rows": 53771
+  },
+  {
+    "schema": "general",
+    "table": "entity_merges",
+    "exact_rows": 66147
+  },
+  {
+    "schema": "cra",
+    "table": "cra_compensation",
+    "exact_rows": 216380
+  },
+  {
+    "schema": "ab",
+    "table": "ab_non_profit",
+    "exact_rows": 69271
+  },
+  {
+    "schema": "cra",
+    "table": "govt_funding_by_charity",
+    "exact_rows": 166968
+  },
+  {
+    "schema": "ab",
+    "table": "ab_contracts",
+    "exact_rows": 67079
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_impossibilities",
+    "exact_rows": 54010
+  },
+  {
+    "schema": "cra",
+    "table": "cra_web_urls",
+    "exact_rows": 169123
+  },
+  {
+    "schema": "cra",
+    "table": "_dnq_canonical",
+    "exact_rows": 91129
+  },
+  {
+    "schema": "cra",
+    "table": "identification_name_history",
+    "exact_rows": 92437
+  },
+  {
+    "schema": "cra",
+    "table": "cra_resources_sent_outside",
+    "exact_rows": 68028
+  },
+  {
+    "schema": "ab",
+    "table": "ab_sole_source",
+    "exact_rows": 15533
+  },
+  {
+    "schema": "cra",
+    "table": "cra_gifts_in_kind",
+    "exact_rows": 54575
+  },
+  {
+    "schema": "cra",
+    "table": "cra_activities_outside_countries",
+    "exact_rows": 44683
+  },
+  {
+    "schema": "cra",
+    "table": "cra_non_qualified_donees",
+    "exact_rows": 29270
+  },
+  {
+    "schema": "cra",
+    "table": "matrix_census",
+    "exact_rows": 10177
+  },
+  {
+    "schema": "cra",
+    "table": "cra_disbursement_quota",
+    "exact_rows": 22151
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_programs",
+    "exact_rows": 20208
+  },
+  {
+    "schema": "cra",
+    "table": "cra_activities_outside_details",
+    "exact_rows": 25139
+  },
+  {
+    "schema": "cra",
+    "table": "loop_participants",
+    "exact_rows": 30003
+  },
+  {
+    "schema": "cra",
+    "table": "loop_edge_year_flows",
+    "exact_rows": 30003
+  },
+  {
+    "schema": "cra",
+    "table": "loops",
+    "exact_rows": 5808
+  },
+  {
+    "schema": "cra",
+    "table": "scc_components",
+    "exact_rows": 10177
+  },
+  {
+    "schema": "cra",
+    "table": "johnson_cycles",
+    "exact_rows": 4601
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_desc",
+    "exact_rows": 313
+  },
+  {
+    "schema": "cra",
+    "table": "cra_exported_goods",
+    "exact_rows": 4029
+  },
+  {
+    "schema": "cra",
+    "table": "loop_financials",
+    "exact_rows": 5808
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_plausibility_flags",
+    "exact_rows": 1075
+  },
+  {
+    "schema": "cra",
+    "table": "loop_universe",
+    "exact_rows": 1501
+  },
+  {
+    "schema": "cra",
+    "table": "loop_charity_financials",
+    "exact_rows": 1501
+  },
+  {
+    "schema": "cra",
+    "table": "scc_summary",
+    "exact_rows": 347
+  },
+  {
+    "schema": "cra",
+    "table": "partitioned_cycles",
+    "exact_rows": 108
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_ministries",
+    "exact_rows": 352
+  },
+  {
+    "schema": "general",
+    "table": "ministries_crosswalk",
+    "exact_rows": 162
+  },
+  {
+    "schema": "general",
+    "table": "ministries_history",
+    "exact_rows": 62
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_resources",
+    "exact_rows": 234
+  },
+  {
+    "schema": "general",
+    "table": "ministries",
+    "exact_rows": 27
+  },
+  {
+    "schema": "cra",
+    "table": "cra_sub_category_lookup",
+    "exact_rows": 247
+  },
+  {
+    "schema": "cra",
+    "table": "cra_country_lookup",
+    "exact_rows": 264
+  },
+  {
+    "schema": "fed",
+    "table": "country_lookup",
+    "exact_rows": 250
+  },
+  {
+    "schema": "cra",
+    "table": "cra_province_state_lookup",
+    "exact_rows": 73
+  },
+  {
+    "schema": "ab",
+    "table": "ab_non_profit_status_lookup",
+    "exact_rows": 16
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_fiscal_years",
+    "exact_rows": 12
+  },
+  {
+    "schema": "general",
+    "table": "donee_trigram_candidates",
+    "exact_rows": 0
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_completeness_issues",
+    "exact_rows": 0
+  },
+  {
+    "schema": "cra",
+    "table": "identified_hubs",
+    "exact_rows": 20
+  },
+  {
+    "schema": "cra",
+    "table": "cra_designation_lookup",
+    "exact_rows": 3
+  },
+  {
+    "schema": "cra",
+    "table": "overhead_by_year",
+    "exact_rows": 5
+  },
+  {
+    "schema": "cra",
+    "table": "overhead_by_year_designation",
+    "exact_rows": 16
+  },
+  {
+    "schema": "cra",
+    "table": "govt_funding_by_year",
+    "exact_rows": 5
+  },
+  {
+    "schema": "general",
+    "table": "splink_aliases",
+    "exact_rows": 0
+  },
+  {
+    "schema": "cra",
+    "table": "cra_category_lookup",
+    "exact_rows": 30
+  },
+  {
+    "schema": "fed",
+    "table": "currency_lookup",
+    "exact_rows": 94
+  },
+  {
+    "schema": "fed",
+    "table": "province_lookup",
+    "exact_rows": 13
+  },
+  {
+    "schema": "fed",
+    "table": "recipient_type_lookup",
+    "exact_rows": 8
+  },
+  {
+    "schema": "fed",
+    "table": "agreement_type_lookup",
+    "exact_rows": 3
+  },
+  {
+    "schema": "cra",
+    "table": "cra_program_type_lookup",
+    "exact_rows": 3
+  },
+  {
+    "schema": "general",
+    "table": "splink_build_metadata",
+    "exact_rows": 1
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_funding",
+    "exact_rows": 0
+  },
+  {
+    "schema": "general",
+    "table": "resolution_batches",
+    "exact_rows": 0
+  }
+]

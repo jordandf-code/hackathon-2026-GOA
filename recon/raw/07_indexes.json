@@ -1,0 +1,1646 @@
+[
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "ab_contracts_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_contracts_pkey ON ab.ab_contracts USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "idx_ab_contracts_amount",
+    "indexdef": "CREATE INDEX idx_ab_contracts_amount ON ab.ab_contracts USING btree (amount)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "idx_ab_contracts_fiscal_year",
+    "indexdef": "CREATE INDEX idx_ab_contracts_fiscal_year ON ab.ab_contracts USING btree (display_fiscal_year)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "idx_ab_contracts_ministry",
+    "indexdef": "CREATE INDEX idx_ab_contracts_ministry ON ab.ab_contracts USING btree (ministry)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "idx_ab_contracts_recipient",
+    "indexdef": "CREATE INDEX idx_ab_contracts_recipient ON ab.ab_contracts USING btree (recipient)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "idx_ab_contracts_recipient_tsvector",
+    "indexdef": "CREATE INDEX idx_ab_contracts_recipient_tsvector ON ab.ab_contracts USING gin (to_tsvector('english'::regconfig, COALESCE(recipient, ''::text)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "idx_ab_contracts_upper_trim_recipient",
+    "indexdef": "CREATE INDEX idx_ab_contracts_upper_trim_recipient ON ab.ab_contracts USING btree (upper(TRIM(BOTH FROM recipient)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_contracts",
+    "indexname": "idx_trgm_ab_contracts_recipient",
+    "indexdef": "CREATE INDEX idx_trgm_ab_contracts_recipient ON ab.ab_contracts USING gin (upper(recipient) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "ab_grants_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_pkey ON ab.ab_grants USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_amount",
+    "indexdef": "CREATE INDEX idx_ab_grants_amount ON ab.ab_grants USING btree (amount)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_fiscal_year",
+    "indexdef": "CREATE INDEX idx_ab_grants_fiscal_year ON ab.ab_grants USING btree (display_fiscal_year)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_ministry",
+    "indexdef": "CREATE INDEX idx_ab_grants_ministry ON ab.ab_grants USING btree (ministry)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_payment_date",
+    "indexdef": "CREATE INDEX idx_ab_grants_payment_date ON ab.ab_grants USING btree (payment_date)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_program",
+    "indexdef": "CREATE INDEX idx_ab_grants_program ON ab.ab_grants USING btree (program)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_recipient",
+    "indexdef": "CREATE INDEX idx_ab_grants_recipient ON ab.ab_grants USING btree (recipient)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_recipient_tsvector",
+    "indexdef": "CREATE INDEX idx_ab_grants_recipient_tsvector ON ab.ab_grants USING gin (to_tsvector('english'::regconfig, COALESCE(recipient, ''::text)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_ab_grants_upper_trim_recipient",
+    "indexdef": "CREATE INDEX idx_ab_grants_upper_trim_recipient ON ab.ab_grants USING btree (upper(TRIM(BOTH FROM recipient)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants",
+    "indexname": "idx_trgm_ab_grants_recipient",
+    "indexdef": "CREATE INDEX idx_trgm_ab_grants_recipient ON ab.ab_grants USING gin (upper(recipient) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_fiscal_years",
+    "indexname": "ab_grants_fiscal_years_mongo_id_key",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_fiscal_years_mongo_id_key ON ab.ab_grants_fiscal_years USING btree (mongo_id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_fiscal_years",
+    "indexname": "ab_grants_fiscal_years_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_fiscal_years_pkey ON ab.ab_grants_fiscal_years USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_ministries",
+    "indexname": "ab_grants_ministries_mongo_id_key",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_ministries_mongo_id_key ON ab.ab_grants_ministries USING btree (mongo_id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_ministries",
+    "indexname": "ab_grants_ministries_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_ministries_pkey ON ab.ab_grants_ministries USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_ministries",
+    "indexname": "idx_ab_grants_min_fiscal_year",
+    "indexdef": "CREATE INDEX idx_ab_grants_min_fiscal_year ON ab.ab_grants_ministries USING btree (display_fiscal_year)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_ministries",
+    "indexname": "idx_ab_grants_min_ministry",
+    "indexdef": "CREATE INDEX idx_ab_grants_min_ministry ON ab.ab_grants_ministries USING btree (ministry)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_programs",
+    "indexname": "ab_grants_programs_mongo_id_key",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_programs_mongo_id_key ON ab.ab_grants_programs USING btree (mongo_id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_programs",
+    "indexname": "ab_grants_programs_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_programs_pkey ON ab.ab_grants_programs USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_programs",
+    "indexname": "idx_ab_grants_prog_fiscal_year",
+    "indexdef": "CREATE INDEX idx_ab_grants_prog_fiscal_year ON ab.ab_grants_programs USING btree (display_fiscal_year)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_programs",
+    "indexname": "idx_ab_grants_prog_ministry",
+    "indexdef": "CREATE INDEX idx_ab_grants_prog_ministry ON ab.ab_grants_programs USING btree (ministry)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_programs",
+    "indexname": "idx_ab_grants_prog_program",
+    "indexdef": "CREATE INDEX idx_ab_grants_prog_program ON ab.ab_grants_programs USING btree (program)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_recipients",
+    "indexname": "ab_grants_recipients_mongo_id_key",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_recipients_mongo_id_key ON ab.ab_grants_recipients USING btree (mongo_id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_recipients",
+    "indexname": "ab_grants_recipients_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_grants_recipients_pkey ON ab.ab_grants_recipients USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_recipients",
+    "indexname": "idx_ab_grants_recip_amount",
+    "indexdef": "CREATE INDEX idx_ab_grants_recip_amount ON ab.ab_grants_recipients USING btree (payments_amount)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_grants_recipients",
+    "indexname": "idx_ab_grants_recip_recipient",
+    "indexdef": "CREATE INDEX idx_ab_grants_recip_recipient ON ab.ab_grants_recipients USING btree (recipient)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "ab_non_profit_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_non_profit_pkey ON ab.ab_non_profit USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_city",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_city ON ab.ab_non_profit USING btree (city)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_legal_name",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_legal_name ON ab.ab_non_profit USING btree (legal_name)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_name_tsvector",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_name_tsvector ON ab.ab_non_profit USING gin (to_tsvector('english'::regconfig, COALESCE(legal_name, ''::text)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_postal_code",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_postal_code ON ab.ab_non_profit USING btree (postal_code)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_reg_date",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_reg_date ON ab.ab_non_profit USING btree (registration_date)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_status",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_status ON ab.ab_non_profit USING btree (status)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_type",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_type ON ab.ab_non_profit USING btree (type)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_ab_non_profit_upper_trim_name",
+    "indexdef": "CREATE INDEX idx_ab_non_profit_upper_trim_name ON ab.ab_non_profit USING btree (upper(TRIM(BOTH FROM legal_name)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit",
+    "indexname": "idx_trgm_ab_non_profit_legal_name",
+    "indexdef": "CREATE INDEX idx_trgm_ab_non_profit_legal_name ON ab.ab_non_profit USING gin (upper(legal_name) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit_status_lookup",
+    "indexname": "ab_non_profit_status_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_non_profit_status_lookup_pkey ON ab.ab_non_profit_status_lookup USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_non_profit_status_lookup",
+    "indexname": "ab_non_profit_status_lookup_status_key",
+    "indexdef": "CREATE UNIQUE INDEX ab_non_profit_status_lookup_status_key ON ab.ab_non_profit_status_lookup USING btree (status)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "ab_sole_source_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ab_sole_source_pkey ON ab.ab_sole_source USING btree (id)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_ab_sole_source_amount",
+    "indexdef": "CREATE INDEX idx_ab_sole_source_amount ON ab.ab_sole_source USING btree (amount)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_ab_sole_source_fiscal_year",
+    "indexdef": "CREATE INDEX idx_ab_sole_source_fiscal_year ON ab.ab_sole_source USING btree (display_fiscal_year)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_ab_sole_source_ministry",
+    "indexdef": "CREATE INDEX idx_ab_sole_source_ministry ON ab.ab_sole_source USING btree (ministry)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_ab_sole_source_start_date",
+    "indexdef": "CREATE INDEX idx_ab_sole_source_start_date ON ab.ab_sole_source USING btree (start_date)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_ab_sole_source_upper_trim_vendor",
+    "indexdef": "CREATE INDEX idx_ab_sole_source_upper_trim_vendor ON ab.ab_sole_source USING btree (upper(TRIM(BOTH FROM vendor)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_ab_sole_source_vendor",
+    "indexdef": "CREATE INDEX idx_ab_sole_source_vendor ON ab.ab_sole_source USING btree (vendor)"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_ab_sole_source_vendor_tsvector",
+    "indexdef": "CREATE INDEX idx_ab_sole_source_vendor_tsvector ON ab.ab_sole_source USING gin (to_tsvector('english'::regconfig, COALESCE(vendor, ''::text)))"
+  },
+  {
+    "schemaname": "ab",
+    "tablename": "ab_sole_source",
+    "indexname": "idx_trgm_ab_sole_source_vendor",
+    "indexdef": "CREATE INDEX idx_trgm_ab_sole_source_vendor ON ab.ab_sole_source USING gin (upper(vendor) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "_dnq_canonical",
+    "indexname": "_dnq_canonical_nname_idx",
+    "indexdef": "CREATE INDEX _dnq_canonical_nname_idx ON cra._dnq_canonical USING gin (nname gin_trgm_ops)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_activities_outside_countries",
+    "indexname": "cra_activities_outside_countries_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_activities_outside_countries_pkey ON cra.cra_activities_outside_countries USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_activities_outside_countries",
+    "indexname": "idx_activities_countries_bn_fpe",
+    "indexdef": "CREATE INDEX idx_activities_countries_bn_fpe ON cra.cra_activities_outside_countries USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_activities_outside_countries",
+    "indexname": "idx_activities_countries_country",
+    "indexdef": "CREATE INDEX idx_activities_countries_country ON cra.cra_activities_outside_countries USING btree (country)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_activities_outside_details",
+    "indexname": "cra_activities_outside_details_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_activities_outside_details_pkey ON cra.cra_activities_outside_details USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_activities_outside_details",
+    "indexname": "idx_activities_details_bn_fpe",
+    "indexdef": "CREATE INDEX idx_activities_details_bn_fpe ON cra.cra_activities_outside_details USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_category_lookup",
+    "indexname": "cra_category_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_category_lookup_pkey ON cra.cra_category_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_charitable_programs",
+    "indexname": "cra_charitable_programs_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_charitable_programs_pkey ON cra.cra_charitable_programs USING btree (bn, fpe, program_type)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_charitable_programs",
+    "indexname": "idx_programs_bn_fpe",
+    "indexdef": "CREATE INDEX idx_programs_bn_fpe ON cra.cra_charitable_programs USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_charitable_programs",
+    "indexname": "idx_programs_description",
+    "indexdef": "CREATE INDEX idx_programs_description ON cra.cra_charitable_programs USING gin (to_tsvector('english'::regconfig, description))"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_compensation",
+    "indexname": "cra_compensation_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_compensation_pkey ON cra.cra_compensation USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_compensation",
+    "indexname": "idx_compensation_bn_fpe",
+    "indexdef": "CREATE INDEX idx_compensation_bn_fpe ON cra.cra_compensation USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_country_lookup",
+    "indexname": "cra_country_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_country_lookup_pkey ON cra.cra_country_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_designation_lookup",
+    "indexname": "cra_designation_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_designation_lookup_pkey ON cra.cra_designation_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_directors",
+    "indexname": "cra_directors_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_directors_pkey ON cra.cra_directors USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_directors",
+    "indexname": "idx_directors_bn_fpe",
+    "indexdef": "CREATE INDEX idx_directors_bn_fpe ON cra.cra_directors USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_directors",
+    "indexname": "idx_directors_name",
+    "indexdef": "CREATE INDEX idx_directors_name ON cra.cra_directors USING btree (last_name, first_name)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_disbursement_quota",
+    "indexname": "cra_disbursement_quota_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_disbursement_quota_pkey ON cra.cra_disbursement_quota USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_disbursement_quota",
+    "indexname": "idx_disbursement_bn_fpe",
+    "indexdef": "CREATE INDEX idx_disbursement_bn_fpe ON cra.cra_disbursement_quota USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_exported_goods",
+    "indexname": "cra_exported_goods_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_exported_goods_pkey ON cra.cra_exported_goods USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_exported_goods",
+    "indexname": "idx_exported_goods_bn_fpe",
+    "indexdef": "CREATE INDEX idx_exported_goods_bn_fpe ON cra.cra_exported_goods USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_financial_details",
+    "indexname": "cra_financial_details_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_financial_details_pkey ON cra.cra_financial_details USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_financial_details",
+    "indexname": "idx_financial_details_bn_fpe",
+    "indexdef": "CREATE INDEX idx_financial_details_bn_fpe ON cra.cra_financial_details USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_financial_general",
+    "indexname": "cra_financial_general_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_financial_general_pkey ON cra.cra_financial_general USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_financial_general",
+    "indexname": "idx_financial_general_bn_fpe",
+    "indexdef": "CREATE INDEX idx_financial_general_bn_fpe ON cra.cra_financial_general USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_foundation_info",
+    "indexname": "cra_foundation_info_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_foundation_info_pkey ON cra.cra_foundation_info USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_foundation_info",
+    "indexname": "idx_foundation_bn_fpe",
+    "indexdef": "CREATE INDEX idx_foundation_bn_fpe ON cra.cra_foundation_info USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_gifts_in_kind",
+    "indexname": "cra_gifts_in_kind_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_gifts_in_kind_pkey ON cra.cra_gifts_in_kind USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_gifts_in_kind",
+    "indexname": "idx_gifts_in_kind_bn_fpe",
+    "indexdef": "CREATE INDEX idx_gifts_in_kind_bn_fpe ON cra.cra_gifts_in_kind USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_identification",
+    "indexname": "cra_identification_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_identification_pkey ON cra.cra_identification USING btree (bn, fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_identification",
+    "indexname": "idx_identification_account",
+    "indexdef": "CREATE INDEX idx_identification_account ON cra.cra_identification USING gin (to_tsvector('english'::regconfig, account_name))"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_identification",
+    "indexname": "idx_identification_category",
+    "indexdef": "CREATE INDEX idx_identification_category ON cra.cra_identification USING btree (category)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_identification",
+    "indexname": "idx_identification_designation",
+    "indexdef": "CREATE INDEX idx_identification_designation ON cra.cra_identification USING btree (designation)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_identification",
+    "indexname": "idx_identification_name",
+    "indexdef": "CREATE INDEX idx_identification_name ON cra.cra_identification USING gin (to_tsvector('english'::regconfig, legal_name))"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_identification",
+    "indexname": "idx_identification_province",
+    "indexdef": "CREATE INDEX idx_identification_province ON cra.cra_identification USING btree (province)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_identification",
+    "indexname": "idx_identification_year",
+    "indexdef": "CREATE INDEX idx_identification_year ON cra.cra_identification USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_non_qualified_donees",
+    "indexname": "cra_non_qualified_donees_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_non_qualified_donees_pkey ON cra.cra_non_qualified_donees USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_non_qualified_donees",
+    "indexname": "idx_non_qualified_donees_bn_fpe",
+    "indexdef": "CREATE INDEX idx_non_qualified_donees_bn_fpe ON cra.cra_non_qualified_donees USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_political_activity_desc",
+    "indexname": "cra_political_activity_desc_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_political_activity_desc_pkey ON cra.cra_political_activity_desc USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_political_activity_desc",
+    "indexname": "idx_political_desc_bn_fpe",
+    "indexdef": "CREATE INDEX idx_political_desc_bn_fpe ON cra.cra_political_activity_desc USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_political_activity_desc",
+    "indexname": "idx_political_desc_text",
+    "indexdef": "CREATE INDEX idx_political_desc_text ON cra.cra_political_activity_desc USING gin (to_tsvector('english'::regconfig, description))"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_political_activity_funding",
+    "indexname": "cra_political_activity_funding_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_political_activity_funding_pkey ON cra.cra_political_activity_funding USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_political_activity_funding",
+    "indexname": "idx_political_funding_bn_fpe",
+    "indexdef": "CREATE INDEX idx_political_funding_bn_fpe ON cra.cra_political_activity_funding USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_political_activity_resources",
+    "indexname": "cra_political_activity_resources_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_political_activity_resources_pkey ON cra.cra_political_activity_resources USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_political_activity_resources",
+    "indexname": "idx_political_resources_bn_fpe",
+    "indexdef": "CREATE INDEX idx_political_resources_bn_fpe ON cra.cra_political_activity_resources USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_program_type_lookup",
+    "indexname": "cra_program_type_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_program_type_lookup_pkey ON cra.cra_program_type_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_province_state_lookup",
+    "indexname": "cra_province_state_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_province_state_lookup_pkey ON cra.cra_province_state_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_qualified_donees",
+    "indexname": "cra_qualified_donees_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_qualified_donees_pkey ON cra.cra_qualified_donees USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_qualified_donees",
+    "indexname": "idx_qualified_donees_bn_fpe",
+    "indexdef": "CREATE INDEX idx_qualified_donees_bn_fpe ON cra.cra_qualified_donees USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_qualified_donees",
+    "indexname": "idx_qualified_donees_donee_bn",
+    "indexdef": "CREATE INDEX idx_qualified_donees_donee_bn ON cra.cra_qualified_donees USING btree (donee_bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_resources_sent_outside",
+    "indexname": "cra_resources_sent_outside_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_resources_sent_outside_pkey ON cra.cra_resources_sent_outside USING btree (bn, fpe, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_resources_sent_outside",
+    "indexname": "idx_resources_sent_bn_fpe",
+    "indexdef": "CREATE INDEX idx_resources_sent_bn_fpe ON cra.cra_resources_sent_outside USING btree (bn, fpe)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_sub_category_lookup",
+    "indexname": "cra_sub_category_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_sub_category_lookup_pkey ON cra.cra_sub_category_lookup USING btree (category_code, sub_category_code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "cra_web_urls",
+    "indexname": "cra_web_urls_pkey",
+    "indexdef": "CREATE UNIQUE INDEX cra_web_urls_pkey ON cra.cra_web_urls USING btree (bn, fiscal_year, sequence_number)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "donee_name_quality",
+    "indexname": "donee_name_quality_pkey",
+    "indexdef": "CREATE UNIQUE INDEX donee_name_quality_pkey ON cra.donee_name_quality USING btree (donee_bn, donee_name)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "donee_name_quality",
+    "indexname": "idx_dnq_category",
+    "indexdef": "CREATE INDEX idx_dnq_category ON cra.donee_name_quality USING btree (mismatch_category)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "donee_name_quality",
+    "indexname": "idx_dnq_defect",
+    "indexdef": "CREATE INDEX idx_dnq_defect ON cra.donee_name_quality USING btree (bn_defect)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "donee_name_quality",
+    "indexname": "idx_dnq_total_gifts",
+    "indexdef": "CREATE INDEX idx_dnq_total_gifts ON cra.donee_name_quality USING btree (total_gifts DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "govt_funding_by_charity",
+    "indexname": "govt_funding_by_charity_pkey",
+    "indexdef": "CREATE UNIQUE INDEX govt_funding_by_charity_pkey ON cra.govt_funding_by_charity USING btree (bn, fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "govt_funding_by_charity",
+    "indexname": "idx_gfbc_designation",
+    "indexdef": "CREATE INDEX idx_gfbc_designation ON cra.govt_funding_by_charity USING btree (designation)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "govt_funding_by_charity",
+    "indexname": "idx_gfbc_total_govt",
+    "indexdef": "CREATE INDEX idx_gfbc_total_govt ON cra.govt_funding_by_charity USING btree (total_govt DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "govt_funding_by_charity",
+    "indexname": "idx_gfbc_year",
+    "indexdef": "CREATE INDEX idx_gfbc_year ON cra.govt_funding_by_charity USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "govt_funding_by_year",
+    "indexname": "govt_funding_by_year_pkey",
+    "indexdef": "CREATE UNIQUE INDEX govt_funding_by_year_pkey ON cra.govt_funding_by_year USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "identification_name_history",
+    "indexname": "identification_name_history_bn_idx",
+    "indexdef": "CREATE INDEX identification_name_history_bn_idx ON cra.identification_name_history USING btree (bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "identified_hubs",
+    "indexname": "identified_hubs_pkey",
+    "indexdef": "CREATE UNIQUE INDEX identified_hubs_pkey ON cra.identified_hubs USING btree (bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "johnson_cycles",
+    "indexname": "idx_johnson_cycles_display",
+    "indexdef": "CREATE INDEX idx_johnson_cycles_display ON cra.johnson_cycles USING btree (path_display)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "johnson_cycles",
+    "indexname": "idx_johnson_cycles_hops",
+    "indexdef": "CREATE INDEX idx_johnson_cycles_hops ON cra.johnson_cycles USING btree (hops)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "johnson_cycles",
+    "indexname": "johnson_cycles_path_display_key",
+    "indexdef": "CREATE UNIQUE INDEX johnson_cycles_path_display_key ON cra.johnson_cycles USING btree (path_display)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "johnson_cycles",
+    "indexname": "johnson_cycles_pkey",
+    "indexdef": "CREATE UNIQUE INDEX johnson_cycles_pkey ON cra.johnson_cycles USING btree (id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_charity_financials",
+    "indexname": "idx_lcf_designation",
+    "indexdef": "CREATE INDEX idx_lcf_designation ON cra.loop_charity_financials USING btree (designation)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_charity_financials",
+    "indexname": "loop_charity_financials_pkey",
+    "indexdef": "CREATE UNIQUE INDEX loop_charity_financials_pkey ON cra.loop_charity_financials USING btree (bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_edge_year_flows",
+    "indexname": "idx_leyf_dst",
+    "indexdef": "CREATE INDEX idx_leyf_dst ON cra.loop_edge_year_flows USING btree (dst)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_edge_year_flows",
+    "indexname": "idx_leyf_src",
+    "indexdef": "CREATE INDEX idx_leyf_src ON cra.loop_edge_year_flows USING btree (src)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_edge_year_flows",
+    "indexname": "loop_edge_year_flows_pkey",
+    "indexdef": "CREATE UNIQUE INDEX loop_edge_year_flows_pkey ON cra.loop_edge_year_flows USING btree (loop_id, hop_idx)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_edges",
+    "indexname": "idx_loop_edges_dst",
+    "indexdef": "CREATE INDEX idx_loop_edges_dst ON cra.loop_edges USING btree (dst)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_edges",
+    "indexname": "idx_loop_edges_dst_src",
+    "indexdef": "CREATE INDEX idx_loop_edges_dst_src ON cra.loop_edges USING btree (dst, src)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_edges",
+    "indexname": "idx_loop_edges_src",
+    "indexdef": "CREATE INDEX idx_loop_edges_src ON cra.loop_edges USING btree (src)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_edges",
+    "indexname": "loop_edges_pkey",
+    "indexdef": "CREATE UNIQUE INDEX loop_edges_pkey ON cra.loop_edges USING btree (src, dst)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_financials",
+    "indexname": "idx_lf_same_year",
+    "indexdef": "CREATE INDEX idx_lf_same_year ON cra.loop_financials USING btree (same_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_financials",
+    "indexname": "loop_financials_pkey",
+    "indexdef": "CREATE UNIQUE INDEX loop_financials_pkey ON cra.loop_financials USING btree (loop_id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_participants",
+    "indexname": "idx_loop_part_bn",
+    "indexdef": "CREATE INDEX idx_loop_part_bn ON cra.loop_participants USING btree (bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_participants",
+    "indexname": "idx_loop_part_receives",
+    "indexdef": "CREATE INDEX idx_loop_part_receives ON cra.loop_participants USING btree (receives_from)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_participants",
+    "indexname": "idx_loop_part_sends",
+    "indexdef": "CREATE INDEX idx_loop_part_sends ON cra.loop_participants USING btree (sends_to)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_participants",
+    "indexname": "loop_participants_pkey",
+    "indexdef": "CREATE UNIQUE INDEX loop_participants_pkey ON cra.loop_participants USING btree (loop_id, position_in_loop)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_universe",
+    "indexname": "idx_loop_uni_loops",
+    "indexdef": "CREATE INDEX idx_loop_uni_loops ON cra.loop_universe USING btree (total_loops DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_universe",
+    "indexname": "idx_loop_uni_score",
+    "indexdef": "CREATE INDEX idx_loop_uni_score ON cra.loop_universe USING btree (score DESC NULLS LAST)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loop_universe",
+    "indexname": "loop_universe_pkey",
+    "indexdef": "CREATE UNIQUE INDEX loop_universe_pkey ON cra.loop_universe USING btree (bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loops",
+    "indexname": "idx_loops_bottleneck",
+    "indexdef": "CREATE INDEX idx_loops_bottleneck ON cra.loops USING btree (bottleneck_amt DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loops",
+    "indexname": "idx_loops_hops",
+    "indexdef": "CREATE INDEX idx_loops_hops ON cra.loops USING btree (hops)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loops",
+    "indexname": "idx_loops_path_bns",
+    "indexdef": "CREATE INDEX idx_loops_path_bns ON cra.loops USING gin (path_bns)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loops",
+    "indexname": "loops_path_display_key",
+    "indexdef": "CREATE UNIQUE INDEX loops_path_display_key ON cra.loops USING btree (path_display)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "loops",
+    "indexname": "loops_pkey",
+    "indexdef": "CREATE UNIQUE INDEX loops_pkey ON cra.loops USING btree (id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "matrix_census",
+    "indexname": "idx_matrix_census_scc",
+    "indexdef": "CREATE INDEX idx_matrix_census_scc ON cra.matrix_census USING btree (scc_id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "matrix_census",
+    "indexname": "idx_matrix_census_total",
+    "indexdef": "CREATE INDEX idx_matrix_census_total ON cra.matrix_census USING btree (total_walk_count DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "matrix_census",
+    "indexname": "matrix_census_pkey",
+    "indexdef": "CREATE UNIQUE INDEX matrix_census_pkey ON cra.matrix_census USING btree (bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "overhead_by_charity",
+    "indexname": "idx_obc_designation",
+    "indexdef": "CREATE INDEX idx_obc_designation ON cra.overhead_by_charity USING btree (designation)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "overhead_by_charity",
+    "indexname": "idx_obc_strict_pct",
+    "indexdef": "CREATE INDEX idx_obc_strict_pct ON cra.overhead_by_charity USING btree (strict_overhead_pct DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "overhead_by_charity",
+    "indexname": "idx_obc_year",
+    "indexdef": "CREATE INDEX idx_obc_year ON cra.overhead_by_charity USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "overhead_by_charity",
+    "indexname": "overhead_by_charity_pkey",
+    "indexdef": "CREATE UNIQUE INDEX overhead_by_charity_pkey ON cra.overhead_by_charity USING btree (bn, fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "overhead_by_year",
+    "indexname": "overhead_by_year_pkey",
+    "indexdef": "CREATE UNIQUE INDEX overhead_by_year_pkey ON cra.overhead_by_year USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "overhead_by_year_designation",
+    "indexname": "overhead_by_year_designation_pkey",
+    "indexdef": "CREATE UNIQUE INDEX overhead_by_year_designation_pkey ON cra.overhead_by_year_designation USING btree (fiscal_year, designation)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "partitioned_cycles",
+    "indexname": "idx_part_cycles_display",
+    "indexdef": "CREATE INDEX idx_part_cycles_display ON cra.partitioned_cycles USING btree (path_display)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "partitioned_cycles",
+    "indexname": "idx_part_cycles_hops",
+    "indexdef": "CREATE INDEX idx_part_cycles_hops ON cra.partitioned_cycles USING btree (hops)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "partitioned_cycles",
+    "indexname": "idx_part_cycles_tier",
+    "indexdef": "CREATE INDEX idx_part_cycles_tier ON cra.partitioned_cycles USING btree (tier)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "partitioned_cycles",
+    "indexname": "partitioned_cycles_path_display_key",
+    "indexdef": "CREATE UNIQUE INDEX partitioned_cycles_path_display_key ON cra.partitioned_cycles USING btree (path_display)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "partitioned_cycles",
+    "indexname": "partitioned_cycles_pkey",
+    "indexdef": "CREATE UNIQUE INDEX partitioned_cycles_pkey ON cra.partitioned_cycles USING btree (id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "scc_components",
+    "indexname": "idx_scc_comp_id",
+    "indexdef": "CREATE INDEX idx_scc_comp_id ON cra.scc_components USING btree (scc_id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "scc_components",
+    "indexname": "idx_scc_comp_scc_id",
+    "indexdef": "CREATE INDEX idx_scc_comp_scc_id ON cra.scc_components USING btree (scc_id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "scc_components",
+    "indexname": "idx_scc_comp_size",
+    "indexdef": "CREATE INDEX idx_scc_comp_size ON cra.scc_components USING btree (scc_size DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "scc_components",
+    "indexname": "scc_components_pkey",
+    "indexdef": "CREATE UNIQUE INDEX scc_components_pkey ON cra.scc_components USING btree (bn)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "scc_summary",
+    "indexname": "idx_scc_summary_size",
+    "indexdef": "CREATE INDEX idx_scc_summary_size ON cra.scc_summary USING btree (node_count DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "scc_summary",
+    "indexname": "scc_summary_pkey",
+    "indexdef": "CREATE UNIQUE INDEX scc_summary_pkey ON cra.scc_summary USING btree (scc_id)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_completeness_issues",
+    "indexname": "idx_comp_field",
+    "indexdef": "CREATE INDEX idx_comp_field ON cra.t3010_completeness_issues USING btree (missing_field)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_completeness_issues",
+    "indexname": "idx_comp_rule",
+    "indexdef": "CREATE INDEX idx_comp_rule ON cra.t3010_completeness_issues USING btree (rule_code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_completeness_issues",
+    "indexname": "idx_comp_year",
+    "indexdef": "CREATE INDEX idx_comp_year ON cra.t3010_completeness_issues USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_completeness_issues",
+    "indexname": "t3010_completeness_issues_pkey",
+    "indexdef": "CREATE UNIQUE INDEX t3010_completeness_issues_pkey ON cra.t3010_completeness_issues USING btree (bn, fpe, rule_code, missing_field)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_impossibilities",
+    "indexname": "idx_imp_family",
+    "indexdef": "CREATE INDEX idx_imp_family ON cra.t3010_impossibilities USING btree (rule_family)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_impossibilities",
+    "indexname": "idx_imp_rule",
+    "indexdef": "CREATE INDEX idx_imp_rule ON cra.t3010_impossibilities USING btree (rule_code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_impossibilities",
+    "indexname": "idx_imp_severity",
+    "indexdef": "CREATE INDEX idx_imp_severity ON cra.t3010_impossibilities USING btree (severity DESC)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_impossibilities",
+    "indexname": "idx_imp_year",
+    "indexdef": "CREATE INDEX idx_imp_year ON cra.t3010_impossibilities USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_impossibilities",
+    "indexname": "t3010_impossibilities_pkey",
+    "indexdef": "CREATE UNIQUE INDEX t3010_impossibilities_pkey ON cra.t3010_impossibilities USING btree (bn, fpe, rule_code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_plausibility_flags",
+    "indexname": "idx_plaus_field",
+    "indexdef": "CREATE INDEX idx_plaus_field ON cra.t3010_plausibility_flags USING btree (offending_field)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_plausibility_flags",
+    "indexname": "idx_plaus_rule",
+    "indexdef": "CREATE INDEX idx_plaus_rule ON cra.t3010_plausibility_flags USING btree (rule_code)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_plausibility_flags",
+    "indexname": "idx_plaus_year",
+    "indexdef": "CREATE INDEX idx_plaus_year ON cra.t3010_plausibility_flags USING btree (fiscal_year)"
+  },
+  {
+    "schemaname": "cra",
+    "tablename": "t3010_plausibility_flags",
+    "indexname": "t3010_plausibility_flags_pkey",
+    "indexdef": "CREATE UNIQUE INDEX t3010_plausibility_flags_pkey ON cra.t3010_plausibility_flags USING btree (bn, fpe, rule_code, offending_field)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "agreement_type_lookup",
+    "indexname": "agreement_type_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX agreement_type_lookup_pkey ON fed.agreement_type_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "country_lookup",
+    "indexname": "country_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX country_lookup_pkey ON fed.country_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "currency_lookup",
+    "indexname": "currency_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX currency_lookup_pkey ON fed.currency_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "grants_contributions_pkey",
+    "indexdef": "CREATE UNIQUE INDEX grants_contributions_pkey ON fed.grants_contributions USING btree (_id)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_agreement_type",
+    "indexdef": "CREATE INDEX idx_fed_gc_agreement_type ON fed.grants_contributions USING btree (agreement_type)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_country",
+    "indexdef": "CREATE INDEX idx_fed_gc_country ON fed.grants_contributions USING btree (recipient_country)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_end_date",
+    "indexdef": "CREATE INDEX idx_fed_gc_end_date ON fed.grants_contributions USING btree (agreement_end_date)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_is_amendment",
+    "indexdef": "CREATE INDEX idx_fed_gc_is_amendment ON fed.grants_contributions USING btree (is_amendment)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_naics",
+    "indexdef": "CREATE INDEX idx_fed_gc_naics ON fed.grants_contributions USING btree (naics_identifier)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_owner_org",
+    "indexdef": "CREATE INDEX idx_fed_gc_owner_org ON fed.grants_contributions USING btree (owner_org)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_program_name",
+    "indexdef": "CREATE INDEX idx_fed_gc_program_name ON fed.grants_contributions USING gin (to_tsvector('english'::regconfig, COALESCE(prog_name_en, ''::text)))"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_province",
+    "indexdef": "CREATE INDEX idx_fed_gc_province ON fed.grants_contributions USING btree (recipient_province)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_recipient_name",
+    "indexdef": "CREATE INDEX idx_fed_gc_recipient_name ON fed.grants_contributions USING gin (to_tsvector('english'::regconfig, COALESCE(recipient_legal_name, ''::text)))"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_recipient_type",
+    "indexdef": "CREATE INDEX idx_fed_gc_recipient_type ON fed.grants_contributions USING btree (recipient_type)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_riding",
+    "indexdef": "CREATE INDEX idx_fed_gc_riding ON fed.grants_contributions USING btree (federal_riding_number)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_start_date",
+    "indexdef": "CREATE INDEX idx_fed_gc_start_date ON fed.grants_contributions USING btree (agreement_start_date)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_upper_trim_name",
+    "indexdef": "CREATE INDEX idx_fed_gc_upper_trim_name ON fed.grants_contributions USING btree (upper(TRIM(BOTH FROM recipient_legal_name)))"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_fed_gc_value",
+    "indexdef": "CREATE INDEX idx_fed_gc_value ON fed.grants_contributions USING btree (agreement_value)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "grants_contributions",
+    "indexname": "idx_trgm_fed_gc_recipient",
+    "indexdef": "CREATE INDEX idx_trgm_fed_gc_recipient ON fed.grants_contributions USING gin (upper(recipient_legal_name) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "province_lookup",
+    "indexname": "province_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX province_lookup_pkey ON fed.province_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "fed",
+    "tablename": "recipient_type_lookup",
+    "indexname": "recipient_type_lookup_pkey",
+    "indexdef": "CREATE UNIQUE INDEX recipient_type_lookup_pkey ON fed.recipient_type_lookup USING btree (code)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "donee_trigram_candidates",
+    "indexname": "donee_trigram_candidates_donee_name_norm_key",
+    "indexdef": "CREATE UNIQUE INDEX donee_trigram_candidates_donee_name_norm_key ON general.donee_trigram_candidates USING btree (donee_name_norm)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "donee_trigram_candidates",
+    "indexname": "donee_trigram_candidates_pkey",
+    "indexdef": "CREATE UNIQUE INDEX donee_trigram_candidates_pkey ON general.donee_trigram_candidates USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "donee_trigram_candidates",
+    "indexname": "idx_donee_trigram_entity",
+    "indexdef": "CREATE INDEX idx_donee_trigram_entity ON general.donee_trigram_candidates USING btree (candidate_entity_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "donee_trigram_candidates",
+    "indexname": "idx_donee_trigram_status",
+    "indexdef": "CREATE INDEX idx_donee_trigram_status ON general.donee_trigram_candidates USING btree (status)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "entities_pkey",
+    "indexdef": "CREATE UNIQUE INDEX entities_pkey ON general.entities USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_active_name_trgm",
+    "indexdef": "CREATE INDEX idx_entities_active_name_trgm ON general.entities USING gin (upper(canonical_name) gin_trgm_ops) WHERE (merged_into IS NULL)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_alt_names",
+    "indexdef": "CREATE INDEX idx_entities_alt_names ON general.entities USING gin (alternate_names)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_alt_names_trgm",
+    "indexdef": "CREATE INDEX idx_entities_alt_names_trgm ON general.entities USING gin (general.array_upper_join(alternate_names) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_bn_root",
+    "indexdef": "CREATE INDEX idx_entities_bn_root ON general.entities USING btree (bn_root)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_bn_root_trgm",
+    "indexdef": "CREATE INDEX idx_entities_bn_root_trgm ON general.entities USING gin (bn_root gin_trgm_ops) WHERE (bn_root IS NOT NULL)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_bn_variants",
+    "indexdef": "CREATE INDEX idx_entities_bn_variants ON general.entities USING gin (bn_variants)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_canonical_name",
+    "indexdef": "CREATE INDEX idx_entities_canonical_name ON general.entities USING btree (canonical_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_confidence",
+    "indexdef": "CREATE INDEX idx_entities_confidence ON general.entities USING btree (confidence)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_dataset_sources",
+    "indexdef": "CREATE INDEX idx_entities_dataset_sources ON general.entities USING gin (dataset_sources)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_merged_into",
+    "indexdef": "CREATE INDEX idx_entities_merged_into ON general.entities USING btree (merged_into)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_metadata",
+    "indexdef": "CREATE INDEX idx_entities_metadata ON general.entities USING gin (metadata jsonb_path_ops)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_norm_canonical",
+    "indexdef": "CREATE INDEX idx_entities_norm_canonical ON general.entities USING btree (norm_canonical)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_norm_canonical_trgm",
+    "indexdef": "CREATE INDEX idx_entities_norm_canonical_trgm ON general.entities USING gin (norm_canonical gin_trgm_ops)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_norm_name",
+    "indexdef": "CREATE INDEX idx_entities_norm_name ON general.entities USING btree (general.norm_name(canonical_name))"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_status",
+    "indexdef": "CREATE INDEX idx_entities_status ON general.entities USING btree (status)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_trgm_name",
+    "indexdef": "CREATE INDEX idx_entities_trgm_name ON general.entities USING gin (upper(canonical_name) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_type",
+    "indexdef": "CREATE INDEX idx_entities_type ON general.entities USING btree (entity_type)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entities",
+    "indexname": "idx_entities_upper_canonical",
+    "indexdef": "CREATE INDEX idx_entities_upper_canonical ON general.entities USING btree (upper(canonical_name))"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "entity_golden_records_pkey",
+    "indexdef": "CREATE UNIQUE INDEX entity_golden_records_pkey ON general.entity_golden_records USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "idx_gr_bn",
+    "indexdef": "CREATE INDEX idx_gr_bn ON general.entity_golden_records USING btree (bn_root)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "idx_gr_canonical",
+    "indexdef": "CREATE INDEX idx_gr_canonical ON general.entity_golden_records USING btree (canonical_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "idx_gr_ds",
+    "indexdef": "CREATE INDEX idx_gr_ds ON general.entity_golden_records USING gin (dataset_sources)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "idx_gr_norm",
+    "indexdef": "CREATE INDEX idx_gr_norm ON general.entity_golden_records USING btree (norm_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "idx_gr_status",
+    "indexdef": "CREATE INDEX idx_gr_status ON general.entity_golden_records USING btree (status)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "idx_gr_trgm",
+    "indexdef": "CREATE INDEX idx_gr_trgm ON general.entity_golden_records USING gin (upper(canonical_name) gin_trgm_ops)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_golden_records",
+    "indexname": "idx_gr_type",
+    "indexdef": "CREATE INDEX idx_gr_type ON general.entity_golden_records USING btree (entity_type)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merge_candidates",
+    "indexname": "entity_merge_candidates_pkey",
+    "indexdef": "CREATE UNIQUE INDEX entity_merge_candidates_pkey ON general.entity_merge_candidates USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merge_candidates",
+    "indexname": "idx_merge_cand_a",
+    "indexdef": "CREATE INDEX idx_merge_cand_a ON general.entity_merge_candidates USING btree (entity_id_a)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merge_candidates",
+    "indexname": "idx_merge_cand_b",
+    "indexdef": "CREATE INDEX idx_merge_cand_b ON general.entity_merge_candidates USING btree (entity_id_b)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merge_candidates",
+    "indexname": "idx_merge_cand_batch",
+    "indexdef": "CREATE INDEX idx_merge_cand_batch ON general.entity_merge_candidates USING btree (batch_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merge_candidates",
+    "indexname": "idx_merge_cand_pair",
+    "indexdef": "CREATE UNIQUE INDEX idx_merge_cand_pair ON general.entity_merge_candidates USING btree (LEAST(entity_id_a, entity_id_b), GREATEST(entity_id_a, entity_id_b))"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merge_candidates",
+    "indexname": "idx_merge_cand_status",
+    "indexdef": "CREATE INDEX idx_merge_cand_status ON general.entity_merge_candidates USING btree (status)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merges",
+    "indexname": "entity_merges_pkey",
+    "indexdef": "CREATE UNIQUE INDEX entity_merges_pkey ON general.entity_merges USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merges",
+    "indexname": "idx_merges_absorbed",
+    "indexdef": "CREATE INDEX idx_merges_absorbed ON general.entity_merges USING btree (absorbed_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_merges",
+    "indexname": "idx_merges_survivor",
+    "indexdef": "CREATE INDEX idx_merges_survivor ON general.entity_merges USING btree (survivor_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_resolution_log",
+    "indexname": "entity_resolution_log_pkey",
+    "indexdef": "CREATE UNIQUE INDEX entity_resolution_log_pkey ON general.entity_resolution_log USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_resolution_log",
+    "indexname": "idx_resolution_log_batch",
+    "indexdef": "CREATE INDEX idx_resolution_log_batch ON general.entity_resolution_log USING btree (batch_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_resolution_log",
+    "indexname": "idx_resolution_log_entity",
+    "indexdef": "CREATE INDEX idx_resolution_log_entity ON general.entity_resolution_log USING btree (entity_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_resolution_log",
+    "indexname": "idx_resolution_log_status",
+    "indexdef": "CREATE INDEX idx_resolution_log_status ON general.entity_resolution_log USING btree (status)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_resolution_log",
+    "indexname": "idx_resolution_log_unique",
+    "indexdef": "CREATE UNIQUE INDEX idx_resolution_log_unique ON general.entity_resolution_log USING btree (source_schema, source_table, source_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_source_links",
+    "indexname": "entity_source_links_pkey",
+    "indexdef": "CREATE UNIQUE INDEX entity_source_links_pkey ON general.entity_source_links USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_source_links",
+    "indexname": "idx_source_links_entity",
+    "indexdef": "CREATE INDEX idx_source_links_entity ON general.entity_source_links USING btree (entity_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_source_links",
+    "indexname": "idx_source_links_pk",
+    "indexdef": "CREATE INDEX idx_source_links_pk ON general.entity_source_links USING gin (source_pk jsonb_path_ops)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_source_links",
+    "indexname": "idx_source_links_source",
+    "indexdef": "CREATE INDEX idx_source_links_source ON general.entity_source_links USING btree (source_schema, source_table)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "entity_source_links",
+    "indexname": "idx_source_links_status",
+    "indexdef": "CREATE INDEX idx_source_links_status ON general.entity_source_links USING btree (link_status)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries",
+    "indexname": "idx_gen_ministries_active",
+    "indexdef": "CREATE INDEX idx_gen_ministries_active ON general.ministries USING btree (is_active)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries",
+    "indexname": "idx_gen_ministries_name",
+    "indexdef": "CREATE INDEX idx_gen_ministries_name ON general.ministries USING btree (name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries",
+    "indexname": "idx_gen_ministries_short_name",
+    "indexdef": "CREATE INDEX idx_gen_ministries_short_name ON general.ministries USING btree (short_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries",
+    "indexname": "ministries_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ministries_pkey ON general.ministries USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries",
+    "indexname": "ministries_short_name_key",
+    "indexdef": "CREATE UNIQUE INDEX ministries_short_name_key ON general.ministries USING btree (short_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_crosswalk",
+    "indexname": "idx_mcw_canonical",
+    "indexdef": "CREATE INDEX idx_mcw_canonical ON general.ministries_crosswalk USING btree (canonical_short_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_crosswalk",
+    "indexname": "idx_mcw_raw",
+    "indexdef": "CREATE INDEX idx_mcw_raw ON general.ministries_crosswalk USING btree (raw_ministry)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_crosswalk",
+    "indexname": "ministries_crosswalk_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ministries_crosswalk_pkey ON general.ministries_crosswalk USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_crosswalk",
+    "indexname": "ministries_crosswalk_raw_ministry_canonical_short_name_key",
+    "indexdef": "CREATE UNIQUE INDEX ministries_crosswalk_raw_ministry_canonical_short_name_key ON general.ministries_crosswalk USING btree (raw_ministry, canonical_short_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_history",
+    "indexname": "idx_mh_active",
+    "indexdef": "CREATE INDEX idx_mh_active ON general.ministries_history USING btree (is_active)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_history",
+    "indexname": "idx_mh_short_name",
+    "indexdef": "CREATE INDEX idx_mh_short_name ON general.ministries_history USING btree (short_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_history",
+    "indexname": "ministries_history_pkey",
+    "indexdef": "CREATE UNIQUE INDEX ministries_history_pkey ON general.ministries_history USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "ministries_history",
+    "indexname": "ministries_history_short_name_key",
+    "indexdef": "CREATE UNIQUE INDEX ministries_history_short_name_key ON general.ministries_history USING btree (short_name)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "resolution_batches",
+    "indexname": "resolution_batches_pkey",
+    "indexdef": "CREATE UNIQUE INDEX resolution_batches_pkey ON general.resolution_batches USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_aliases",
+    "indexname": "idx_splink_alias_cluster",
+    "indexdef": "CREATE INDEX idx_splink_alias_cluster ON general.splink_aliases USING btree (cluster_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_aliases",
+    "indexname": "splink_aliases_cluster_id_alias_source_dataset_source_id_key",
+    "indexdef": "CREATE UNIQUE INDEX splink_aliases_cluster_id_alias_source_dataset_source_id_key ON general.splink_aliases USING btree (cluster_id, alias, source_dataset, source_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_aliases",
+    "indexname": "splink_aliases_pkey",
+    "indexdef": "CREATE UNIQUE INDEX splink_aliases_pkey ON general.splink_aliases USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_build_metadata",
+    "indexname": "splink_build_metadata_pkey",
+    "indexdef": "CREATE UNIQUE INDEX splink_build_metadata_pkey ON general.splink_build_metadata USING btree (id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_predictions",
+    "indexname": "idx_splink_pred_cluster",
+    "indexdef": "CREATE INDEX idx_splink_pred_cluster ON general.splink_predictions USING btree (cluster_id)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_predictions",
+    "indexname": "idx_splink_pred_l",
+    "indexdef": "CREATE INDEX idx_splink_pred_l ON general.splink_predictions USING btree (source_l, record_l)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_predictions",
+    "indexname": "idx_splink_pred_prob",
+    "indexdef": "CREATE INDEX idx_splink_pred_prob ON general.splink_predictions USING btree (match_probability)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_predictions",
+    "indexname": "idx_splink_pred_r",
+    "indexdef": "CREATE INDEX idx_splink_pred_r ON general.splink_predictions USING btree (source_r, record_r)"
+  },
+  {
+    "schemaname": "general",
+    "tablename": "splink_predictions",
+    "indexname": "splink_predictions_pkey",
+    "indexdef": "CREATE UNIQUE INDEX splink_predictions_pkey ON general.splink_predictions USING btree (id)"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "contracts",
+    "indexname": "contracts_pkey",
+    "indexdef": "CREATE UNIQUE INDEX contracts_pkey ON public.contracts USING btree (id)"
+  }
+]

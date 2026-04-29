@@ -1,0 +1,932 @@
+{
+  "id": [
+    "ab.ab_contracts",
+    "ab.ab_grants",
+    "ab.ab_grants_fiscal_years",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs",
+    "ab.ab_grants_recipients",
+    "ab.ab_non_profit",
+    "ab.ab_non_profit_status_lookup",
+    "ab.ab_sole_source",
+    "ab.vw_non_profit_decoded",
+    "cra.johnson_cycles",
+    "cra.loops",
+    "cra.partitioned_cycles",
+    "general.donee_trigram_candidates",
+    "general.entities",
+    "general.entity_golden_records",
+    "general.entity_merge_candidates",
+    "general.entity_merges",
+    "general.entity_resolution_log",
+    "general.entity_source_links",
+    "general.ministries",
+    "general.ministries_crosswalk",
+    "general.ministries_history",
+    "general.resolution_batches",
+    "general.splink_aliases",
+    "general.splink_build_metadata",
+    "general.splink_predictions",
+    "general.vw_entity_search",
+    "public.contracts"
+  ],
+  "display_fiscal_year": [
+    "ab.ab_contracts",
+    "ab.ab_grants",
+    "ab.ab_grants_fiscal_years",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs",
+    "ab.ab_sole_source",
+    "ab.vw_grants_by_ministry"
+  ],
+  "recipient": [
+    "ab.ab_contracts",
+    "ab.ab_grants",
+    "ab.ab_grants_recipients",
+    "ab.vw_grants_by_recipient"
+  ],
+  "amount": [
+    "ab.ab_contracts",
+    "ab.ab_grants",
+    "ab.ab_sole_source",
+    "cra.cra_political_activity_funding",
+    "cra.cra_resources_sent_outside"
+  ],
+  "ministry": [
+    "ab.ab_contracts",
+    "ab.ab_grants",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs",
+    "ab.ab_sole_source",
+    "ab.vw_grants_by_ministry"
+  ],
+  "program": [
+    "ab.ab_grants",
+    "ab.ab_grants_programs"
+  ],
+  "fiscal_year": [
+    "ab.ab_grants",
+    "cra.cra_identification",
+    "cra.cra_web_urls",
+    "cra.govt_funding_by_charity",
+    "cra.govt_funding_by_year",
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation",
+    "cra.t3010_completeness_issues",
+    "cra.t3010_impossibilities",
+    "cra.t3010_plausibility_flags",
+    "cra.vw_charity_financials_by_year",
+    "cra.vw_charity_profiles",
+    "cra.vw_charity_programs"
+  ],
+  "version": [
+    "ab.ab_grants",
+    "ab.ab_grants_fiscal_years",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs",
+    "ab.ab_grants_recipients"
+  ],
+  "created_at": [
+    "ab.ab_grants",
+    "general.donee_trigram_candidates",
+    "general.entities",
+    "general.entity_golden_records",
+    "general.entity_merge_candidates",
+    "general.entity_resolution_log",
+    "general.entity_source_links",
+    "general.ministries",
+    "general.ministries_crosswalk",
+    "general.ministries_history",
+    "general.splink_predictions"
+  ],
+  "updated_at": [
+    "ab.ab_grants",
+    "general.entities",
+    "general.entity_golden_records",
+    "general.entity_resolution_log",
+    "general.entity_source_links",
+    "general.ministries",
+    "general.ministries_history"
+  ],
+  "mongo_id": [
+    "ab.ab_grants_fiscal_years",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs",
+    "ab.ab_grants_recipients"
+  ],
+  "count": [
+    "ab.ab_grants_fiscal_years",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs"
+  ],
+  "total_amount": [
+    "ab.ab_grants_fiscal_years",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs",
+    "ab.vw_grants_by_ministry",
+    "ab.vw_grants_by_recipient"
+  ],
+  "last_updated": [
+    "ab.ab_grants_fiscal_years",
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs",
+    "ab.ab_grants_recipients"
+  ],
+  "aggregation_type": [
+    "ab.ab_grants_ministries",
+    "ab.ab_grants_programs"
+  ],
+  "programs_count": [
+    "ab.ab_grants_recipients",
+    "ab.vw_grants_by_recipient"
+  ],
+  "ministries_count": [
+    "ab.ab_grants_recipients",
+    "ab.vw_grants_by_recipient"
+  ],
+  "type": [
+    "ab.ab_non_profit",
+    "ab.vw_non_profit_decoded"
+  ],
+  "legal_name": [
+    "ab.ab_non_profit",
+    "ab.vw_non_profit_decoded",
+    "cra._dnq_canonical",
+    "cra.cra_identification",
+    "cra.govt_funding_by_charity",
+    "cra.identification_name_history",
+    "cra.identified_hubs",
+    "cra.loop_charity_financials",
+    "cra.loop_universe",
+    "cra.matrix_census",
+    "cra.overhead_by_charity",
+    "cra.scc_components",
+    "cra.t3010_completeness_issues",
+    "cra.t3010_impossibilities",
+    "cra.t3010_plausibility_flags",
+    "cra.vw_charity_financials_by_year",
+    "cra.vw_charity_profiles",
+    "cra.vw_charity_programs"
+  ],
+  "status": [
+    "ab.ab_non_profit",
+    "ab.ab_non_profit_status_lookup",
+    "ab.vw_non_profit_decoded",
+    "general.donee_trigram_candidates",
+    "general.entities",
+    "general.entity_golden_records",
+    "general.entity_merge_candidates",
+    "general.entity_resolution_log",
+    "general.resolution_batches",
+    "general.splink_build_metadata",
+    "general.vw_entity_funding",
+    "general.vw_entity_search"
+  ],
+  "registration_date": [
+    "ab.ab_non_profit",
+    "ab.vw_non_profit_decoded",
+    "cra.cra_identification"
+  ],
+  "city": [
+    "ab.ab_non_profit",
+    "ab.vw_non_profit_decoded",
+    "cra.cra_identification",
+    "cra.cra_qualified_donees",
+    "cra.vw_charity_profiles"
+  ],
+  "postal_code": [
+    "ab.ab_non_profit",
+    "ab.vw_non_profit_decoded",
+    "cra.cra_identification",
+    "cra.vw_charity_profiles"
+  ],
+  "description": [
+    "ab.ab_non_profit_status_lookup",
+    "cra.cra_charitable_programs",
+    "cra.cra_political_activity_desc",
+    "cra.vw_charity_programs",
+    "general.ministries"
+  ],
+  "vendor_postal_code": [
+    "ab.ab_sole_source",
+    "public.contracts"
+  ],
+  "start_date": [
+    "ab.ab_sole_source",
+    "cra.cra_directors"
+  ],
+  "end_date": [
+    "ab.ab_sole_source",
+    "cra.cra_directors"
+  ],
+  "payment_count": [
+    "ab.vw_grants_by_ministry",
+    "ab.vw_grants_by_recipient"
+  ],
+  "bn": [
+    "cra._dnq_canonical",
+    "cra.cra_activities_outside_countries",
+    "cra.cra_activities_outside_details",
+    "cra.cra_charitable_programs",
+    "cra.cra_compensation",
+    "cra.cra_directors",
+    "cra.cra_disbursement_quota",
+    "cra.cra_exported_goods",
+    "cra.cra_financial_details",
+    "cra.cra_financial_general",
+    "cra.cra_foundation_info",
+    "cra.cra_gifts_in_kind",
+    "cra.cra_identification",
+    "cra.cra_non_qualified_donees",
+    "cra.cra_political_activity_desc",
+    "cra.cra_political_activity_funding",
+    "cra.cra_political_activity_resources",
+    "cra.cra_qualified_donees",
+    "cra.cra_resources_sent_outside",
+    "cra.cra_web_urls",
+    "cra.govt_funding_by_charity",
+    "cra.identification_name_history",
+    "cra.identified_hubs",
+    "cra.loop_charity_financials",
+    "cra.loop_participants",
+    "cra.loop_universe",
+    "cra.matrix_census",
+    "cra.overhead_by_charity",
+    "cra.scc_components",
+    "cra.t3010_completeness_issues",
+    "cra.t3010_impossibilities",
+    "cra.t3010_plausibility_flags",
+    "cra.vw_charity_financials_by_year",
+    "cra.vw_charity_profiles",
+    "cra.vw_charity_programs",
+    "general.entity_resolution_log"
+  ],
+  "fpe": [
+    "cra.cra_activities_outside_countries",
+    "cra.cra_activities_outside_details",
+    "cra.cra_charitable_programs",
+    "cra.cra_compensation",
+    "cra.cra_directors",
+    "cra.cra_disbursement_quota",
+    "cra.cra_exported_goods",
+    "cra.cra_financial_details",
+    "cra.cra_financial_general",
+    "cra.cra_foundation_info",
+    "cra.cra_gifts_in_kind",
+    "cra.cra_non_qualified_donees",
+    "cra.cra_political_activity_desc",
+    "cra.cra_political_activity_funding",
+    "cra.cra_political_activity_resources",
+    "cra.cra_qualified_donees",
+    "cra.cra_resources_sent_outside",
+    "cra.t3010_completeness_issues",
+    "cra.t3010_impossibilities",
+    "cra.t3010_plausibility_flags"
+  ],
+  "form_id": [
+    "cra.cra_activities_outside_countries",
+    "cra.cra_activities_outside_details",
+    "cra.cra_charitable_programs",
+    "cra.cra_compensation",
+    "cra.cra_directors",
+    "cra.cra_disbursement_quota",
+    "cra.cra_exported_goods",
+    "cra.cra_financial_details",
+    "cra.cra_financial_general",
+    "cra.cra_foundation_info",
+    "cra.cra_gifts_in_kind",
+    "cra.cra_non_qualified_donees",
+    "cra.cra_political_activity_desc",
+    "cra.cra_political_activity_funding",
+    "cra.cra_political_activity_resources",
+    "cra.cra_qualified_donees",
+    "cra.cra_resources_sent_outside"
+  ],
+  "sequence_number": [
+    "cra.cra_activities_outside_countries",
+    "cra.cra_directors",
+    "cra.cra_exported_goods",
+    "cra.cra_non_qualified_donees",
+    "cra.cra_political_activity_funding",
+    "cra.cra_political_activity_resources",
+    "cra.cra_qualified_donees",
+    "cra.cra_resources_sent_outside",
+    "cra.cra_web_urls"
+  ],
+  "country": [
+    "cra.cra_activities_outside_countries",
+    "cra.cra_exported_goods",
+    "cra.cra_identification",
+    "cra.cra_non_qualified_donees",
+    "cra.cra_political_activity_funding",
+    "cra.cra_province_state_lookup",
+    "cra.cra_resources_sent_outside",
+    "cra.vw_charity_profiles"
+  ],
+  "code": [
+    "cra.cra_category_lookup",
+    "cra.cra_country_lookup",
+    "cra.cra_designation_lookup",
+    "cra.cra_program_type_lookup",
+    "cra.cra_province_state_lookup",
+    "fed.agreement_type_lookup",
+    "fed.country_lookup",
+    "fed.currency_lookup",
+    "fed.province_lookup",
+    "fed.recipient_type_lookup"
+  ],
+  "name_en": [
+    "cra.cra_category_lookup",
+    "cra.cra_country_lookup",
+    "cra.cra_designation_lookup",
+    "cra.cra_program_type_lookup",
+    "cra.cra_province_state_lookup",
+    "cra.cra_sub_category_lookup",
+    "fed.agreement_type_lookup",
+    "fed.country_lookup",
+    "fed.currency_lookup",
+    "fed.province_lookup",
+    "fed.recipient_type_lookup"
+  ],
+  "name_fr": [
+    "cra.cra_category_lookup",
+    "cra.cra_country_lookup",
+    "cra.cra_designation_lookup",
+    "cra.cra_program_type_lookup",
+    "cra.cra_province_state_lookup",
+    "cra.cra_sub_category_lookup",
+    "fed.agreement_type_lookup",
+    "fed.country_lookup",
+    "fed.currency_lookup",
+    "fed.province_lookup",
+    "fed.recipient_type_lookup"
+  ],
+  "description_en": [
+    "cra.cra_category_lookup",
+    "cra.cra_designation_lookup",
+    "cra.cra_program_type_lookup",
+    "cra.cra_sub_category_lookup",
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded",
+    "public.contracts"
+  ],
+  "description_fr": [
+    "cra.cra_category_lookup",
+    "cra.cra_designation_lookup",
+    "cra.cra_program_type_lookup",
+    "cra.cra_sub_category_lookup",
+    "fed.grants_contributions",
+    "public.contracts"
+  ],
+  "program_type": [
+    "cra.cra_charitable_programs",
+    "cra.vw_charity_programs"
+  ],
+  "field_5000": [
+    "cra.cra_financial_details",
+    "cra.cra_financial_general"
+  ],
+  "field_5010": [
+    "cra.cra_financial_details",
+    "cra.cra_financial_general"
+  ],
+  "field_5030": [
+    "cra.cra_financial_details",
+    "cra.cra_financial_general"
+  ],
+  "category": [
+    "cra.cra_identification",
+    "cra.govt_funding_by_charity",
+    "cra.loop_charity_financials",
+    "cra.overhead_by_charity",
+    "cra.vw_charity_profiles"
+  ],
+  "sub_category": [
+    "cra.cra_identification",
+    "cra.vw_charity_profiles"
+  ],
+  "designation": [
+    "cra.cra_identification",
+    "cra.govt_funding_by_charity",
+    "cra.loop_charity_financials",
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year_designation",
+    "cra.vw_charity_profiles"
+  ],
+  "account_name": [
+    "cra.cra_identification",
+    "cra.identification_name_history",
+    "cra.vw_charity_financials_by_year",
+    "cra.vw_charity_profiles",
+    "cra.vw_charity_programs"
+  ],
+  "address_line_1": [
+    "cra.cra_identification",
+    "cra.vw_charity_profiles"
+  ],
+  "address_line_2": [
+    "cra.cra_identification",
+    "cra.vw_charity_profiles"
+  ],
+  "province": [
+    "cra.cra_identification",
+    "cra.cra_qualified_donees",
+    "cra.vw_charity_profiles"
+  ],
+  "donee_bn": [
+    "cra.cra_qualified_donees",
+    "cra.donee_name_quality"
+  ],
+  "donee_name": [
+    "cra.cra_qualified_donees",
+    "cra.donee_name_quality",
+    "general.donee_trigram_candidates"
+  ],
+  "total_gifts": [
+    "cra.cra_qualified_donees",
+    "cra.donee_name_quality",
+    "general.donee_trigram_candidates"
+  ],
+  "canonical_name": [
+    "cra.donee_name_quality",
+    "general.entities",
+    "general.entity_golden_records",
+    "general.ministries_history",
+    "general.vw_entity_funding",
+    "general.vw_entity_search"
+  ],
+  "citations": [
+    "cra.donee_name_quality",
+    "general.donee_trigram_candidates"
+  ],
+  "federal": [
+    "cra.govt_funding_by_charity",
+    "cra.govt_funding_by_year"
+  ],
+  "provincial": [
+    "cra.govt_funding_by_charity",
+    "cra.govt_funding_by_year"
+  ],
+  "municipal": [
+    "cra.govt_funding_by_charity",
+    "cra.govt_funding_by_year"
+  ],
+  "combined_sectiond": [
+    "cra.govt_funding_by_charity",
+    "cra.govt_funding_by_year"
+  ],
+  "total_govt": [
+    "cra.govt_funding_by_charity",
+    "cra.govt_funding_by_year"
+  ],
+  "revenue": [
+    "cra.govt_funding_by_charity",
+    "cra.loop_charity_financials",
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "charities_filed": [
+    "cra.govt_funding_by_year",
+    "cra.overhead_by_year"
+  ],
+  "total_revenue": [
+    "cra.govt_funding_by_year",
+    "cra.vw_charity_financials_by_year"
+  ],
+  "scc_id": [
+    "cra.identified_hubs",
+    "cra.matrix_census",
+    "cra.scc_components",
+    "cra.scc_summary"
+  ],
+  "hops": [
+    "cra.johnson_cycles",
+    "cra.loop_financials",
+    "cra.loops",
+    "cra.partitioned_cycles"
+  ],
+  "path_bns": [
+    "cra.johnson_cycles",
+    "cra.loops",
+    "cra.partitioned_cycles"
+  ],
+  "path_display": [
+    "cra.johnson_cycles",
+    "cra.loops",
+    "cra.partitioned_cycles"
+  ],
+  "bottleneck_amt": [
+    "cra.johnson_cycles",
+    "cra.loops",
+    "cra.partitioned_cycles"
+  ],
+  "total_flow": [
+    "cra.johnson_cycles",
+    "cra.loops",
+    "cra.partitioned_cycles"
+  ],
+  "min_year": [
+    "cra.johnson_cycles",
+    "cra.loop_edges",
+    "cra.loop_financials",
+    "cra.loops",
+    "cra.partitioned_cycles"
+  ],
+  "max_year": [
+    "cra.johnson_cycles",
+    "cra.loop_edges",
+    "cra.loop_financials",
+    "cra.loops",
+    "cra.partitioned_cycles"
+  ],
+  "total_expenditures": [
+    "cra.loop_charity_financials",
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation",
+    "cra.vw_charity_financials_by_year"
+  ],
+  "loop_id": [
+    "cra.loop_edge_year_flows",
+    "cra.loop_financials",
+    "cra.loop_participants"
+  ],
+  "src": [
+    "cra.loop_edge_year_flows",
+    "cra.loop_edges"
+  ],
+  "dst": [
+    "cra.loop_edge_year_flows",
+    "cra.loop_edges"
+  ],
+  "edge_count": [
+    "cra.loop_edges",
+    "cra.scc_summary"
+  ],
+  "scc_size": [
+    "cra.matrix_census",
+    "cra.scc_components"
+  ],
+  "compensation": [
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "administration": [
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "fundraising": [
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "programs": [
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "strict_overhead": [
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "broad_overhead": [
+    "cra.overhead_by_charity",
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "strict_overhead_pct_rev": [
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "broad_overhead_pct_rev": [
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "strict_overhead_pct_exp": [
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "broad_overhead_pct_exp": [
+    "cra.overhead_by_year",
+    "cra.overhead_by_year_designation"
+  ],
+  "scc_root": [
+    "cra.scc_components",
+    "cra.scc_summary"
+  ],
+  "rule_code": [
+    "cra.t3010_completeness_issues",
+    "cra.t3010_impossibilities",
+    "cra.t3010_plausibility_flags"
+  ],
+  "details": [
+    "cra.t3010_completeness_issues",
+    "cra.t3010_impossibilities",
+    "cra.t3010_plausibility_flags"
+  ],
+  "severity": [
+    "cra.t3010_impossibilities",
+    "cra.t3010_plausibility_flags"
+  ],
+  "fiscal_period_end": [
+    "cra.vw_charity_financials_by_year",
+    "cra.vw_charity_programs"
+  ],
+  "province_name": [
+    "cra.vw_charity_profiles",
+    "fed.vw_grants_by_province",
+    "fed.vw_grants_decoded"
+  ],
+  "country_name": [
+    "cra.vw_charity_profiles",
+    "fed.vw_grants_decoded"
+  ],
+  "_id": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "ref_number": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "amendment_number": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "amendment_date": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "agreement_type": [
+    "fed.grants_contributions",
+    "fed.vw_grants_by_department",
+    "fed.vw_grants_decoded"
+  ],
+  "agreement_number": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_type": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_business_number": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_legal_name": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_operating_name": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "research_organization_name": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_country": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_province": [
+    "fed.grants_contributions",
+    "fed.vw_grants_by_province",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_city": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "recipient_postal_code": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "federal_riding_name_en": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "federal_riding_number": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "prog_name_en": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "prog_purpose_en": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "agreement_title_en": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "agreement_value": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "foreign_currency_type": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "foreign_currency_value": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "agreement_start_date": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "agreement_end_date": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "coverage": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "expected_results_en": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "additional_information_en": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "naics_identifier": [
+    "fed.grants_contributions",
+    "fed.vw_grants_decoded"
+  ],
+  "owner_org": [
+    "fed.grants_contributions",
+    "fed.vw_grants_by_department",
+    "fed.vw_grants_decoded",
+    "public.contracts"
+  ],
+  "owner_org_title": [
+    "fed.grants_contributions",
+    "fed.vw_grants_by_department",
+    "fed.vw_grants_decoded",
+    "public.contracts"
+  ],
+  "grant_count": [
+    "fed.vw_grants_by_department",
+    "fed.vw_grants_by_province"
+  ],
+  "total_value": [
+    "fed.vw_grants_by_department",
+    "fed.vw_grants_by_province"
+  ],
+  "avg_value": [
+    "fed.vw_grants_by_department",
+    "fed.vw_grants_by_province"
+  ],
+  "llm_verdict": [
+    "general.donee_trigram_candidates",
+    "general.entity_merge_candidates"
+  ],
+  "llm_confidence": [
+    "general.donee_trigram_candidates",
+    "general.entity_merge_candidates"
+  ],
+  "llm_reasoning": [
+    "general.donee_trigram_candidates",
+    "general.entity_merge_candidates"
+  ],
+  "reviewed_at": [
+    "general.donee_trigram_candidates",
+    "general.entity_merge_candidates"
+  ],
+  "alternate_names": [
+    "general.entities",
+    "general.vw_entity_search"
+  ],
+  "entity_type": [
+    "general.entities",
+    "general.entity_golden_records",
+    "general.vw_entity_funding",
+    "general.vw_entity_search"
+  ],
+  "bn_root": [
+    "general.entities",
+    "general.entity_golden_records",
+    "general.vw_entity_funding",
+    "general.vw_entity_search"
+  ],
+  "bn_variants": [
+    "general.entities",
+    "general.entity_golden_records",
+    "general.vw_entity_search"
+  ],
+  "metadata": [
+    "general.entities",
+    "general.entity_source_links",
+    "general.vw_entity_search"
+  ],
+  "source_count": [
+    "general.entities",
+    "general.vw_entity_funding",
+    "general.vw_entity_search"
+  ],
+  "dataset_sources": [
+    "general.entities",
+    "general.entity_golden_records",
+    "general.vw_entity_funding",
+    "general.vw_entity_search"
+  ],
+  "confidence": [
+    "general.entities",
+    "general.entity_golden_records",
+    "general.ministries_crosswalk",
+    "general.vw_entity_funding",
+    "general.vw_entity_search"
+  ],
+  "aliases": [
+    "general.entity_golden_records",
+    "general.ministries_history"
+  ],
+  "llm_response": [
+    "general.entity_merge_candidates",
+    "general.entity_resolution_log"
+  ],
+  "batch_id": [
+    "general.entity_merge_candidates",
+    "general.entity_resolution_log"
+  ],
+  "source_schema": [
+    "general.entity_resolution_log",
+    "general.entity_source_links"
+  ],
+  "source_table": [
+    "general.entity_resolution_log",
+    "general.entity_source_links"
+  ],
+  "source_name": [
+    "general.entity_resolution_log",
+    "general.entity_source_links"
+  ],
+  "entity_id": [
+    "general.entity_resolution_log",
+    "general.entity_source_links",
+    "general.vw_entity_funding"
+  ],
+  "match_confidence": [
+    "general.entity_resolution_log",
+    "general.entity_source_links"
+  ],
+  "match_method": [
+    "general.entity_resolution_log",
+    "general.entity_source_links"
+  ],
+  "short_name": [
+    "general.ministries",
+    "general.ministries_history"
+  ],
+  "effective_from": [
+    "general.ministries",
+    "general.ministries_history"
+  ],
+  "effective_to": [
+    "general.ministries",
+    "general.ministries_history"
+  ],
+  "is_active": [
+    "general.ministries",
+    "general.ministries_history"
+  ],
+  "started_at": [
+    "general.resolution_batches",
+    "general.splink_build_metadata"
+  ],
+  "completed_at": [
+    "general.resolution_batches",
+    "general.splink_build_metadata"
+  ],
+  "total_records": [
+    "general.resolution_batches",
+    "general.splink_build_metadata"
+  ],
+  "config": [
+    "general.resolution_batches",
+    "general.splink_build_metadata"
+  ],
+  "cluster_id": [
+    "general.splink_aliases",
+    "general.splink_predictions"
+  ],
+  "match_probability": [
+    "general.splink_aliases",
+    "general.splink_predictions"
+  ],
+  "build_id": [
+    "general.splink_aliases",
+    "general.splink_predictions"
+  ]
+}

@@ -1,13 +1,1755 @@
-Traceback (most recent call last):
-  File "/home/user/hackathon-2026-GOA/scripts/recon.py", line 297, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/user/hackathon-2026-GOA/scripts/recon.py", line 60, in main
-    conn = psycopg2.connect(DSN)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/dist-packages/psycopg2/__init__.py", line 122, in connect
-    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.OperationalError: connection to server at "dpg-d7auudv5r7bs738iqh70-b.replica-cyan.oregon-postgres.render.com" (35.230.50.23), port 5432 failed: Connection timed out
-	Is the server running on that host and accepting TCP/IP connections?
+== version + current db ==
+  wrote recon/raw/00_version.json
+[{'version': 'PostgreSQL 18.3 (Debian 18.3-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit', 'db': 'database_database_w2a1', 'user': 'database_database_w2a1_user'}]
 
+== schemas ==
+  wrote recon/raw/01_schemas.json
+  ab (owner=database_database_w2a1_user)
+  cra (owner=database_database_w2a1_user)
+  fed (owner=database_database_w2a1_user)
+  general (owner=database_database_w2a1_user)
+  public (owner=database_database_w2a1_user)
+
+== tables w/ size + row estimates ==
+  wrote recon/raw/02_tables.json
+  fed.grants_contributions  est_rows=   1275521  size=3006 MB
+  general.entity_golden_records  est_rows=    853710  size=1382 MB
+  general.entity_source_links  est_rows=   5157743  size=1342 MB
+  general.entity_merge_candidates  est_rows=   1646131  size=1254 MB
+  general.entities  est_rows=    928687  size=1179 MB
+  ab.ab_grants  est_rows=   1983886  size=1044 MB
+  cra.cra_directors  est_rows=   2872615  size=530 MB
+  general.entity_resolution_log  est_rows=   1255151  size=472 MB
+  cra.cra_qualified_donees  est_rows=   1664343  size=350 MB
+  cra.cra_charitable_programs  est_rows=    478691  size=242 MB
+  cra.cra_financial_details  est_rows=    420849  size=134 MB
+  cra.cra_identification  est_rows=    421866  size=133 MB
+  general.splink_predictions  est_rows=    540640  size=125 MB
+  cra.donee_name_quality  est_rows=    439867  size=122 MB
+  cra.overhead_by_charity  est_rows=    420021  size=94 MB
+  cra.cra_financial_general  est_rows=    422683  size=82 MB
+  public.contracts  est_rows=    153455  size=82 MB
+  ab.ab_grants_recipients  est_rows=    452900  size=79 MB
+  cra.cra_foundation_info  est_rows=    422569  size=67 MB
+  cra.loop_edges  est_rows=     53771  size=60 MB
+  general.entity_merges  est_rows=     63782  size=54 MB
+  cra.cra_compensation  est_rows=    216380  size=40 MB
+  ab.ab_non_profit  est_rows=     69271  size=37 MB
+  cra.govt_funding_by_charity  est_rows=    166968  size=35 MB
+  ab.ab_contracts  est_rows=     67079  size=25 MB
+  cra.t3010_impossibilities  est_rows=     54010  size=23 MB
+  cra.cra_web_urls  est_rows=    169123  size=21 MB
+  cra._dnq_canonical  est_rows=     91129  size=18 MB
+  cra.identification_name_history  est_rows=     92437  size=15 MB
+  cra.cra_resources_sent_outside  est_rows=     68028  size=11 MB
+  ab.ab_sole_source  est_rows=     15533  size=11 MB
+  cra.cra_gifts_in_kind  est_rows=     54575  size=9816 kB
+  cra.cra_activities_outside_countries  est_rows=     44683  size=6632 kB
+  cra.cra_non_qualified_donees  est_rows=     29270  size=6496 kB
+  cra.matrix_census  est_rows=     10177  size=6432 kB
+  cra.cra_disbursement_quota  est_rows=     22151  size=5288 kB
+  ab.ab_grants_programs  est_rows=     20208  size=4360 kB
+  cra.cra_activities_outside_details  est_rows=     25139  size=4344 kB
+  cra.loop_participants  est_rows=     30003  size=4064 kB
+  cra.loop_edge_year_flows  est_rows=     30003  size=4048 kB
+  cra.loops  est_rows=      5808  size=3480 kB
+  cra.scc_components  est_rows=     10177  size=2904 kB
+  cra.johnson_cycles  est_rows=      4601  size=2832 kB
+  cra.cra_political_activity_desc  est_rows=       286  size=936 kB
+  cra.cra_exported_goods  est_rows=      4029  size=776 kB
+  cra.loop_financials  est_rows=      5808  size=704 kB
+  cra.t3010_plausibility_flags  est_rows=      1075  size=664 kB
+  cra.loop_universe  est_rows=      1501  size=624 kB
+  cra.loop_charity_financials  est_rows=      1501  size=376 kB
+  cra.scc_summary  est_rows=       347  size=144 kB
+  cra.partitioned_cycles  est_rows=       108  size=136 kB
+  ab.ab_grants_ministries  est_rows=       352  size=136 kB
+  general.ministries_crosswalk  est_rows=       162  size=128 kB
+  general.ministries_history  est_rows=        62  size=120 kB
+  cra.cra_political_activity_resources  est_rows=       234  size=96 kB
+  general.ministries  est_rows=        -1  size=96 kB
+  cra.cra_sub_category_lookup  est_rows=       247  size=80 kB
+  cra.cra_country_lookup  est_rows=       264  size=72 kB
+  fed.country_lookup  est_rows=       250  size=64 kB
+  cra.cra_province_state_lookup  est_rows=        73  size=56 kB
+  ab.ab_non_profit_status_lookup  est_rows=        -1  size=48 kB
+  ab.ab_grants_fiscal_years  est_rows=        -1  size=48 kB
+  general.donee_trigram_candidates  est_rows=        -1  size=40 kB
+  cra.t3010_completeness_issues  est_rows=        -1  size=40 kB
+  cra.identified_hubs  est_rows=        -1  size=32 kB
+  cra.cra_designation_lookup  est_rows=        -1  size=32 kB
+  cra.overhead_by_year  est_rows=        -1  size=32 kB
+  cra.overhead_by_year_designation  est_rows=        -1  size=32 kB
+  cra.govt_funding_by_year  est_rows=        -1  size=32 kB
+  general.splink_aliases  est_rows=        -1  size=32 kB
+  cra.cra_category_lookup  est_rows=        30  size=32 kB
+  fed.currency_lookup  est_rows=        94  size=32 kB
+  fed.province_lookup  est_rows=        -1  size=32 kB
+  fed.recipient_type_lookup  est_rows=        -1  size=32 kB
+  fed.agreement_type_lookup  est_rows=        -1  size=32 kB
+  cra.cra_program_type_lookup  est_rows=        -1  size=32 kB
+  general.splink_build_metadata  est_rows=        -1  size=32 kB
+  cra.cra_political_activity_funding  est_rows=        -1  size=24 kB
+  general.resolution_batches  est_rows=        -1  size=16 kB
+
+== exact row counts ==
+  "fed"."grants_contributions": 1275521
+  "general"."entity_golden_records": 851300
+  count failed for "general"."entity_source_links": proxy 400: {"detail":"postgres error: QueryCanceled: canceling statement due to statement timeout\n"}
+  "general"."entity_source_links": None
+  "general"."entity_merge_candidates": 1643060
+  "general"."entities": 926670
+  "ab"."ab_grants": 1986676
+  "cra"."cra_directors": 2873624
+  "general"."entity_resolution_log": 1266141
+  "cra"."cra_qualified_donees": 1664343
+  "cra"."cra_charitable_programs": 478691
+  "cra"."cra_financial_details": 420849
+  "cra"."cra_identification": 421866
+  "general"."splink_predictions": 540640
+  "cra"."donee_name_quality": 439867
+  "cra"."overhead_by_charity": 420021
+  "cra"."cra_financial_general": 422683
+  "public"."contracts": 153455
+  "ab"."ab_grants_recipients": 452900
+  "cra"."cra_foundation_info": 422569
+  "cra"."loop_edges": 53771
+  "general"."entity_merges": 66147
+  "cra"."cra_compensation": 216380
+  "ab"."ab_non_profit": 69271
+  "cra"."govt_funding_by_charity": 166968
+  "ab"."ab_contracts": 67079
+  "cra"."t3010_impossibilities": 54010
+  "cra"."cra_web_urls": 169123
+  "cra"."_dnq_canonical": 91129
+  "cra"."identification_name_history": 92437
+  "cra"."cra_resources_sent_outside": 68028
+  "ab"."ab_sole_source": 15533
+  "cra"."cra_gifts_in_kind": 54575
+  "cra"."cra_activities_outside_countries": 44683
+  "cra"."cra_non_qualified_donees": 29270
+  "cra"."matrix_census": 10177
+  "cra"."cra_disbursement_quota": 22151
+  "ab"."ab_grants_programs": 20208
+  "cra"."cra_activities_outside_details": 25139
+  "cra"."loop_participants": 30003
+  "cra"."loop_edge_year_flows": 30003
+  "cra"."loops": 5808
+  "cra"."scc_components": 10177
+  "cra"."johnson_cycles": 4601
+  "cra"."cra_political_activity_desc": 313
+  "cra"."cra_exported_goods": 4029
+  "cra"."loop_financials": 5808
+  "cra"."t3010_plausibility_flags": 1075
+  "cra"."loop_universe": 1501
+  "cra"."loop_charity_financials": 1501
+  "cra"."scc_summary": 347
+  "cra"."partitioned_cycles": 108
+  "ab"."ab_grants_ministries": 352
+  "general"."ministries_crosswalk": 162
+  "general"."ministries_history": 62
+  "cra"."cra_political_activity_resources": 234
+  "general"."ministries": 27
+  "cra"."cra_sub_category_lookup": 247
+  "cra"."cra_country_lookup": 264
+  "fed"."country_lookup": 250
+  "cra"."cra_province_state_lookup": 73
+  "ab"."ab_non_profit_status_lookup": 16
+  "ab"."ab_grants_fiscal_years": 12
+  "general"."donee_trigram_candidates": 0
+  "cra"."t3010_completeness_issues": 0
+  "cra"."identified_hubs": 20
+  "cra"."cra_designation_lookup": 3
+  "cra"."overhead_by_year": 5
+  "cra"."overhead_by_year_designation": 16
+  "cra"."govt_funding_by_year": 5
+  "general"."splink_aliases": 0
+  "cra"."cra_category_lookup": 30
+  "fed"."currency_lookup": 94
+  "fed"."province_lookup": 13
+  "fed"."recipient_type_lookup": 8
+  "fed"."agreement_type_lookup": 3
+  "cra"."cra_program_type_lookup": 3
+  "general"."splink_build_metadata": 1
+  "cra"."cra_political_activity_funding": 0
+  "general"."resolution_batches": 0
+  wrote recon/raw/03_exact_counts.json
+
+== columns ==
+  wrote recon/raw/04_columns.json
+  ab.ab_contracts:
+    id                             uuid                 null=NO
+    display_fiscal_year            text                 null=YES
+    recipient                      text                 null=YES
+    amount                         numeric              null=YES
+    ministry                       text                 null=YES
+  ab.ab_grants:
+    id                             int4                 null=NO
+    ministry                       text                 null=YES
+    business_unit_name             text                 null=YES
+    recipient                      text                 null=YES
+    program                        text                 null=YES
+    amount                         numeric              null=YES
+    lottery                        text                 null=YES
+    payment_date                   timestamp            null=YES
+    fiscal_year                    text                 null=YES
+    display_fiscal_year            text                 null=YES
+    lottery_fund                   text                 null=YES
+    version                        int4                 null=YES
+    created_at                     timestamp            null=YES
+    updated_at                     timestamp            null=YES
+  ab.ab_grants_fiscal_years:
+    id                             int4                 null=NO
+    mongo_id                       varchar              null=YES
+    display_fiscal_year            text                 null=YES
+    count                          int4                 null=YES
+    total_amount                   numeric              null=YES
+    last_updated                   timestamp            null=YES
+    version                        int4                 null=YES
+  ab.ab_grants_ministries:
+    id                             int4                 null=NO
+    mongo_id                       varchar              null=YES
+    ministry                       text                 null=YES
+    display_fiscal_year            text                 null=YES
+    aggregation_type               text                 null=YES
+    count                          int4                 null=YES
+    total_amount                   numeric              null=YES
+    last_updated                   timestamp            null=YES
+    version                        int4                 null=YES
+  ab.ab_grants_programs:
+    id                             int4                 null=NO
+    mongo_id                       varchar              null=YES
+    program                        text                 null=YES
+    ministry                       text                 null=YES
+    display_fiscal_year            text                 null=YES
+    aggregation_type               text                 null=YES
+    count                          int4                 null=YES
+    total_amount                   numeric              null=YES
+    last_updated                   timestamp            null=YES
+    version                        int4                 null=YES
+  ab.ab_grants_recipients:
+    id                             int4                 null=NO
+    mongo_id                       varchar              null=YES
+    recipient                      text                 null=YES
+    payments_count                 int4                 null=YES
+    payments_amount                numeric              null=YES
+    programs_count                 int4                 null=YES
+    ministries_count               int4                 null=YES
+    last_updated                   timestamp            null=YES
+    version                        int4                 null=YES
+  ab.ab_non_profit:
+    id                             uuid                 null=NO
+    type                           text                 null=YES
+    legal_name                     text                 null=YES
+    status                         text                 null=YES
+    registration_date              date                 null=YES
+    city                           text                 null=YES
+    postal_code                    text                 null=YES
+  ab.ab_non_profit_status_lookup:
+    id                             int4                 null=NO
+    status                         text                 null=NO
+    description                    text                 null=YES
+  ab.ab_sole_source:
+    id                             uuid                 null=NO
+    ministry                       text                 null=YES
+    department_street              text                 null=YES
+    department_street_2            text                 null=YES
+    department_city                text                 null=YES
+    department_province            text                 null=YES
+    department_postal_code         text                 null=YES
+    department_country             text                 null=YES
+    vendor                         text                 null=YES
+    vendor_street                  text                 null=YES
+    vendor_street_2                text                 null=YES
+    vendor_city                    text                 null=YES
+    vendor_province                text                 null=YES
+    vendor_postal_code             text                 null=YES
+    vendor_country                 text                 null=YES
+    start_date                     date                 null=YES
+    end_date                       date                 null=YES
+    amount                         numeric              null=YES
+    contract_number                text                 null=YES
+    contract_services              text                 null=YES
+    permitted_situations           text                 null=YES
+    display_fiscal_year            text                 null=YES
+    special                        text                 null=YES
+  ab.vw_grants_by_ministry:
+    display_fiscal_year            text                 null=YES
+    ministry                       text                 null=YES
+    payment_count                  int8                 null=YES
+    total_amount                   numeric              null=YES
+    avg_amount                     numeric              null=YES
+    min_amount                     numeric              null=YES
+    max_amount                     numeric              null=YES
+  ab.vw_grants_by_recipient:
+    recipient                      text                 null=YES
+    payment_count                  int8                 null=YES
+    total_amount                   numeric              null=YES
+    fiscal_years_active            int8                 null=YES
+    ministries_count               int8                 null=YES
+    programs_count                 int8                 null=YES
+  ab.vw_non_profit_decoded:
+    id                             uuid                 null=YES
+    type                           text                 null=YES
+    legal_name                     text                 null=YES
+    status                         text                 null=YES
+    registration_date              date                 null=YES
+    city                           text                 null=YES
+    postal_code                    text                 null=YES
+    status_description             text                 null=YES
+  cra._dnq_canonical:
+    bn                             varchar              null=YES
+    legal_name                     text                 null=YES
+    nname                          text                 null=YES
+  cra.cra_activities_outside_countries:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    country                        bpchar               null=YES
+  cra.cra_activities_outside_details:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    field_200                      numeric              null=YES
+    field_210                      bool                 null=YES
+    field_220                      bool                 null=YES
+    field_230                      text                 null=YES
+    field_240                      bool                 null=YES
+    field_250                      bool                 null=YES
+    field_260                      bool                 null=YES
+  cra.cra_category_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+    description_en                 text                 null=YES
+    description_fr                 text                 null=YES
+  cra.cra_charitable_programs:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    program_type                   varchar              null=NO
+    description                    text                 null=YES
+  cra.cra_compensation:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    field_300                      int4                 null=YES
+    field_305                      int4                 null=YES
+    field_310                      int4                 null=YES
+    field_315                      int4                 null=YES
+    field_320                      int4                 null=YES
+    field_325                      int4                 null=YES
+    field_330                      int4                 null=YES
+    field_335                      int4                 null=YES
+    field_340                      int4                 null=YES
+    field_345                      int4                 null=YES
+    field_370                      int4                 null=YES
+    field_380                      numeric              null=YES
+    field_390                      numeric              null=YES
+  cra.cra_country_lookup:
+    code                           bpchar               null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+  cra.cra_designation_lookup:
+    code                           bpchar               null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+    description_en                 text                 null=YES
+    description_fr                 text                 null=YES
+  cra.cra_directors:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    last_name                      text                 null=YES
+    first_name                     text                 null=YES
+    initials                       text                 null=YES
+    position                       text                 null=YES
+    at_arms_length                 bool                 null=YES
+    start_date                     date                 null=YES
+    end_date                       date                 null=YES
+  cra.cra_disbursement_quota:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    field_805                      numeric              null=YES
+    field_810                      numeric              null=YES
+    field_815                      numeric              null=YES
+    field_820                      numeric              null=YES
+    field_825                      numeric              null=YES
+    field_830                      numeric              null=YES
+    field_835                      numeric              null=YES
+    field_840                      numeric              null=YES
+    field_845                      numeric              null=YES
+    field_850                      numeric              null=YES
+    field_855                      numeric              null=YES
+    field_860                      numeric              null=YES
+    field_865                      numeric              null=YES
+    field_870                      numeric              null=YES
+    field_875                      numeric              null=YES
+    field_880                      numeric              null=YES
+    field_885                      numeric              null=YES
+    field_890                      numeric              null=YES
+  cra.cra_exported_goods:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    item_name                      text                 null=YES
+    item_value                     numeric              null=YES
+    destination                    text                 null=YES
+    country                        bpchar               null=YES
+  cra.cra_financial_details:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    section_used                   bpchar               null=YES
+    field_4020                     bpchar               null=YES
+    field_4050                     bool                 null=YES
+    field_4100                     numeric              null=YES
+    field_4101                     numeric              null=YES
+    field_4102                     numeric              null=YES
+    field_4110                     numeric              null=YES
+    field_4120                     numeric              null=YES
+    field_4130                     numeric              null=YES
+    field_4140                     numeric              null=YES
+    field_4150                     numeric              null=YES
+    field_4155                     numeric              null=YES
+    field_4157                     numeric              null=YES
+    field_4158                     numeric              null=YES
+    field_4160                     numeric              null=YES
+    field_4165                     numeric              null=YES
+    field_4166                     numeric              null=YES
+    field_4170                     numeric              null=YES
+    field_4180                     numeric              null=YES
+    field_4190                     numeric              null=YES
+    field_4200                     numeric              null=YES
+    field_4250                     numeric              null=YES
+    field_4300                     numeric              null=YES
+    field_4310                     numeric              null=YES
+    field_4320                     numeric              null=YES
+    field_4330                     numeric              null=YES
+    field_4350                     numeric              null=YES
+    field_4400                     bool                 null=YES
+    field_4490                     bool                 null=YES
+    field_4500                     numeric              null=YES
+    field_4505                     numeric              null=YES
+    field_4510                     numeric              null=YES
+    field_4530                     numeric              null=YES
+    field_4540                     numeric              null=YES
+    field_4550                     numeric              null=YES
+    field_4560                     numeric              null=YES
+    field_4565                     bool                 null=YES
+    field_4570                     numeric              null=YES
+    field_4571                     numeric              null=YES
+    field_4575                     numeric              null=YES
+    field_4576                     numeric              null=YES
+    field_4577                     numeric              null=YES
+    field_4580                     numeric              null=YES
+    field_4590                     numeric              null=YES
+    field_4600                     numeric              null=YES
+    field_4610                     numeric              null=YES
+    field_4620                     numeric              null=YES
+    field_4630                     numeric              null=YES
+    field_4640                     numeric              null=YES
+    field_4650                     numeric              null=YES
+    field_4655                     text                 null=YES
+    field_4700                     numeric              null=YES
+    field_4800                     numeric              null=YES
+    field_4810                     numeric              null=YES
+    field_4820                     numeric              null=YES
+    field_4830                     numeric              null=YES
+    field_4840                     numeric              null=YES
+    field_4850                     numeric              null=YES
+    field_4860                     numeric              null=YES
+    field_4870                     numeric              null=YES
+    field_4880                     numeric              null=YES
+    field_4890                     numeric              null=YES
+    field_4891                     numeric              null=YES
+    field_4900                     numeric              null=YES
+    field_4910                     numeric              null=YES
+    field_4920                     numeric              null=YES
+    field_4930                     text                 null=YES
+    field_4950                     numeric              null=YES
+    field_5000                     numeric              null=YES
+    field_5010                     numeric              null=YES
+    field_5020                     numeric              null=YES
+    field_5030                     numeric              null=YES
+    field_5040                     numeric              null=YES
+    field_5045                     numeric              null=YES
+    field_5050                     numeric              null=YES
+    field_5100                     numeric              null=YES
+    field_5500                     numeric              null=YES
+    field_5510                     numeric              null=YES
+    field_5610                     numeric              null=YES
+    field_5750                     numeric              null=YES
+    field_5900                     numeric              null=YES
+    field_5910                     numeric              null=YES
+    field_5030_indicator           text                 null=YES
+  cra.cra_financial_general:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    program_area_1                 varchar              null=YES
+    program_area_2                 varchar              null=YES
+    program_area_3                 varchar              null=YES
+    program_percentage_1           int4                 null=YES
+    program_percentage_2           int4                 null=YES
+    program_percentage_3           int4                 null=YES
+    program_description_1          text                 null=YES
+    program_description_2          text                 null=YES
+    program_description_3          text                 null=YES
+    internal_division_1510_01      int4                 null=YES
+    internal_division_1510_02      int4                 null=YES
+    internal_division_1510_03      int4                 null=YES
+    internal_division_1510_04      int4                 null=YES
+    internal_division_1510_05      int4                 null=YES
+    field_1510_subordinate         bool                 null=YES
+    field_1510_parent_bn           varchar              null=YES
+    field_1510_parent_name         text                 null=YES
+    field_1570                     bool                 null=YES
+    field_1600                     bool                 null=YES
+    field_1610                     bool                 null=YES
+    field_1620                     bool                 null=YES
+    field_1630                     bool                 null=YES
+    field_1640                     bool                 null=YES
+    field_1650                     bool                 null=YES
+    field_1800                     bool                 null=YES
+    field_2000                     bool                 null=YES
+    field_2100                     bool                 null=YES
+    field_2110                     bool                 null=YES
+    field_2300                     bool                 null=YES
+    field_2350                     bool                 null=YES
+    field_2400                     bool                 null=YES
+    field_2500                     bool                 null=YES
+    field_2510                     bool                 null=YES
+    field_2520                     bool                 null=YES
+    field_2530                     bool                 null=YES
+    field_2540                     bool                 null=YES
+    field_2550                     bool                 null=YES
+    field_2560                     bool                 null=YES
+    field_2570                     bool                 null=YES
+    field_2575                     bool                 null=YES
+    field_2580                     bool                 null=YES
+    field_2590                     bool                 null=YES
+    field_2600                     bool                 null=YES
+    field_2610                     bool                 null=YES
+    field_2620                     bool                 null=YES
+    field_2630                     bool                 null=YES
+    field_2640                     bool                 null=YES
+    field_2650                     bool                 null=YES
+    field_2660                     text                 null=YES
+    field_2700                     bool                 null=YES
+    field_2730                     bool                 null=YES
+    field_2740                     bool                 null=YES
+    field_2750                     bool                 null=YES
+    field_2760                     bool                 null=YES
+    field_2770                     bool                 null=YES
+    field_2780                     bool                 null=YES
+    field_2790                     text                 null=YES
+    field_2800                     bool                 null=YES
+    field_3200                     bool                 null=YES
+    field_3205                     bool                 null=YES
+    field_3210                     bool                 null=YES
+    field_3220                     bool                 null=YES
+    field_3230                     bool                 null=YES
+    field_3235                     bool                 null=YES
+    field_3240                     bool                 null=YES
+    field_3250                     bool                 null=YES
+    field_3260                     bool                 null=YES
+    field_3270                     bool                 null=YES
+    field_3400                     bool                 null=YES
+    field_3600                     bool                 null=YES
+    field_3610                     bool                 null=YES
+    field_3900                     bool                 null=YES
+    field_4000                     bool                 null=YES
+    field_4010                     bool                 null=YES
+    field_5000                     bool                 null=YES
+    field_5010                     bool                 null=YES
+    field_5030                     numeric              null=YES
+    field_5031                     numeric              null=YES
+    field_5032                     numeric              null=YES
+    field_5450                     numeric              null=YES
+    field_5460                     numeric              null=YES
+    field_5800                     bool                 null=YES
+    field_5810                     bool                 null=YES
+    field_5820                     bool                 null=YES
+    field_5830                     bool                 null=YES
+    field_5840                     bool                 null=YES
+    field_5841                     bool                 null=YES
+    field_5842                     int4                 null=YES
+    field_5843                     numeric              null=YES
+    field_5844                     bool                 null=YES
+    field_5845                     bool                 null=YES
+    field_5846                     bool                 null=YES
+    field_5847                     bool                 null=YES
+    field_5848                     bool                 null=YES
+    field_5849                     bool                 null=YES
+    field_5850                     bool                 null=YES
+    field_5851                     bool                 null=YES
+    field_5852                     bool                 null=YES
+    field_5853                     bool                 null=YES
+    field_5854                     bool                 null=YES
+    field_5855                     bool                 null=YES
+    field_5856                     bool                 null=YES
+    field_5857                     bool                 null=YES
+    field_5858                     bool                 null=YES
+    field_5859                     bool                 null=YES
+    field_5860                     bool                 null=YES
+    field_5861                     int4                 null=YES
+    field_5862                     numeric              null=YES
+    field_5863                     numeric              null=YES
+    field_5864                     numeric              null=YES
+  cra.cra_foundation_info:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    field_100                      bool                 null=YES
+    field_110                      bool                 null=YES
+    field_111                      numeric              null=YES
+    field_112                      numeric              null=YES
+    field_120                      bool                 null=YES
+    field_130                      bool                 null=YES
+  cra.cra_gifts_in_kind:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    field_500                      bool                 null=YES
+    field_505                      bool                 null=YES
+    field_510                      bool                 null=YES
+    field_515                      bool                 null=YES
+    field_520                      bool                 null=YES
+    field_525                      bool                 null=YES
+    field_530                      bool                 null=YES
+    field_535                      bool                 null=YES
+    field_540                      bool                 null=YES
+    field_545                      bool                 null=YES
+    field_550                      bool                 null=YES
+    field_555                      bool                 null=YES
+    field_560                      bool                 null=YES
+    field_565                      text                 null=YES
+    field_580                      numeric              null=YES
+  cra.cra_identification:
+    bn                             varchar              null=NO
+    fiscal_year                    int4                 null=NO
+    category                       varchar              null=YES
+    sub_category                   varchar              null=YES
+    designation                    bpchar               null=YES
+    legal_name                     text                 null=YES
+    account_name                   text                 null=YES
+    address_line_1                 text                 null=YES
+    address_line_2                 text                 null=YES
+    city                           text                 null=YES
+    province                       varchar              null=YES
+    postal_code                    varchar              null=YES
+    country                        bpchar               null=YES
+    registration_date              date                 null=YES
+    language                       varchar              null=YES
+    contact_phone                  text                 null=YES
+    contact_email                  text                 null=YES
+  cra.cra_non_qualified_donees:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    recipient_name                 text                 null=YES
+    purpose                        text                 null=YES
+    cash_amount                    numeric              null=YES
+    non_cash_amount                numeric              null=YES
+    country                        text                 null=YES
+  cra.cra_political_activity_desc:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    description                    text                 null=YES
+  cra.cra_political_activity_funding:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    activity                       text                 null=YES
+    amount                         numeric              null=YES
+    country                        bpchar               null=YES
+  cra.cra_political_activity_resources:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    staff                          bool                 null=YES
+    volunteers                     bool                 null=YES
+    financial                      bool                 null=YES
+    property                       bool                 null=YES
+    other_resource                 text                 null=YES
+  cra.cra_program_type_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+    description_en                 text                 null=YES
+    description_fr                 text                 null=YES
+  cra.cra_province_state_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+    country                        bpchar               null=YES
+  cra.cra_qualified_donees:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    donee_bn                       varchar              null=YES
+    donee_name                     text                 null=YES
+    associated                     bool                 null=YES
+    city                           text                 null=YES
+    province                       varchar              null=YES
+    total_gifts                    numeric              null=YES
+    gifts_in_kind                  numeric              null=YES
+    number_of_donees               int4                 null=YES
+    political_activity_gift        bool                 null=YES
+    political_activity_amount      numeric              null=YES
+  cra.cra_resources_sent_outside:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    form_id                        int4                 null=YES
+    sequence_number                int4                 null=NO
+    individual_org_name            text                 null=YES
+    amount                         numeric              null=YES
+    country                        bpchar               null=YES
+  cra.cra_sub_category_lookup:
+    category_code                  varchar              null=NO
+    sub_category_code              varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+    description_en                 text                 null=YES
+    description_fr                 text                 null=YES
+  cra.cra_web_urls:
+    bn                             varchar              null=NO
+    fiscal_year                    int4                 null=NO
+    sequence_number                int4                 null=NO
+    contact_url                    text                 null=YES
+  cra.donee_name_quality:
+    donee_bn                       varchar              null=NO
+    donee_name                     text                 null=NO
+    canonical_name                 text                 null=YES
+    mismatch_category              text                 null=NO
+    bn_defect                      text                 null=YES
+    trigram_sim                    numeric              null=YES
+    citations                      int4                 null=YES
+    total_gifts                    numeric              null=YES
+  cra.govt_funding_by_charity:
+    bn                             varchar              null=NO
+    fiscal_year                    int4                 null=NO
+    legal_name                     text                 null=YES
+    designation                    bpchar               null=YES
+    category                       varchar              null=YES
+    federal                        numeric              null=YES
+    provincial                     numeric              null=YES
+    municipal                      numeric              null=YES
+    combined_sectiond              numeric              null=YES
+    total_govt                     numeric              null=YES
+    revenue                        numeric              null=YES
+    govt_share_of_rev              numeric              null=YES
+  cra.govt_funding_by_year:
+    fiscal_year                    int4                 null=NO
+    charities_filed                int4                 null=YES
+    charities_any_govt             int4                 null=YES
+    federal                        numeric              null=YES
+    provincial                     numeric              null=YES
+    municipal                      numeric              null=YES
+    combined_sectiond              numeric              null=YES
+    total_govt                     numeric              null=YES
+    total_revenue                  numeric              null=YES
+    federal_pct                    numeric              null=YES
+    provincial_pct                 numeric              null=YES
+    municipal_pct                  numeric              null=YES
+    total_govt_pct                 numeric              null=YES
+  cra.identification_name_history:
+    bn                             varchar              null=YES
+    legal_name                     text                 null=YES
+    account_name                   text                 null=YES
+    first_year                     int4                 null=YES
+    last_year                      int4                 null=YES
+    years_present                  int4                 null=YES
+  cra.identified_hubs:
+    bn                             varchar              null=NO
+    legal_name                     text                 null=YES
+    scc_id                         int4                 null=YES
+    in_degree                      int4                 null=YES
+    out_degree                     int4                 null=YES
+    total_degree                   int4                 null=YES
+    total_inflow                   numeric              null=YES
+    total_outflow                  numeric              null=YES
+    hub_type                       varchar              null=YES
+  cra.johnson_cycles:
+    id                             int4                 null=NO
+    hops                           int4                 null=NO
+    path_bns                       _varchar             null=NO
+    path_display                   text                 null=NO
+    bottleneck_amt                 numeric              null=YES
+    total_flow                     numeric              null=YES
+    min_year                       int4                 null=YES
+    max_year                       int4                 null=YES
+  cra.loop_charity_financials:
+    bn                             varchar              null=NO
+    legal_name                     text                 null=YES
+    designation                    bpchar               null=YES
+    category                       varchar              null=YES
+    circular_outflow               numeric              null=YES
+    circular_inflow                numeric              null=YES
+    loops_count                    int4                 null=YES
+    revenue                        numeric              null=YES
+    gifts_received_charities       numeric              null=YES
+    gifts_given_donees             numeric              null=YES
+    total_expenditures             numeric              null=YES
+    program_spending               numeric              null=YES
+    admin_spending                 numeric              null=YES
+    fundraising_spending           numeric              null=YES
+    compensation_spending          numeric              null=YES
+  cra.loop_edge_year_flows:
+    loop_id                        int4                 null=NO
+    hop_idx                        int4                 null=NO
+    src                            varchar              null=NO
+    dst                            varchar              null=NO
+    year_flow                      numeric              null=NO
+    gift_count                     int4                 null=NO
+  cra.loop_edges:
+    src                            varchar              null=NO
+    dst                            varchar              null=NO
+    total_amt                      numeric              null=NO
+    edge_count                     int4                 null=NO
+    min_year                       int4                 null=YES
+    max_year                       int4                 null=YES
+    years                          _int4                null=YES
+  cra.loop_financials:
+    loop_id                        int4                 null=NO
+    hops                           int4                 null=NO
+    same_year                      bool                 null=NO
+    min_year                       int4                 null=YES
+    max_year                       int4                 null=YES
+    bottleneck_window              numeric              null=YES
+    total_flow_window              numeric              null=YES
+    bottleneck_allyears            numeric              null=YES
+    total_flow_allyears            numeric              null=YES
+  cra.loop_participants:
+    bn                             varchar              null=NO
+    loop_id                        int4                 null=NO
+    position_in_loop               int4                 null=NO
+    sends_to                       varchar              null=YES
+    receives_from                  varchar              null=YES
+  cra.loop_universe:
+    bn                             varchar              null=NO
+    legal_name                     text                 null=YES
+    total_loops                    int4                 null=YES
+    loops_2hop                     int4                 null=YES
+    loops_3hop                     int4                 null=YES
+    loops_4hop                     int4                 null=YES
+    loops_5hop                     int4                 null=YES
+    loops_6hop                     int4                 null=YES
+    loops_7plus                    int4                 null=YES
+    max_bottleneck                 numeric              null=YES
+    total_circular_amt             numeric              null=YES
+    score                          int4                 null=YES
+    scored_at                      timestamptz          null=YES
+  cra.loops:
+    id                             int4                 null=NO
+    hops                           int4                 null=NO
+    path_bns                       _varchar             null=NO
+    path_display                   text                 null=NO
+    bottleneck_amt                 numeric              null=YES
+    total_flow                     numeric              null=YES
+    min_year                       int4                 null=YES
+    max_year                       int4                 null=YES
+  cra.matrix_census:
+    bn                             varchar              null=NO
+    legal_name                     text                 null=YES
+    walks_2                        numeric              null=YES
+    walks_3                        numeric              null=YES
+    walks_4                        numeric              null=YES
+    walks_5                        numeric              null=YES
+    walks_6                        numeric              null=YES
+    walks_7                        numeric              null=YES
+    walks_8                        numeric              null=YES
+    max_walk_length                int4                 null=YES
+    total_walk_count               numeric              null=YES
+    in_johnson_cycle               bool                 null=YES
+    in_selfjoin_cycle              bool                 null=YES
+    scc_id                         int4                 null=YES
+    scc_size                       int4                 null=YES
+  cra.overhead_by_charity:
+    bn                             varchar              null=NO
+    fiscal_year                    int4                 null=NO
+    legal_name                     text                 null=YES
+    designation                    bpchar               null=YES
+    category                       varchar              null=YES
+    revenue                        numeric              null=YES
+    total_expenditures             numeric              null=YES
+    compensation                   numeric              null=YES
+    administration                 numeric              null=YES
+    fundraising                    numeric              null=YES
+    programs                       numeric              null=YES
+    strict_overhead                numeric              null=YES
+    broad_overhead                 numeric              null=YES
+    strict_overhead_pct            numeric              null=YES
+    broad_overhead_pct             numeric              null=YES
+    outlier_flag                   bool                 null=YES
+  cra.overhead_by_year:
+    fiscal_year                    int4                 null=NO
+    charities_filed                int4                 null=YES
+    outliers_excluded              int4                 null=YES
+    revenue                        numeric              null=YES
+    total_expenditures             numeric              null=YES
+    compensation                   numeric              null=YES
+    administration                 numeric              null=YES
+    fundraising                    numeric              null=YES
+    programs                       numeric              null=YES
+    strict_overhead                numeric              null=YES
+    broad_overhead                 numeric              null=YES
+    comp_pct_rev                   numeric              null=YES
+    admin_pct_rev                  numeric              null=YES
+    fundraising_pct_rev            numeric              null=YES
+    strict_overhead_pct_rev        numeric              null=YES
+    broad_overhead_pct_rev         numeric              null=YES
+    comp_pct_exp                   numeric              null=YES
+    admin_pct_exp                  numeric              null=YES
+    fundraising_pct_exp            numeric              null=YES
+    strict_overhead_pct_exp        numeric              null=YES
+    broad_overhead_pct_exp         numeric              null=YES
+  cra.overhead_by_year_designation:
+    fiscal_year                    int4                 null=NO
+    designation                    bpchar               null=NO
+    charities                      int4                 null=YES
+    revenue                        numeric              null=YES
+    total_expenditures             numeric              null=YES
+    compensation                   numeric              null=YES
+    administration                 numeric              null=YES
+    fundraising                    numeric              null=YES
+    programs                       numeric              null=YES
+    strict_overhead                numeric              null=YES
+    broad_overhead                 numeric              null=YES
+    strict_overhead_pct_rev        numeric              null=YES
+    broad_overhead_pct_rev         numeric              null=YES
+    strict_overhead_pct_exp        numeric              null=YES
+    broad_overhead_pct_exp         numeric              null=YES
+  cra.partitioned_cycles:
+    id                             int4                 null=NO
+    hops                           int4                 null=NO
+    path_bns                       _varchar             null=NO
+    path_display                   text                 null=NO
+    bottleneck_amt                 numeric              null=YES
+    total_flow                     numeric              null=YES
+    min_year                       int4                 null=YES
+    max_year                       int4                 null=YES
+    tier                           varchar              null=NO
+    source_scc_id                  int4                 null=YES
+    source_scc_size                int4                 null=YES
+  cra.scc_components:
+    bn                             varchar              null=NO
+    scc_id                         int4                 null=NO
+    scc_root                       varchar              null=NO
+    scc_size                       int4                 null=NO
+    legal_name                     text                 null=YES
+  cra.scc_summary:
+    scc_id                         int4                 null=NO
+    scc_root                       varchar              null=NO
+    node_count                     int4                 null=NO
+    edge_count                     int4                 null=NO
+    total_internal_flow            numeric              null=YES
+    cycle_count_from_loops         int4                 null=YES
+    cycle_count_from_johnson       int4                 null=YES
+    top_charity_names              _text                null=YES
+  cra.t3010_completeness_issues:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    fiscal_year                    int4                 null=NO
+    legal_name                     text                 null=YES
+    rule_code                      text                 null=NO
+    missing_field                  text                 null=NO
+    context_rule                   text                 null=NO
+    details                        text                 null=YES
+  cra.t3010_impossibilities:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    fiscal_year                    int4                 null=NO
+    legal_name                     text                 null=YES
+    rule_code                      text                 null=NO
+    rule_family                    text                 null=NO
+    details                        text                 null=YES
+    severity                       numeric              null=YES
+  cra.t3010_plausibility_flags:
+    bn                             varchar              null=NO
+    fpe                            date                 null=NO
+    fiscal_year                    int4                 null=NO
+    legal_name                     text                 null=YES
+    rule_code                      text                 null=NO
+    offending_field                text                 null=NO
+    details                        text                 null=YES
+    severity                       numeric              null=YES
+  cra.vw_charity_financials_by_year:
+    bn                             varchar              null=YES
+    legal_name                     text                 null=YES
+    account_name                   text                 null=YES
+    fiscal_period_end              date                 null=YES
+    fiscal_year                    numeric              null=YES
+    total_revenue                  numeric              null=YES
+    tax_receipted_gifts            numeric              null=YES
+    federal_government_revenue     numeric              null=YES
+    provincial_government_revenue  numeric              null=YES
+    municipal_government_revenue   numeric              null=YES
+    total_expenditures_before_disbursements numeric              null=YES
+    charitable_programs_expenditure numeric              null=YES
+    management_and_admin_expenditure numeric              null=YES
+    fundraising_expenditure        numeric              null=YES
+    gifts_to_qualified_donees      numeric              null=YES
+    total_expenditures             numeric              null=YES
+    total_assets                   numeric              null=YES
+    total_liabilities              numeric              null=YES
+    net_assets                     numeric              null=YES
+  cra.vw_charity_profiles:
+    bn                             varchar              null=YES
+    fiscal_year                    int4                 null=YES
+    legal_name                     text                 null=YES
+    account_name                   text                 null=YES
+    address_line_1                 text                 null=YES
+    address_line_2                 text                 null=YES
+    city                           text                 null=YES
+    province                       varchar              null=YES
+    province_name                  text                 null=YES
+    postal_code                    varchar              null=YES
+    country                        bpchar               null=YES
+    country_name                   text                 null=YES
+    category                       varchar              null=YES
+    category_name                  text                 null=YES
+    sub_category                   varchar              null=YES
+    sub_category_name              text                 null=YES
+    designation                    bpchar               null=YES
+    designation_name               text                 null=YES
+    designation_description        text                 null=YES
+  cra.vw_charity_programs:
+    bn                             varchar              null=YES
+    legal_name                     text                 null=YES
+    account_name                   text                 null=YES
+    fiscal_period_end              date                 null=YES
+    fiscal_year                    numeric              null=YES
+    program_type                   varchar              null=YES
+    program_type_name              text                 null=YES
+    description                    text                 null=YES
+  fed.agreement_type_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+  fed.country_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+  fed.currency_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+  fed.grants_contributions:
+    _id                            int4                 null=NO
+    ref_number                     text                 null=YES
+    amendment_number               text                 null=YES
+    amendment_date                 date                 null=YES
+    agreement_type                 text                 null=YES
+    agreement_number               text                 null=YES
+    recipient_type                 text                 null=YES
+    recipient_business_number      text                 null=YES
+    recipient_legal_name           text                 null=YES
+    recipient_operating_name       text                 null=YES
+    research_organization_name     text                 null=YES
+    recipient_country              text                 null=YES
+    recipient_province             text                 null=YES
+    recipient_city                 text                 null=YES
+    recipient_postal_code          text                 null=YES
+    federal_riding_name_en         text                 null=YES
+    federal_riding_name_fr         text                 null=YES
+    federal_riding_number          text                 null=YES
+    prog_name_en                   text                 null=YES
+    prog_name_fr                   text                 null=YES
+    prog_purpose_en                text                 null=YES
+    prog_purpose_fr                text                 null=YES
+    agreement_title_en             text                 null=YES
+    agreement_title_fr             text                 null=YES
+    agreement_value                numeric              null=YES
+    foreign_currency_type          text                 null=YES
+    foreign_currency_value         numeric              null=YES
+    agreement_start_date           date                 null=YES
+    agreement_end_date             date                 null=YES
+    coverage                       text                 null=YES
+    description_en                 text                 null=YES
+    description_fr                 text                 null=YES
+    expected_results_en            text                 null=YES
+    expected_results_fr            text                 null=YES
+    additional_information_en      text                 null=YES
+    additional_information_fr      text                 null=YES
+    naics_identifier               text                 null=YES
+    owner_org                      text                 null=YES
+    owner_org_title                text                 null=YES
+    is_amendment                   bool                 null=YES
+  fed.province_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+  fed.recipient_type_lookup:
+    code                           varchar              null=NO
+    name_en                        text                 null=NO
+    name_fr                        text                 null=YES
+  fed.vw_grants_by_department:
+    owner_org                      text                 null=YES
+    owner_org_title                text                 null=YES
+    agreement_type                 text                 null=YES
+    grant_count                    int8                 null=YES
+    total_value                    numeric              null=YES
+    avg_value                      numeric              null=YES
+    earliest_start                 date                 null=YES
+    latest_start                   date                 null=YES
+  fed.vw_grants_by_province:
+    recipient_province             text                 null=YES
+    province_name                  text                 null=YES
+    grant_count                    int8                 null=YES
+    total_value                    numeric              null=YES
+    avg_value                      numeric              null=YES
+    department_count               int8                 null=YES
+  fed.vw_grants_decoded:
+    _id                            int4                 null=YES
+    ref_number                     text                 null=YES
+    amendment_number               text                 null=YES
+    amendment_date                 date                 null=YES
+    agreement_type                 text                 null=YES
+    agreement_type_name            text                 null=YES
+    agreement_number               text                 null=YES
+    recipient_type                 text                 null=YES
+    recipient_type_name            text                 null=YES
+    recipient_business_number      text                 null=YES
+    recipient_legal_name           text                 null=YES
+    recipient_operating_name       text                 null=YES
+    research_organization_name     text                 null=YES
+    recipient_country              text                 null=YES
+    country_name                   text                 null=YES
+    recipient_province             text                 null=YES
+    province_name                  text                 null=YES
+    recipient_city                 text                 null=YES
+    recipient_postal_code          text                 null=YES
+    federal_riding_name_en         text                 null=YES
+    federal_riding_number          text                 null=YES
+    prog_name_en                   text                 null=YES
+    prog_purpose_en                text                 null=YES
+    agreement_title_en             text                 null=YES
+    agreement_value                numeric              null=YES
+    foreign_currency_type          text                 null=YES
+    foreign_currency_value         numeric              null=YES
+    agreement_start_date           date                 null=YES
+    agreement_end_date             date                 null=YES
+    coverage                       text                 null=YES
+    description_en                 text                 null=YES
+    expected_results_en            text                 null=YES
+    additional_information_en      text                 null=YES
+    naics_identifier               text                 null=YES
+    owner_org                      text                 null=YES
+    owner_org_title                text                 null=YES
+  general.donee_trigram_candidates:
+    id                             int4                 null=NO
+    donee_name                     text                 null=NO
+    donee_name_norm                text                 null=NO
+    candidate_entity_id            int4                 null=NO
+    candidate_canonical_name       text                 null=NO
+    candidate_bn_root              varchar              null=YES
+    similarity                     numeric              null=NO
+    citations                      int4                 null=NO
+    total_gifts                    numeric              null=YES
+    status                         text                 null=NO
+    llm_verdict                    text                 null=YES
+    llm_confidence                 numeric              null=YES
+    llm_reasoning                  text                 null=YES
+    reviewed_at                    timestamp            null=YES
+    applied_at                     timestamp            null=YES
+    created_at                     timestamp            null=YES
+  general.entities:
+    id                             int4                 null=NO
+    canonical_name                 text                 null=NO
+    alternate_names                _text                null=YES
+    entity_type                    text                 null=YES
+    bn_root                        varchar              null=YES
+    bn_variants                    _text                null=YES
+    metadata                       jsonb                null=YES
+    source_count                   int4                 null=YES
+    dataset_sources                _text                null=YES
+    confidence                     numeric              null=YES
+    status                         text                 null=YES
+    reviewed_by                    text                 null=YES
+    llm_review                     jsonb                null=YES
+    created_at                     timestamp            null=YES
+    updated_at                     timestamp            null=YES
+    merged_into                    int4                 null=YES
+    norm_canonical                 text                 null=YES
+  general.entity_golden_records:
+    id                             int4                 null=NO
+    canonical_name                 text                 null=NO
+    norm_name                      text                 null=YES
+    entity_type                    text                 null=YES
+    bn_root                        varchar              null=YES
+    bn_variants                    _text                null=YES
+    aliases                        jsonb                null=YES
+    dataset_sources                _text                null=YES
+    source_summary                 jsonb                null=YES
+    source_link_count              int4                 null=YES
+    addresses                      jsonb                null=YES
+    cra_profile                    jsonb                null=YES
+    fed_profile                    jsonb                null=YES
+    ab_profile                     jsonb                null=YES
+    related_entities               jsonb                null=YES
+    merge_history                  jsonb                null=YES
+    llm_authored                   jsonb                null=YES
+    confidence                     numeric              null=YES
+    status                         text                 null=YES
+    created_at                     timestamp            null=YES
+    updated_at                     timestamp            null=YES
+  general.entity_merge_candidates:
+    id                             int4                 null=NO
+    entity_id_a                    int4                 null=NO
+    entity_id_b                    int4                 null=NO
+    candidate_method               text                 null=NO
+    similarity_score               numeric              null=YES
+    status                         text                 null=YES
+    llm_verdict                    text                 null=YES
+    llm_confidence                 numeric              null=YES
+    llm_reasoning                  text                 null=YES
+    llm_response                   jsonb                null=YES
+    llm_provider                   text                 null=YES
+    llm_tokens_in                  int4                 null=YES
+    llm_tokens_out                 int4                 null=YES
+    batch_id                       int4                 null=YES
+    reviewed_at                    timestamp            null=YES
+    created_at                     timestamp            null=YES
+  general.entity_merges:
+    id                             int4                 null=NO
+    survivor_id                    int4                 null=NO
+    absorbed_id                    int4                 null=NO
+    candidate_id                   int4                 null=YES
+    merge_method                   text                 null=NO
+    names_added                    _text                null=YES
+    bns_added                      _text                null=YES
+    metadata_merged                jsonb                null=YES
+    links_redirected               int4                 null=YES
+    merged_at                      timestamp            null=YES
+    merged_by                      text                 null=YES
+  general.entity_resolution_log:
+    id                             int4                 null=NO
+    source_schema                  text                 null=NO
+    source_table                   text                 null=NO
+    source_name                    text                 null=NO
+    original_names                 _text                null=YES
+    bn                             text                 null=YES
+    record_count                   int4                 null=YES
+    status                         text                 null=YES
+    entity_id                      int4                 null=YES
+    match_confidence               numeric              null=YES
+    match_method                   text                 null=YES
+    candidates                     jsonb                null=YES
+    llm_response                   jsonb                null=YES
+    error_message                  text                 null=YES
+    batch_id                       int4                 null=YES
+    created_at                     timestamp            null=YES
+    updated_at                     timestamp            null=YES
+  general.entity_source_links:
+    id                             int4                 null=NO
+    entity_id                      int4                 null=NO
+    source_schema                  text                 null=NO
+    source_table                   text                 null=NO
+    source_pk                      jsonb                null=NO
+    source_name                    text                 null=YES
+    match_confidence               numeric              null=YES
+    match_method                   text                 null=YES
+    link_status                    text                 null=YES
+    metadata                       jsonb                null=YES
+    created_at                     timestamp            null=YES
+    updated_at                     timestamp            null=YES
+  general.ministries:
+    id                             int4                 null=NO
+    short_name                     varchar              null=NO
+    name                           text                 null=NO
+    description                    text                 null=YES
+    minister                       text                 null=YES
+    deputy_minister                text                 null=YES
+    effective_from                 date                 null=YES
+    effective_to                   date                 null=YES
+    is_active                      bool                 null=YES
+    created_at                     timestamp            null=YES
+    updated_at                     timestamp            null=YES
+  general.ministries_crosswalk:
+    id                             int4                 null=NO
+    raw_ministry                   text                 null=NO
+    normalized_ministry            text                 null=NO
+    canonical_short_name           varchar              null=NO
+    historical_short_name          varchar              null=YES
+    confidence                     text                 null=NO
+    transform_note                 text                 null=YES
+    created_at                     timestamp            null=YES
+  general.ministries_history:
+    id                             int4                 null=NO
+    short_name                     varchar              null=NO
+    canonical_name                 text                 null=NO
+    effective_from                 date                 null=YES
+    effective_to                   date                 null=YES
+    predecessors                   _text                null=YES
+    successors                     _text                null=YES
+    mandate_summary                text                 null=YES
+    aliases                        _text                null=YES
+    is_active                      bool                 null=YES
+    source_citation                text                 null=YES
+    created_at                     timestamp            null=YES
+    updated_at                     timestamp            null=YES
+  general.resolution_batches:
+    id                             int4                 null=NO
+    started_at                     timestamp            null=YES
+    completed_at                   timestamp            null=YES
+    source_description             text                 null=YES
+    status                         text                 null=YES
+    total_records                  int4                 null=YES
+    processed_records              int4                 null=YES
+    matched_records                int4                 null=YES
+    created_records                int4                 null=YES
+    llm_reviewed                   int4                 null=YES
+    error_records                  int4                 null=YES
+    config                         jsonb                null=YES
+  general.splink_aliases:
+    id                             int4                 null=NO
+    cluster_id                     text                 null=NO
+    alias                          text                 null=NO
+    source_dataset                 text                 null=YES
+    source_id                      text                 null=YES
+    match_probability              numeric              null=YES
+    build_id                       int4                 null=YES
+  general.splink_build_metadata:
+    id                             int4                 null=NO
+    started_at                     timestamp            null=YES
+    completed_at                   timestamp            null=YES
+    splink_version                 text                 null=YES
+    backend                        text                 null=YES
+    threshold                      numeric              null=YES
+    total_records                  int4                 null=YES
+    total_predictions              int4                 null=YES
+    total_clusters                 int4                 null=YES
+    config                         jsonb                null=YES
+    status                         text                 null=YES
+  general.splink_predictions:
+    id                             int4                 null=NO
+    source_l                       text                 null=NO
+    record_l                       text                 null=NO
+    source_r                       text                 null=NO
+    record_r                       text                 null=NO
+    match_probability              numeric              null=NO
+    match_weight                   numeric              null=YES
+    features                       jsonb                null=YES
+    cluster_id                     text                 null=YES
+    build_id                       int4                 null=YES
+    created_at                     timestamp            null=YES
+  general.vw_entity_funding:
+    entity_id                      int4                 null=YES
+    canonical_name                 text                 null=YES
+    bn_root                        varchar              null=YES
+    entity_type                    text                 null=YES
+    dataset_sources                _text                null=YES
+    source_count                   int4                 null=YES
+    confidence                     numeric              null=YES
+    status                         text                 null=YES
+    cra_total_revenue              numeric              null=YES
+    cra_total_expenditures         numeric              null=YES
+    cra_gifts_to_donees            numeric              null=YES
+    cra_program_spending           numeric              null=YES
+    cra_filing_count               int8                 null=YES
+    cra_earliest_year              int4                 null=YES
+    cra_latest_year                int4                 null=YES
+    fed_total_grants               numeric              null=YES
+    fed_grant_count                int8                 null=YES
+    fed_earliest_grant             date                 null=YES
+    fed_latest_grant               date                 null=YES
+    ab_total_grants                numeric              null=YES
+    ab_grant_payment_count         int8                 null=YES
+    ab_total_contracts             numeric              null=YES
+    ab_contract_count              int8                 null=YES
+    ab_total_sole_source           numeric              null=YES
+    ab_sole_source_count           int8                 null=YES
+    total_all_funding              numeric              null=YES
+  general.vw_entity_search:
+    id                             int4                 null=YES
+    canonical_name                 text                 null=YES
+    alternate_names                _text                null=YES
+    entity_type                    text                 null=YES
+    bn_root                        varchar              null=YES
+    bn_variants                    _text                null=YES
+    metadata                       jsonb                null=YES
+    source_count                   int4                 null=YES
+    dataset_sources                _text                null=YES
+    confidence                     numeric              null=YES
+    status                         text                 null=YES
+  public.contracts:
+    id                             int4                 null=NO
+    reference_number               text                 null=YES
+    procurement_id                 text                 null=YES
+    vendor_name                    text                 null=YES
+    vendor_postal_code             text                 null=YES
+    buyer_name                     text                 null=YES
+    contract_date                  text                 null=YES
+    economic_object_code           text                 null=YES
+    description_en                 text                 null=YES
+    description_fr                 text                 null=YES
+    contract_period_start          text                 null=YES
+    delivery_date                  text                 null=YES
+    contract_value                 text                 null=YES
+    original_value                 text                 null=YES
+    amendment_value                text                 null=YES
+    comments_en                    text                 null=YES
+    comments_fr                    text                 null=YES
+    additional_comments_en         text                 null=YES
+    additional_comments_fr         text                 null=YES
+    agreement_type_code            text                 null=YES
+    trade_agreement                text                 null=YES
+    land_claims                    text                 null=YES
+    commodity_type                 text                 null=YES
+    commodity_code                 text                 null=YES
+    country_of_vendor              text                 null=YES
+    solicitation_procedure         text                 null=YES
+    limited_tendering_reason       text                 null=YES
+    trade_agreement_exceptions     text                 null=YES
+    indigenous_business            text                 null=YES
+    indigenous_business_excluding_psib text                 null=YES
+    intellectual_property          text                 null=YES
+    potential_commercial_exploitation text                 null=YES
+    former_public_servant          text                 null=YES
+    contracting_entity             text                 null=YES
+    standing_offer_number          text                 null=YES
+    instrument_type                text                 null=YES
+    ministers_office               text                 null=YES
+    number_of_bids                 text                 null=YES
+    article_6_exceptions           text                 null=YES
+    award_criteria                 text                 null=YES
+    socioeconomic_indicator        text                 null=YES
+    reporting_period               text                 null=YES
+    owner_org                      text                 null=YES
+    owner_org_title                text                 null=YES
+
+== primary keys ==
+  wrote recon/raw/05_primary_keys.json
+
+== foreign keys ==
+  wrote recon/raw/06_foreign_keys.json
+  cra.loop_edge_year_flows.loop_id -> cra.loops.id
+  cra.loop_financials.loop_id -> cra.loops.id
+  cra.loop_participants.loop_id -> cra.loops.id
+  general.donee_trigram_candidates.candidate_entity_id -> general.entities.id
+  general.entities.merged_into -> general.entities.id
+  general.entity_merge_candidates.entity_id_b -> general.entities.id
+  general.entity_merge_candidates.entity_id_a -> general.entities.id
+  general.entity_merges.absorbed_id -> general.entities.id
+  general.entity_merges.survivor_id -> general.entities.id
+  general.entity_resolution_log.entity_id -> general.entities.id
+  general.entity_source_links.entity_id -> general.entities.id
+
+== indexes ==
+  wrote recon/raw/07_indexes.json
+
+== samples (3 rows each, truncated) ==
+  fed.grants_contributions: 3 rows
+  general.entity_golden_records: 3 rows
+  general.entity_source_links: 3 rows
+  general.entity_merge_candidates: 3 rows
+  general.entities: 3 rows
+  ab.ab_grants: 3 rows
+  cra.cra_directors: 3 rows
+  general.entity_resolution_log: 3 rows
+  cra.cra_qualified_donees: 3 rows
+  cra.cra_charitable_programs: 3 rows
+  cra.cra_financial_details: 3 rows
+  cra.cra_identification: 3 rows
+  general.splink_predictions: 3 rows
+  cra.donee_name_quality: 3 rows
+  cra.overhead_by_charity: 3 rows
+  cra.cra_financial_general: 3 rows
+  public.contracts: 3 rows
+  ab.ab_grants_recipients: 3 rows
+  cra.cra_foundation_info: 3 rows
+  cra.loop_edges: 3 rows
+  general.entity_merges: 3 rows
+  cra.cra_compensation: 3 rows
+  ab.ab_non_profit: 3 rows
+  cra.govt_funding_by_charity: 3 rows
+  ab.ab_contracts: 3 rows
+  cra.t3010_impossibilities: 3 rows
+  cra.cra_web_urls: 3 rows
+  cra._dnq_canonical: 3 rows
+  cra.identification_name_history: 3 rows
+  cra.cra_resources_sent_outside: 3 rows
+  ab.ab_sole_source: 3 rows
+  cra.cra_gifts_in_kind: 3 rows
+  cra.cra_activities_outside_countries: 3 rows
+  cra.cra_non_qualified_donees: 3 rows
+  cra.matrix_census: 3 rows
+  cra.cra_disbursement_quota: 3 rows
+  ab.ab_grants_programs: 3 rows
+  cra.cra_activities_outside_details: 3 rows
+  cra.loop_participants: 3 rows
+  cra.loop_edge_year_flows: 3 rows
+  cra.loops: 3 rows
+  cra.scc_components: 3 rows
+  cra.johnson_cycles: 3 rows
+  cra.cra_political_activity_desc: 3 rows
+  cra.cra_exported_goods: 3 rows
+  cra.loop_financials: 3 rows
+  cra.t3010_plausibility_flags: 3 rows
+  cra.loop_universe: 3 rows
+  cra.loop_charity_financials: 3 rows
+  cra.scc_summary: 3 rows
+  cra.partitioned_cycles: 3 rows
+  ab.ab_grants_ministries: 3 rows
+  general.ministries_crosswalk: 3 rows
+  general.ministries_history: 3 rows
+  cra.cra_political_activity_resources: 3 rows
+  general.ministries: 3 rows
+  cra.cra_sub_category_lookup: 3 rows
+  cra.cra_country_lookup: 3 rows
+  fed.country_lookup: 3 rows
+  cra.cra_province_state_lookup: 3 rows
+  ab.ab_non_profit_status_lookup: 3 rows
+  ab.ab_grants_fiscal_years: 3 rows
+  general.donee_trigram_candidates: 0 rows
+  cra.t3010_completeness_issues: 0 rows
+  cra.identified_hubs: 3 rows
+  cra.cra_designation_lookup: 3 rows
+  cra.overhead_by_year: 3 rows
+  cra.overhead_by_year_designation: 3 rows
+  cra.govt_funding_by_year: 3 rows
+  general.splink_aliases: 0 rows
+  cra.cra_category_lookup: 3 rows
+  fed.currency_lookup: 3 rows
+  fed.province_lookup: 3 rows
+  fed.recipient_type_lookup: 3 rows
+  fed.agreement_type_lookup: 3 rows
+  cra.cra_program_type_lookup: 3 rows
+  general.splink_build_metadata: 1 rows
+  cra.cra_political_activity_funding: 0 rows
+  general.resolution_batches: 0 rows
+  wrote recon/raw/08_samples.json
+
+== date / timestamp min/max ==
+  ab.ab_grants.payment_date: 2014-04-01 00:00:00 -> 2026-03-31 00:00:00 (n=1983355)
+  ab.ab_grants_fiscal_years.last_updated: 2026-04-20 02:33:02.517968 -> 2026-04-20 02:33:02.517968 (n=12)
+  ab.ab_grants_ministries.last_updated: 2026-04-20 02:33:02.517968 -> 2026-04-20 02:33:02.517968 (n=352)
+  ab.ab_grants_programs.last_updated: 2026-04-20 02:33:02.517968 -> 2026-04-20 02:33:02.517968 (n=20208)
+  ab.ab_grants_recipients.last_updated: 2026-04-20 02:33:02.517968 -> 2026-04-20 02:33:02.517968 (n=452900)
+  ab.ab_non_profit.registration_date: 1900-03-25 -> 2026-03-31 (n=69271)
+  ab.ab_sole_source.start_date: 1975-04-01 -> 2025-09-29 (n=15533)
+  ab.ab_sole_source.end_date: 2015-04-28 -> 2099-03-31 (n=15530)
+  ab.vw_non_profit_decoded.registration_date: 1900-03-25 -> 2026-03-31 (n=69271)
+  cra.cra_activities_outside_countries.fpe: 2020-01-01 -> 2024-12-31 (n=44683)
+  cra.cra_activities_outside_details.fpe: 2020-01-01 -> 2024-12-31 (n=25139)
+  cra.cra_charitable_programs.fpe: 2020-01-01 -> 2024-12-31 (n=478691)
+  cra.cra_compensation.fpe: 2020-01-01 -> 2024-12-31 (n=216380)
+  cra.cra_directors.fpe: 2020-01-01 -> 2024-12-31 (n=2873624)
+  cra.cra_disbursement_quota.fpe: 2023-07-31 -> 2024-12-31 (n=22151)
+  cra.cra_exported_goods.fpe: 2020-01-15 -> 2024-12-31 (n=4029)
+  cra.cra_financial_details.fpe: 2020-01-01 -> 2024-12-31 (n=420849)
+  cra.cra_financial_general.fpe: 2020-01-01 -> 2024-12-31 (n=422683)
+  cra.cra_foundation_info.fpe: 2020-01-01 -> 2024-12-31 (n=422569)
+  cra.cra_gifts_in_kind.fpe: 2020-01-01 -> 2024-12-31 (n=54575)
+  cra.cra_identification.registration_date: None -> None (n=0)
+  cra.cra_non_qualified_donees.fpe: 2022-06-30 -> 2024-12-31 (n=29270)
+  cra.cra_political_activity_desc.fpe: 2020-01-31 -> 2023-08-31 (n=313)
+  cra.cra_political_activity_funding.fpe: None -> None (n=0)
+  cra.cra_political_activity_resources.fpe: 2020-03-20 -> 2023-08-31 (n=234)
+  cra.cra_qualified_donees.fpe: 2020-01-01 -> 2024-12-31 (n=1664343)
+  cra.cra_resources_sent_outside.fpe: 2020-01-01 -> 2024-12-31 (n=68028)
+  cra.loop_universe.scored_at: 2026-04-19 20:00:28.143327+00 -> 2026-04-19 20:01:46.746383+00 (n=1501)
+  cra.t3010_completeness_issues.fpe: None -> None (n=0)
+  cra.t3010_impossibilities.fpe: 2020-01-01 -> 2024-12-31 (n=54010)
+  cra.t3010_plausibility_flags.fpe: 2020-03-31 -> 2024-12-31 (n=1075)
+  cra.vw_charity_financials_by_year.fiscal_period_end: 2020-01-01 -> 2024-12-31 (n=420849)
+  fed.grants_contributions.agreement_start_date: 1899-12-30 -> 2027-01-01 (n=1275521)
+  fed.grants_contributions.agreement_end_date: 0209-10-16 -> 9999-12-31 (n=1087655)
+  general.donee_trigram_candidates.reviewed_at: None -> None (n=0)
+  general.donee_trigram_candidates.applied_at: None -> None (n=0)
+  general.donee_trigram_candidates.created_at: None -> None (n=0)
+  general.entities.created_at: 2026-04-20 03:19:48.04046 -> 2026-04-20 03:42:57.497048 (n=926670)
+  general.entity_merge_candidates.reviewed_at: 2026-04-20 10:14:05.138335 -> 2026-04-20 22:27:58.13824 (n=1614607)
+  general.entity_merge_candidates.created_at: 2026-04-20 03:54:08.357115 -> 2026-04-20 10:13:50.898058 (n=1643060)
+  general.entity_merges.merged_at: 2026-04-20 10:14:05.853707 -> 2026-04-20 21:20:27.269917 (n=66147)
+  general.entity_resolution_log.created_at: 2026-04-20 03:20:29.604654 -> 2026-04-20 03:42:56.391982 (n=1266141)
+  general.ministries.effective_from: 2022-10-11 -> 2025-05-16 (n=25)
+  general.ministries.effective_to: None -> None (n=0)
+  general.ministries.created_at: 2026-04-13 03:55:11.924028 -> 2026-04-13 03:55:13.246887 (n=27)
+  general.ministries.updated_at: 2026-04-13 03:55:11.924028 -> 2026-04-13 03:55:13.246887 (n=27)
+  general.ministries_crosswalk.created_at: 2026-04-20 02:58:21.459182 -> 2026-04-20 02:58:30.83318 (n=162)
+  general.ministries_history.effective_from: 2015-05-24 -> 2025-05-16 (n=62)
+  general.ministries_history.effective_to: 2015-10-21 -> 2025-05-15 (n=35)
+  general.ministries_history.created_at: 2026-04-19 22:28:05.107448 -> 2026-04-19 22:28:08.172671 (n=62)
+  general.ministries_history.updated_at: 2026-04-20 02:58:17.839106 -> 2026-04-20 02:58:21.070167 (n=62)
+  general.resolution_batches.started_at: None -> None (n=0)
+  general.resolution_batches.completed_at: None -> None (n=0)
+  general.splink_build_metadata.started_at: 2026-04-20 03:48:41.249651 -> 2026-04-20 03:48:41.249651 (n=1)
+  general.splink_build_metadata.completed_at: 2026-04-20 03:54:01.463944 -> 2026-04-20 03:54:01.463944 (n=1)
+  general.splink_predictions.created_at: 2026-04-20 03:48:41.394672 -> 2026-04-20 03:48:41.394672 (n=540640)
+  wrote recon/raw/09_date_minmax.json
+
+== column-name overlap (likely join keys) ==
+  wrote recon/raw/10_name_overlap.json
+  bn: ['cra._dnq_canonical', 'cra.cra_activities_outside_countries', 'cra.cra_activities_outside_details', 'cra.cra_charitable_programs', 'cra.cra_compensation', 'cra.cra_directors', 'cra.cra_disbursement_quota', 'cra.cra_exported_goods', 'cra.cra_financial_details', 'cra.cra_financial_general', 'cra.cra_foundation_info', 'cra.cra_gifts_in_kind', 'cra.cra_identification', 'cra.cra_non_qualified_donees', 'cra.cra_political_activity_desc', 'cra.cra_political_activity_funding', 'cra.cra_political_activity_resources', 'cra.cra_qualified_donees', 'cra.cra_resources_sent_outside', 'cra.cra_web_urls', 'cra.govt_funding_by_charity', 'cra.identification_name_history', 'cra.identified_hubs', 'cra.loop_charity_financials', 'cra.loop_participants', 'cra.loop_universe', 'cra.matrix_census', 'cra.overhead_by_charity', 'cra.scc_components', 'cra.t3010_completeness_issues', 'cra.t3010_impossibilities', 'cra.t3010_plausibility_flags', 'cra.vw_charity_financials_by_year', 'cra.vw_charity_profiles', 'cra.vw_charity_programs', 'general.entity_resolution_log']
+  id: ['ab.ab_contracts', 'ab.ab_grants', 'ab.ab_grants_fiscal_years', 'ab.ab_grants_ministries', 'ab.ab_grants_programs', 'ab.ab_grants_recipients', 'ab.ab_non_profit', 'ab.ab_non_profit_status_lookup', 'ab.ab_sole_source', 'ab.vw_non_profit_decoded', 'cra.johnson_cycles', 'cra.loops', 'cra.partitioned_cycles', 'general.donee_trigram_candidates', 'general.entities', 'general.entity_golden_records', 'general.entity_merge_candidates', 'general.entity_merges', 'general.entity_resolution_log', 'general.entity_source_links', 'general.ministries', 'general.ministries_crosswalk', 'general.ministries_history', 'general.resolution_batches', 'general.splink_aliases', 'general.splink_build_metadata', 'general.splink_predictions', 'general.vw_entity_search', 'public.contracts']
+  fpe: ['cra.cra_activities_outside_countries', 'cra.cra_activities_outside_details', 'cra.cra_charitable_programs', 'cra.cra_compensation', 'cra.cra_directors', 'cra.cra_disbursement_quota', 'cra.cra_exported_goods', 'cra.cra_financial_details', 'cra.cra_financial_general', 'cra.cra_foundation_info', 'cra.cra_gifts_in_kind', 'cra.cra_non_qualified_donees', 'cra.cra_political_activity_desc', 'cra.cra_political_activity_funding', 'cra.cra_political_activity_resources', 'cra.cra_qualified_donees', 'cra.cra_resources_sent_outside', 'cra.t3010_completeness_issues', 'cra.t3010_impossibilities', 'cra.t3010_plausibility_flags']
+  legal_name: ['ab.ab_non_profit', 'ab.vw_non_profit_decoded', 'cra._dnq_canonical', 'cra.cra_identification', 'cra.govt_funding_by_charity', 'cra.identification_name_history', 'cra.identified_hubs', 'cra.loop_charity_financials', 'cra.loop_universe', 'cra.matrix_census', 'cra.overhead_by_charity', 'cra.scc_components', 'cra.t3010_completeness_issues', 'cra.t3010_impossibilities', 'cra.t3010_plausibility_flags', 'cra.vw_charity_financials_by_year', 'cra.vw_charity_profiles', 'cra.vw_charity_programs']
+  form_id: ['cra.cra_activities_outside_countries', 'cra.cra_activities_outside_details', 'cra.cra_charitable_programs', 'cra.cra_compensation', 'cra.cra_directors', 'cra.cra_disbursement_quota', 'cra.cra_exported_goods', 'cra.cra_financial_details', 'cra.cra_financial_general', 'cra.cra_foundation_info', 'cra.cra_gifts_in_kind', 'cra.cra_non_qualified_donees', 'cra.cra_political_activity_desc', 'cra.cra_political_activity_funding', 'cra.cra_political_activity_resources', 'cra.cra_qualified_donees', 'cra.cra_resources_sent_outside']
+  fiscal_year: ['ab.ab_grants', 'cra.cra_identification', 'cra.cra_web_urls', 'cra.govt_funding_by_charity', 'cra.govt_funding_by_year', 'cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation', 'cra.t3010_completeness_issues', 'cra.t3010_impossibilities', 'cra.t3010_plausibility_flags', 'cra.vw_charity_financials_by_year', 'cra.vw_charity_profiles', 'cra.vw_charity_programs']
+  status: ['ab.ab_non_profit', 'ab.ab_non_profit_status_lookup', 'ab.vw_non_profit_decoded', 'general.donee_trigram_candidates', 'general.entities', 'general.entity_golden_records', 'general.entity_merge_candidates', 'general.entity_resolution_log', 'general.resolution_batches', 'general.splink_build_metadata', 'general.vw_entity_funding', 'general.vw_entity_search']
+  created_at: ['ab.ab_grants', 'general.donee_trigram_candidates', 'general.entities', 'general.entity_golden_records', 'general.entity_merge_candidates', 'general.entity_resolution_log', 'general.entity_source_links', 'general.ministries', 'general.ministries_crosswalk', 'general.ministries_history', 'general.splink_predictions']
+  name_en: ['cra.cra_category_lookup', 'cra.cra_country_lookup', 'cra.cra_designation_lookup', 'cra.cra_program_type_lookup', 'cra.cra_province_state_lookup', 'cra.cra_sub_category_lookup', 'fed.agreement_type_lookup', 'fed.country_lookup', 'fed.currency_lookup', 'fed.province_lookup', 'fed.recipient_type_lookup']
+  name_fr: ['cra.cra_category_lookup', 'cra.cra_country_lookup', 'cra.cra_designation_lookup', 'cra.cra_program_type_lookup', 'cra.cra_province_state_lookup', 'cra.cra_sub_category_lookup', 'fed.agreement_type_lookup', 'fed.country_lookup', 'fed.currency_lookup', 'fed.province_lookup', 'fed.recipient_type_lookup']
+  code: ['cra.cra_category_lookup', 'cra.cra_country_lookup', 'cra.cra_designation_lookup', 'cra.cra_program_type_lookup', 'cra.cra_province_state_lookup', 'fed.agreement_type_lookup', 'fed.country_lookup', 'fed.currency_lookup', 'fed.province_lookup', 'fed.recipient_type_lookup']
+  sequence_number: ['cra.cra_activities_outside_countries', 'cra.cra_directors', 'cra.cra_exported_goods', 'cra.cra_non_qualified_donees', 'cra.cra_political_activity_funding', 'cra.cra_political_activity_resources', 'cra.cra_qualified_donees', 'cra.cra_resources_sent_outside', 'cra.cra_web_urls']
+  country: ['cra.cra_activities_outside_countries', 'cra.cra_exported_goods', 'cra.cra_identification', 'cra.cra_non_qualified_donees', 'cra.cra_political_activity_funding', 'cra.cra_province_state_lookup', 'cra.cra_resources_sent_outside', 'cra.vw_charity_profiles']
+  display_fiscal_year: ['ab.ab_contracts', 'ab.ab_grants', 'ab.ab_grants_fiscal_years', 'ab.ab_grants_ministries', 'ab.ab_grants_programs', 'ab.ab_sole_source', 'ab.vw_grants_by_ministry']
+  updated_at: ['ab.ab_grants', 'general.entities', 'general.entity_golden_records', 'general.entity_resolution_log', 'general.entity_source_links', 'general.ministries', 'general.ministries_history']
+  description_en: ['cra.cra_category_lookup', 'cra.cra_designation_lookup', 'cra.cra_program_type_lookup', 'cra.cra_sub_category_lookup', 'fed.grants_contributions', 'fed.vw_grants_decoded', 'public.contracts']
+  ministry: ['ab.ab_contracts', 'ab.ab_grants', 'ab.ab_grants_ministries', 'ab.ab_grants_programs', 'ab.ab_sole_source', 'ab.vw_grants_by_ministry']
+  description_fr: ['cra.cra_category_lookup', 'cra.cra_designation_lookup', 'cra.cra_program_type_lookup', 'cra.cra_sub_category_lookup', 'fed.grants_contributions', 'public.contracts']
+  designation: ['cra.cra_identification', 'cra.govt_funding_by_charity', 'cra.loop_charity_financials', 'cra.overhead_by_charity', 'cra.overhead_by_year_designation', 'cra.vw_charity_profiles']
+  canonical_name: ['cra.donee_name_quality', 'general.entities', 'general.entity_golden_records', 'general.ministries_history', 'general.vw_entity_funding', 'general.vw_entity_search']
+  amount: ['ab.ab_contracts', 'ab.ab_grants', 'ab.ab_sole_source', 'cra.cra_political_activity_funding', 'cra.cra_resources_sent_outside']
+  version: ['ab.ab_grants', 'ab.ab_grants_fiscal_years', 'ab.ab_grants_ministries', 'ab.ab_grants_programs', 'ab.ab_grants_recipients']
+  total_amount: ['ab.ab_grants_fiscal_years', 'ab.ab_grants_ministries', 'ab.ab_grants_programs', 'ab.vw_grants_by_ministry', 'ab.vw_grants_by_recipient']
+  city: ['ab.ab_non_profit', 'ab.vw_non_profit_decoded', 'cra.cra_identification', 'cra.cra_qualified_donees', 'cra.vw_charity_profiles']
+  description: ['ab.ab_non_profit_status_lookup', 'cra.cra_charitable_programs', 'cra.cra_political_activity_desc', 'cra.vw_charity_programs', 'general.ministries']
+  category: ['cra.cra_identification', 'cra.govt_funding_by_charity', 'cra.loop_charity_financials', 'cra.overhead_by_charity', 'cra.vw_charity_profiles']
+  account_name: ['cra.cra_identification', 'cra.identification_name_history', 'cra.vw_charity_financials_by_year', 'cra.vw_charity_profiles', 'cra.vw_charity_programs']
+  revenue: ['cra.govt_funding_by_charity', 'cra.loop_charity_financials', 'cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  min_year: ['cra.johnson_cycles', 'cra.loop_edges', 'cra.loop_financials', 'cra.loops', 'cra.partitioned_cycles']
+  max_year: ['cra.johnson_cycles', 'cra.loop_edges', 'cra.loop_financials', 'cra.loops', 'cra.partitioned_cycles']
+  total_expenditures: ['cra.loop_charity_financials', 'cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation', 'cra.vw_charity_financials_by_year']
+  confidence: ['general.entities', 'general.entity_golden_records', 'general.ministries_crosswalk', 'general.vw_entity_funding', 'general.vw_entity_search']
+  recipient: ['ab.ab_contracts', 'ab.ab_grants', 'ab.ab_grants_recipients', 'ab.vw_grants_by_recipient']
+  mongo_id: ['ab.ab_grants_fiscal_years', 'ab.ab_grants_ministries', 'ab.ab_grants_programs', 'ab.ab_grants_recipients']
+  last_updated: ['ab.ab_grants_fiscal_years', 'ab.ab_grants_ministries', 'ab.ab_grants_programs', 'ab.ab_grants_recipients']
+  postal_code: ['ab.ab_non_profit', 'ab.vw_non_profit_decoded', 'cra.cra_identification', 'cra.vw_charity_profiles']
+  scc_id: ['cra.identified_hubs', 'cra.matrix_census', 'cra.scc_components', 'cra.scc_summary']
+  hops: ['cra.johnson_cycles', 'cra.loop_financials', 'cra.loops', 'cra.partitioned_cycles']
+  owner_org: ['fed.grants_contributions', 'fed.vw_grants_by_department', 'fed.vw_grants_decoded', 'public.contracts']
+  owner_org_title: ['fed.grants_contributions', 'fed.vw_grants_by_department', 'fed.vw_grants_decoded', 'public.contracts']
+  entity_type: ['general.entities', 'general.entity_golden_records', 'general.vw_entity_funding', 'general.vw_entity_search']
+  bn_root: ['general.entities', 'general.entity_golden_records', 'general.vw_entity_funding', 'general.vw_entity_search']
+  dataset_sources: ['general.entities', 'general.entity_golden_records', 'general.vw_entity_funding', 'general.vw_entity_search']
+  count: ['ab.ab_grants_fiscal_years', 'ab.ab_grants_ministries', 'ab.ab_grants_programs']
+  registration_date: ['ab.ab_non_profit', 'ab.vw_non_profit_decoded', 'cra.cra_identification']
+  province: ['cra.cra_identification', 'cra.cra_qualified_donees', 'cra.vw_charity_profiles']
+  donee_name: ['cra.cra_qualified_donees', 'cra.donee_name_quality', 'general.donee_trigram_candidates']
+  total_gifts: ['cra.cra_qualified_donees', 'cra.donee_name_quality', 'general.donee_trigram_candidates']
+  path_bns: ['cra.johnson_cycles', 'cra.loops', 'cra.partitioned_cycles']
+  path_display: ['cra.johnson_cycles', 'cra.loops', 'cra.partitioned_cycles']
+  bottleneck_amt: ['cra.johnson_cycles', 'cra.loops', 'cra.partitioned_cycles']
+  total_flow: ['cra.johnson_cycles', 'cra.loops', 'cra.partitioned_cycles']
+  loop_id: ['cra.loop_edge_year_flows', 'cra.loop_financials', 'cra.loop_participants']
+  compensation: ['cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  administration: ['cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  fundraising: ['cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  programs: ['cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  strict_overhead: ['cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  broad_overhead: ['cra.overhead_by_charity', 'cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  rule_code: ['cra.t3010_completeness_issues', 'cra.t3010_impossibilities', 'cra.t3010_plausibility_flags']
+  details: ['cra.t3010_completeness_issues', 'cra.t3010_impossibilities', 'cra.t3010_plausibility_flags']
+  province_name: ['cra.vw_charity_profiles', 'fed.vw_grants_by_province', 'fed.vw_grants_decoded']
+  agreement_type: ['fed.grants_contributions', 'fed.vw_grants_by_department', 'fed.vw_grants_decoded']
+  recipient_province: ['fed.grants_contributions', 'fed.vw_grants_by_province', 'fed.vw_grants_decoded']
+  bn_variants: ['general.entities', 'general.entity_golden_records', 'general.vw_entity_search']
+  metadata: ['general.entities', 'general.entity_source_links', 'general.vw_entity_search']
+  source_count: ['general.entities', 'general.vw_entity_funding', 'general.vw_entity_search']
+  entity_id: ['general.entity_resolution_log', 'general.entity_source_links', 'general.vw_entity_funding']
+  program: ['ab.ab_grants', 'ab.ab_grants_programs']
+  aggregation_type: ['ab.ab_grants_ministries', 'ab.ab_grants_programs']
+  programs_count: ['ab.ab_grants_recipients', 'ab.vw_grants_by_recipient']
+  ministries_count: ['ab.ab_grants_recipients', 'ab.vw_grants_by_recipient']
+  type: ['ab.ab_non_profit', 'ab.vw_non_profit_decoded']
+  vendor_postal_code: ['ab.ab_sole_source', 'public.contracts']
+  start_date: ['ab.ab_sole_source', 'cra.cra_directors']
+  end_date: ['ab.ab_sole_source', 'cra.cra_directors']
+  payment_count: ['ab.vw_grants_by_ministry', 'ab.vw_grants_by_recipient']
+  program_type: ['cra.cra_charitable_programs', 'cra.vw_charity_programs']
+  field_5000: ['cra.cra_financial_details', 'cra.cra_financial_general']
+  field_5010: ['cra.cra_financial_details', 'cra.cra_financial_general']
+  field_5030: ['cra.cra_financial_details', 'cra.cra_financial_general']
+  sub_category: ['cra.cra_identification', 'cra.vw_charity_profiles']
+  address_line_1: ['cra.cra_identification', 'cra.vw_charity_profiles']
+  address_line_2: ['cra.cra_identification', 'cra.vw_charity_profiles']
+  donee_bn: ['cra.cra_qualified_donees', 'cra.donee_name_quality']
+  citations: ['cra.donee_name_quality', 'general.donee_trigram_candidates']
+  federal: ['cra.govt_funding_by_charity', 'cra.govt_funding_by_year']
+  provincial: ['cra.govt_funding_by_charity', 'cra.govt_funding_by_year']
+  municipal: ['cra.govt_funding_by_charity', 'cra.govt_funding_by_year']
+  combined_sectiond: ['cra.govt_funding_by_charity', 'cra.govt_funding_by_year']
+  total_govt: ['cra.govt_funding_by_charity', 'cra.govt_funding_by_year']
+  charities_filed: ['cra.govt_funding_by_year', 'cra.overhead_by_year']
+  total_revenue: ['cra.govt_funding_by_year', 'cra.vw_charity_financials_by_year']
+  src: ['cra.loop_edge_year_flows', 'cra.loop_edges']
+  dst: ['cra.loop_edge_year_flows', 'cra.loop_edges']
+  edge_count: ['cra.loop_edges', 'cra.scc_summary']
+  scc_size: ['cra.matrix_census', 'cra.scc_components']
+  strict_overhead_pct_rev: ['cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  broad_overhead_pct_rev: ['cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  strict_overhead_pct_exp: ['cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  broad_overhead_pct_exp: ['cra.overhead_by_year', 'cra.overhead_by_year_designation']
+  scc_root: ['cra.scc_components', 'cra.scc_summary']
+  severity: ['cra.t3010_impossibilities', 'cra.t3010_plausibility_flags']
+  fiscal_period_end: ['cra.vw_charity_financials_by_year', 'cra.vw_charity_programs']
+  country_name: ['cra.vw_charity_profiles', 'fed.vw_grants_decoded']
+  _id: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  ref_number: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  amendment_number: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  amendment_date: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  agreement_number: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  recipient_type: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  recipient_business_number: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  recipient_legal_name: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  recipient_operating_name: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  research_organization_name: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  recipient_country: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  recipient_city: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  recipient_postal_code: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  federal_riding_name_en: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  federal_riding_number: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  prog_name_en: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  prog_purpose_en: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  agreement_title_en: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  agreement_value: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  foreign_currency_type: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  foreign_currency_value: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  agreement_start_date: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  agreement_end_date: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  coverage: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  expected_results_en: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  additional_information_en: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  naics_identifier: ['fed.grants_contributions', 'fed.vw_grants_decoded']
+  grant_count: ['fed.vw_grants_by_department', 'fed.vw_grants_by_province']
+  total_value: ['fed.vw_grants_by_department', 'fed.vw_grants_by_province']
+  avg_value: ['fed.vw_grants_by_department', 'fed.vw_grants_by_province']
+  llm_verdict: ['general.donee_trigram_candidates', 'general.entity_merge_candidates']
+  llm_confidence: ['general.donee_trigram_candidates', 'general.entity_merge_candidates']
+  llm_reasoning: ['general.donee_trigram_candidates', 'general.entity_merge_candidates']
+  reviewed_at: ['general.donee_trigram_candidates', 'general.entity_merge_candidates']
+  alternate_names: ['general.entities', 'general.vw_entity_search']
+  aliases: ['general.entity_golden_records', 'general.ministries_history']
+  llm_response: ['general.entity_merge_candidates', 'general.entity_resolution_log']
+  batch_id: ['general.entity_merge_candidates', 'general.entity_resolution_log']
+  source_schema: ['general.entity_resolution_log', 'general.entity_source_links']
+  source_table: ['general.entity_resolution_log', 'general.entity_source_links']
+  source_name: ['general.entity_resolution_log', 'general.entity_source_links']
+  match_confidence: ['general.entity_resolution_log', 'general.entity_source_links']
+  match_method: ['general.entity_resolution_log', 'general.entity_source_links']
+  short_name: ['general.ministries', 'general.ministries_history']
+  effective_from: ['general.ministries', 'general.ministries_history']
+  effective_to: ['general.ministries', 'general.ministries_history']
+  is_active: ['general.ministries', 'general.ministries_history']
+  started_at: ['general.resolution_batches', 'general.splink_build_metadata']
+  completed_at: ['general.resolution_batches', 'general.splink_build_metadata']
+  total_records: ['general.resolution_batches', 'general.splink_build_metadata']
+  config: ['general.resolution_batches', 'general.splink_build_metadata']
+  cluster_id: ['general.splink_aliases', 'general.splink_predictions']
+  match_probability: ['general.splink_aliases', 'general.splink_predictions']
+  build_id: ['general.splink_aliases', 'general.splink_predictions']
+
+== text-heavy columns (potential corpus) ==

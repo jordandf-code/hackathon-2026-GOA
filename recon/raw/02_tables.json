@@ -1,0 +1,792 @@
+[
+  {
+    "schema": "fed",
+    "table": "grants_contributions",
+    "est_rows": 1275521,
+    "total_bytes": 3152388096,
+    "heap_bytes": 2176344064,
+    "total_size": "3006 MB",
+    "heap_size": "2076 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "entity_golden_records",
+    "est_rows": 853710,
+    "total_bytes": 1448935424,
+    "heap_bytes": 977068032,
+    "total_size": "1382 MB",
+    "heap_size": "932 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "entity_source_links",
+    "est_rows": 5157743,
+    "total_bytes": 1406836736,
+    "heap_bytes": 964558848,
+    "total_size": "1342 MB",
+    "heap_size": "920 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "entity_merge_candidates",
+    "est_rows": 1646131,
+    "total_bytes": 1315151872,
+    "heap_bytes": 1063452672,
+    "total_size": "1254 MB",
+    "heap_size": "1014 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "entities",
+    "est_rows": 928687,
+    "total_bytes": 1235902464,
+    "heap_bytes": 349888512,
+    "total_size": "1179 MB",
+    "heap_size": "334 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants",
+    "est_rows": 1983886,
+    "total_bytes": 1094713344,
+    "heap_bytes": 591273984,
+    "total_size": "1044 MB",
+    "heap_size": "564 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_directors",
+    "est_rows": 2872615,
+    "total_bytes": 556154880,
+    "heap_bytes": 288243712,
+    "total_size": "530 MB",
+    "heap_size": "275 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "entity_resolution_log",
+    "est_rows": 1255151,
+    "total_bytes": 494469120,
+    "heap_bytes": 220872704,
+    "total_size": "472 MB",
+    "heap_size": "211 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_qualified_donees",
+    "est_rows": 1664343,
+    "total_bytes": 366559232,
+    "heap_bytes": 219947008,
+    "total_size": "350 MB",
+    "heap_size": "210 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_charitable_programs",
+    "est_rows": 478691,
+    "total_bytes": 253468672,
+    "heap_bytes": 154509312,
+    "total_size": "242 MB",
+    "heap_size": "147 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_financial_details",
+    "est_rows": 420849,
+    "total_bytes": 140812288,
+    "heap_bytes": 96649216,
+    "total_size": "134 MB",
+    "heap_size": "92 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_identification",
+    "est_rows": 421866,
+    "total_bytes": 139722752,
+    "heap_bytes": 79601664,
+    "total_size": "133 MB",
+    "heap_size": "76 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "splink_predictions",
+    "est_rows": 540640,
+    "total_bytes": 130564096,
+    "heap_bytes": 73154560,
+    "total_size": "125 MB",
+    "heap_size": "70 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "donee_name_quality",
+    "est_rows": 439867,
+    "total_bytes": 128393216,
+    "heap_bytes": 67600384,
+    "total_size": "122 MB",
+    "heap_size": "64 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "overhead_by_charity",
+    "est_rows": 420021,
+    "total_bytes": 98566144,
+    "heap_bytes": 64233472,
+    "total_size": "94 MB",
+    "heap_size": "61 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_financial_general",
+    "est_rows": 422683,
+    "total_bytes": 86401024,
+    "heap_bytes": 42098688,
+    "total_size": "82 MB",
+    "heap_size": "40 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "public",
+    "table": "contracts",
+    "est_rows": 153455,
+    "total_bytes": 86261760,
+    "heap_bytes": 82649088,
+    "total_size": "82 MB",
+    "heap_size": "79 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_recipients",
+    "est_rows": 452900,
+    "total_bytes": 82731008,
+    "heap_bytes": 40722432,
+    "total_size": "79 MB",
+    "heap_size": "39 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_foundation_info",
+    "est_rows": 422569,
+    "total_bytes": 70270976,
+    "heap_bytes": 25968640,
+    "total_size": "67 MB",
+    "heap_size": "25 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_edges",
+    "est_rows": 53771,
+    "total_bytes": 62693376,
+    "heap_bytes": 28123136,
+    "total_size": "60 MB",
+    "heap_size": "27 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "entity_merges",
+    "est_rows": 63782,
+    "total_bytes": 56868864,
+    "heap_bytes": 51224576,
+    "total_size": "54 MB",
+    "heap_size": "49 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_compensation",
+    "est_rows": 216380,
+    "total_bytes": 41943040,
+    "heap_bytes": 19103744,
+    "total_size": "40 MB",
+    "heap_size": "18 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_non_profit",
+    "est_rows": 69271,
+    "total_bytes": 38420480,
+    "heap_bytes": 9084928,
+    "total_size": "37 MB",
+    "heap_size": "8872 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "govt_funding_by_charity",
+    "est_rows": 166968,
+    "total_bytes": 36601856,
+    "heap_bytes": 22519808,
+    "total_size": "35 MB",
+    "heap_size": "21 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_contracts",
+    "est_rows": 67079,
+    "total_bytes": 26378240,
+    "heap_bytes": 8069120,
+    "total_size": "25 MB",
+    "heap_size": "7880 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_impossibilities",
+    "est_rows": 54010,
+    "total_bytes": 24231936,
+    "heap_bytes": 17309696,
+    "total_size": "23 MB",
+    "heap_size": "17 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_web_urls",
+    "est_rows": 169123,
+    "total_bytes": 22446080,
+    "heap_bytes": 13082624,
+    "total_size": "21 MB",
+    "heap_size": "12 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "_dnq_canonical",
+    "est_rows": 91129,
+    "total_bytes": 19226624,
+    "heap_bytes": 11141120,
+    "total_size": "18 MB",
+    "heap_size": "11 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "identification_name_history",
+    "est_rows": 92437,
+    "total_bytes": 15695872,
+    "heap_bytes": 12746752,
+    "total_size": "15 MB",
+    "heap_size": "12 MB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_resources_sent_outside",
+    "est_rows": 68028,
+    "total_bytes": 11935744,
+    "heap_bytes": 6496256,
+    "total_size": "11 MB",
+    "heap_size": "6344 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_sole_source",
+    "est_rows": 15533,
+    "total_bytes": 11329536,
+    "heap_bytes": 5144576,
+    "total_size": "11 MB",
+    "heap_size": "5024 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_gifts_in_kind",
+    "est_rows": 54575,
+    "total_bytes": 10051584,
+    "heap_bytes": 4489216,
+    "total_size": "9816 kB",
+    "heap_size": "4384 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_activities_outside_countries",
+    "est_rows": 44683,
+    "total_bytes": 6791168,
+    "heap_bytes": 2695168,
+    "total_size": "6632 kB",
+    "heap_size": "2632 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_non_qualified_donees",
+    "est_rows": 29270,
+    "total_bytes": 6651904,
+    "heap_bytes": 4300800,
+    "total_size": "6496 kB",
+    "heap_size": "4200 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "matrix_census",
+    "est_rows": 10177,
+    "total_bytes": 6586368,
+    "heap_bytes": 4571136,
+    "total_size": "6432 kB",
+    "heap_size": "4464 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_disbursement_quota",
+    "est_rows": 22151,
+    "total_bytes": 5414912,
+    "heap_bytes": 2940928,
+    "total_size": "5288 kB",
+    "heap_size": "2872 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_programs",
+    "est_rows": 20208,
+    "total_bytes": 4464640,
+    "heap_bytes": 2801664,
+    "total_size": "4360 kB",
+    "heap_size": "2736 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_activities_outside_details",
+    "est_rows": 25139,
+    "total_bytes": 4448256,
+    "heap_bytes": 1900544,
+    "total_size": "4344 kB",
+    "heap_size": "1856 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_participants",
+    "est_rows": 30003,
+    "total_bytes": 4161536,
+    "heap_bytes": 2539520,
+    "total_size": "4064 kB",
+    "heap_size": "2480 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_edge_year_flows",
+    "est_rows": 30003,
+    "total_bytes": 4145152,
+    "heap_bytes": 2539520,
+    "total_size": "4048 kB",
+    "heap_size": "2480 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "loops",
+    "est_rows": 5808,
+    "total_bytes": 3563520,
+    "heap_bytes": 1728512,
+    "total_size": "3480 kB",
+    "heap_size": "1688 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "scc_components",
+    "est_rows": 10177,
+    "total_bytes": 2973696,
+    "heap_bytes": 1884160,
+    "total_size": "2904 kB",
+    "heap_size": "1840 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "johnson_cycles",
+    "est_rows": 4601,
+    "total_bytes": 2899968,
+    "heap_bytes": 1343488,
+    "total_size": "2832 kB",
+    "heap_size": "1312 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_desc",
+    "est_rows": 286,
+    "total_bytes": 958464,
+    "heap_bytes": 212992,
+    "total_size": "936 kB",
+    "heap_size": "208 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_exported_goods",
+    "est_rows": 4029,
+    "total_bytes": 794624,
+    "heap_bytes": 409600,
+    "total_size": "776 kB",
+    "heap_size": "400 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_financials",
+    "est_rows": 5808,
+    "total_bytes": 720896,
+    "heap_bytes": 450560,
+    "total_size": "704 kB",
+    "heap_size": "440 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_plausibility_flags",
+    "est_rows": 1075,
+    "total_bytes": 679936,
+    "heap_bytes": 458752,
+    "total_size": "664 kB",
+    "heap_size": "448 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_universe",
+    "est_rows": 1501,
+    "total_bytes": 638976,
+    "heap_bytes": 417792,
+    "total_size": "624 kB",
+    "heap_size": "408 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "loop_charity_financials",
+    "est_rows": 1501,
+    "total_bytes": 385024,
+    "heap_bytes": 253952,
+    "total_size": "376 kB",
+    "heap_size": "248 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "scc_summary",
+    "est_rows": 347,
+    "total_bytes": 147456,
+    "heap_bytes": 81920,
+    "total_size": "144 kB",
+    "heap_size": "80 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "partitioned_cycles",
+    "est_rows": 108,
+    "total_bytes": 139264,
+    "heap_bytes": 24576,
+    "total_size": "136 kB",
+    "heap_size": "24 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_ministries",
+    "est_rows": 352,
+    "total_bytes": 139264,
+    "heap_bytes": 40960,
+    "total_size": "136 kB",
+    "heap_size": "40 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "ministries_crosswalk",
+    "est_rows": 162,
+    "total_bytes": 131072,
+    "heap_bytes": 32768,
+    "total_size": "128 kB",
+    "heap_size": "32 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "ministries_history",
+    "est_rows": 62,
+    "total_bytes": 122880,
+    "heap_bytes": 24576,
+    "total_size": "120 kB",
+    "heap_size": "24 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_resources",
+    "est_rows": 234,
+    "total_bytes": 98304,
+    "heap_bytes": 16384,
+    "total_size": "96 kB",
+    "heap_size": "16 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "ministries",
+    "est_rows": -1,
+    "total_bytes": 98304,
+    "heap_bytes": 8192,
+    "total_size": "96 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_sub_category_lookup",
+    "est_rows": 247,
+    "total_bytes": 81920,
+    "heap_bytes": 32768,
+    "total_size": "80 kB",
+    "heap_size": "32 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_country_lookup",
+    "est_rows": 264,
+    "total_bytes": 73728,
+    "heap_bytes": 24576,
+    "total_size": "72 kB",
+    "heap_size": "24 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "fed",
+    "table": "country_lookup",
+    "est_rows": 250,
+    "total_bytes": 65536,
+    "heap_bytes": 16384,
+    "total_size": "64 kB",
+    "heap_size": "16 kB",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_province_state_lookup",
+    "est_rows": 73,
+    "total_bytes": 57344,
+    "heap_bytes": 8192,
+    "total_size": "56 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_non_profit_status_lookup",
+    "est_rows": -1,
+    "total_bytes": 49152,
+    "heap_bytes": 8192,
+    "total_size": "48 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "ab",
+    "table": "ab_grants_fiscal_years",
+    "est_rows": -1,
+    "total_bytes": 49152,
+    "heap_bytes": 8192,
+    "total_size": "48 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "donee_trigram_candidates",
+    "est_rows": -1,
+    "total_bytes": 40960,
+    "heap_bytes": 0,
+    "total_size": "40 kB",
+    "heap_size": "0 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "t3010_completeness_issues",
+    "est_rows": -1,
+    "total_bytes": 40960,
+    "heap_bytes": 0,
+    "total_size": "40 kB",
+    "heap_size": "0 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "identified_hubs",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_designation_lookup",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "overhead_by_year",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "overhead_by_year_designation",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "govt_funding_by_year",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "splink_aliases",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 0,
+    "total_size": "32 kB",
+    "heap_size": "0 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_category_lookup",
+    "est_rows": 30,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "fed",
+    "table": "currency_lookup",
+    "est_rows": 94,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "fed",
+    "table": "province_lookup",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "fed",
+    "table": "recipient_type_lookup",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "fed",
+    "table": "agreement_type_lookup",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_program_type_lookup",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "splink_build_metadata",
+    "est_rows": -1,
+    "total_bytes": 32768,
+    "heap_bytes": 8192,
+    "total_size": "32 kB",
+    "heap_size": "8192 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "cra",
+    "table": "cra_political_activity_funding",
+    "est_rows": -1,
+    "total_bytes": 24576,
+    "heap_bytes": 0,
+    "total_size": "24 kB",
+    "heap_size": "0 bytes",
+    "relkind": "r"
+  },
+  {
+    "schema": "general",
+    "table": "resolution_batches",
+    "est_rows": -1,
+    "total_bytes": 16384,
+    "heap_bytes": 0,
+    "total_size": "16 kB",
+    "heap_size": "0 bytes",
+    "relkind": "r"
+  }
+]
