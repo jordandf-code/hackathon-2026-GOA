@@ -15,3 +15,5 @@ services:
         value: "10000"
       - key: STATEMENT_TIMEOUT_MS
         value: "30000"
+      - key: PYTHON_VERSION
+        value: "3.12.7"
