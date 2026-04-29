@@ -1,19 +1,18 @@
-"""Read-only reconnaissance of the provided Postgres replica.
+"""Read-only reconnaissance of the provided Postgres replica via the
+deployed HTTPS proxy (proxy/main.py on Render).
 
-Saves raw query outputs to recon/raw/ as JSON for later re-reading without
-re-querying. Intended to be run once before any application code is written.
+Saves raw query outputs to recon/raw/*.json so we can re-read them without
+re-querying. Set PROXY_URL + PROXY_TOKEN in .env (see .env.example).
 """
 from __future__ import annotations
 
 import json
 import os
 import sys
-from datetime import date, datetime, time
-from decimal import Decimal
 from pathlib import Path
+from typing import Any
 
-import psycopg2
-import psycopg2.extras
+import requests
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,33 +20,26 @@ RAW = ROOT / "recon" / "raw"
 RAW.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(ROOT / ".env")
-DSN = os.environ["DATABASE_URL"]
+PROXY_URL = os.environ["PROXY_URL"].rstrip("/")
+PROXY_TOKEN = os.environ["PROXY_TOKEN"]
+SESSION = requests.Session()
+SESSION.headers["Authorization"] = f"Bearer {PROXY_TOKEN}"
 
 
-def _default(o):
-    if isinstance(o, (datetime, date, time)):
-        return o.isoformat()
-    if isinstance(o, Decimal):
-        return str(o)
-    if isinstance(o, (bytes, memoryview)):
-        try:
-            return bytes(o).decode("utf-8", errors="replace")
-        except Exception:
-            return repr(o)
-    return str(o)
+def q(sql: str, limit: int | None = None) -> tuple[list[str], list[dict[str, Any]]]:
+    r = SESSION.post(f"{PROXY_URL}/query", json={"sql": sql, "limit": limit}, timeout=120)
+    if r.status_code >= 400:
+        raise RuntimeError(f"proxy {r.status_code}: {r.text[:500]}")
+    d = r.json()
+    if d.get("truncated"):
+        print(f"  WARN: result truncated at row_count={d['row_count']}")
+    return d["columns"], d["rows"]
 
 
 def dump(name: str, payload) -> None:
     path = RAW / f"{name}.json"
-    path.write_text(json.dumps(payload, indent=2, default=_default))
+    path.write_text(json.dumps(payload, indent=2, default=str))
     print(f"  wrote {path.relative_to(ROOT)}")
-
-
-def run(cur, sql, params=None):
-    cur.execute(sql, params or ())
-    cols = [c.name for c in cur.description] if cur.description else []
-    rows = cur.fetchall() if cur.description else []
-    return cols, [dict(r) for r in rows]
 
 
 def truncate(value, limit=200):
@@ -57,18 +49,13 @@ def truncate(value, limit=200):
 
 
 def main() -> int:
-    conn = psycopg2.connect(DSN)
-    conn.set_session(readonly=True, autocommit=True)
-    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-
     print("== version + current db ==")
-    _, version = run(cur, "SELECT version() AS version, current_database() AS db, current_user AS user")
+    _, version = q("SELECT version() AS version, current_database() AS db, current_user AS \"user\"")
     dump("00_version", version)
     print(version)
 
     print("\n== schemas ==")
-    _, schemas = run(
-        cur,
+    _, schemas = q(
         """
         SELECT n.nspname AS schema,
                pg_catalog.pg_get_userbyid(n.nspowner) AS owner
@@ -77,18 +64,17 @@ def main() -> int:
           AND n.nspname NOT LIKE 'pg_toast%'
           AND n.nspname NOT LIKE 'pg_temp%'
         ORDER BY 1
-        """,
+        """
     )
     dump("01_schemas", schemas)
     for s in schemas:
         print(f"  {s['schema']} (owner={s['owner']})")
 
     print("\n== tables w/ size + row estimates ==")
-    _, tables = run(
-        cur,
+    _, tables = q(
         """
         SELECT n.nspname AS schema,
-               c.relname AS table,
+               c.relname AS \"table\",
                c.reltuples::bigint AS est_rows,
                pg_total_relation_size(c.oid) AS total_bytes,
                pg_relation_size(c.oid) AS heap_bytes,
@@ -101,7 +87,7 @@ def main() -> int:
           AND n.nspname NOT IN ('pg_catalog','information_schema')
           AND n.nspname NOT LIKE 'pg_toast%'
         ORDER BY pg_total_relation_size(c.oid) DESC
-        """,
+        """
     )
     dump("02_tables", tables)
     for t in tables:
@@ -114,8 +100,8 @@ def main() -> int:
             continue
         full = f'"{t["schema"]}"."{t["table"]}"'
         try:
-            cur.execute(f"SELECT count(*) AS n FROM {full}")
-            n = cur.fetchone()["n"]
+            _, rows = q(f"SELECT count(*) AS n FROM {full}")
+            n = rows[0]["n"] if rows else None
         except Exception as e:
             n = None
             print(f"  count failed for {full}: {e}")
@@ -124,8 +110,7 @@ def main() -> int:
     dump("03_exact_counts", exact_counts)
 
     print("\n== columns ==")
-    _, columns = run(
-        cur,
+    _, columns = q(
         """
         SELECT table_schema, table_name, ordinal_position, column_name,
                data_type, udt_name, is_nullable, character_maximum_length,
@@ -133,7 +118,7 @@ def main() -> int:
         FROM information_schema.columns
         WHERE table_schema NOT IN ('pg_catalog','information_schema')
         ORDER BY table_schema, table_name, ordinal_position
-        """,
+        """
     )
     dump("04_columns", columns)
     by_table: dict[tuple[str, str], list[dict]] = {}
@@ -145,8 +130,7 @@ def main() -> int:
             print(f"    {c['column_name']:<30} {c['udt_name']:<20} null={c['is_nullable']}")
 
     print("\n== primary keys ==")
-    _, pks = run(
-        cur,
+    _, pks = q(
         """
         SELECT tc.table_schema, tc.table_name, kc.column_name, kc.ordinal_position
         FROM information_schema.table_constraints tc
@@ -157,16 +141,15 @@ def main() -> int:
         WHERE tc.constraint_type = 'PRIMARY KEY'
           AND tc.table_schema NOT IN ('pg_catalog','information_schema')
         ORDER BY tc.table_schema, tc.table_name, kc.ordinal_position
-        """,
+        """
     )
     dump("05_primary_keys", pks)
 
     print("\n== foreign keys ==")
-    _, fks = run(
-        cur,
+    _, fks = q(
         """
-        SELECT tc.table_schema AS schema, tc.table_name AS table,
-               kcu.column_name AS column,
+        SELECT tc.table_schema AS schema, tc.table_name AS \"table\",
+               kcu.column_name AS \"column\",
                ccu.table_schema AS ref_schema, ccu.table_name AS ref_table,
                ccu.column_name AS ref_column,
                tc.constraint_name
@@ -180,34 +163,32 @@ def main() -> int:
         WHERE tc.constraint_type = 'FOREIGN KEY'
           AND tc.table_schema NOT IN ('pg_catalog','information_schema')
         ORDER BY tc.table_schema, tc.table_name
-        """,
+        """
     )
     dump("06_foreign_keys", fks)
     for fk in fks:
         print(f"  {fk['schema']}.{fk['table']}.{fk['column']} -> {fk['ref_schema']}.{fk['ref_table']}.{fk['ref_column']}")
 
     print("\n== indexes ==")
-    _, indexes = run(
-        cur,
+    _, indexes = q(
         """
         SELECT schemaname, tablename, indexname, indexdef
         FROM pg_indexes
         WHERE schemaname NOT IN ('pg_catalog','information_schema')
         ORDER BY schemaname, tablename, indexname
-        """,
+        """
     )
     dump("07_indexes", indexes)
 
     print("\n== samples (3 rows each, truncated) ==")
-    samples = {}
+    samples: dict[str, Any] = {}
     for t in tables:
         if t["relkind"] not in ("r", "m", "p"):
             continue
         full = f'"{t["schema"]}"."{t["table"]}"'
         key = f'{t["schema"]}.{t["table"]}'
         try:
-            cur.execute(f"SELECT * FROM {full} LIMIT 3")
-            rows = [dict(r) for r in cur.fetchall()]
+            _, rows = q(f"SELECT * FROM {full} LIMIT 3")
             for r in rows:
                 for k, v in list(r.items()):
                     r[k] = truncate(v) if isinstance(v, str) else v
@@ -219,16 +200,15 @@ def main() -> int:
     dump("08_samples", samples)
 
     print("\n== date / timestamp min/max ==")
-    date_types = {"date", "timestamp", "timestamptz", "timestamp without time zone",
-                  "timestamp with time zone"}
-    date_cols = [c for c in columns if c["data_type"] in date_types or c["udt_name"] in {"date", "timestamp", "timestamptz"}]
+    date_udts = {"date", "timestamp", "timestamptz"}
+    date_cols = [c for c in columns if c["udt_name"] in date_udts]
     minmax = []
     for c in date_cols:
         full = f'"{c["table_schema"]}"."{c["table_name"]}"'
         col = f'"{c["column_name"]}"'
         try:
-            cur.execute(f"SELECT MIN({col}) AS min_v, MAX({col}) AS max_v, COUNT({col}) AS n FROM {full}")
-            r = cur.fetchone()
+            _, rows = q(f"SELECT MIN({col})::text AS min_v, MAX({col})::text AS max_v, COUNT({col}) AS n FROM {full}")
+            r = rows[0]
             minmax.append({
                 "schema": c["table_schema"],
                 "table": c["table_name"],
@@ -258,19 +238,22 @@ def main() -> int:
         print(f"  {n}: {ts}")
 
     print("\n== text-heavy columns (potential corpus) ==")
-    text_like = [c for c in columns if c["udt_name"] in {"text", "varchar", "bpchar", "json", "jsonb"} or
-                 (c["character_maximum_length"] or 0) >= 1000]
+    text_like = [
+        c for c in columns
+        if c["udt_name"] in {"text", "varchar", "bpchar", "json", "jsonb"}
+        or (c["character_maximum_length"] or 0) >= 1000
+    ]
     text_stats = []
     for c in text_like:
         full = f'"{c["table_schema"]}"."{c["table_name"]}"'
         col = f'"{c["column_name"]}"'
         try:
-            cur.execute(
+            _, rows = q(
                 f"SELECT AVG(length({col}::text))::int AS avg_len, "
                 f"MAX(length({col}::text)) AS max_len, "
                 f"COUNT({col}) AS non_null FROM {full}"
             )
-            r = cur.fetchone()
+            r = rows[0]
             text_stats.append({
                 "schema": c["table_schema"], "table": c["table_name"],
                 "column": c["column_name"], "udt": c["udt_name"],
@@ -282,13 +265,11 @@ def main() -> int:
                 "schema": c["table_schema"], "table": c["table_name"],
                 "column": c["column_name"], "udt": c["udt_name"], "error": str(e),
             })
-    text_stats.sort(key=lambda r: (r.get("avg_len") or 0), reverse=True)
+    text_stats.sort(key=lambda r: int(r.get("avg_len") or 0), reverse=True)
     dump("11_text_stats", text_stats)
     for r in text_stats[:25]:
         print(f"  {r.get('schema')}.{r.get('table')}.{r.get('column')} ({r.get('udt')}): avg={r.get('avg_len')} max={r.get('max_len')} non_null={r.get('non_null')}")
 
-    cur.close()
-    conn.close()
     print("\nDone.")
     return 0
 
